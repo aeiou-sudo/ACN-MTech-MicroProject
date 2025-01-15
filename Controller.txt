@@ -1,0 +1,614 @@
+Last login: Mon Dec  2 17:25:01 on ttys000
+pauljose@Pauls-MacBook-Air ~ % multipass shell mininet-vm
+Welcome to Ubuntu 24.04.1 LTS (GNU/Linux 6.8.0-49-generic aarch64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/pro
+
+ System information as of Mon Dec  2 17:30:37 IST 2024
+
+  System load:             0.1
+  Usage of /:              50.7% of 3.80GB
+  Memory usage:            55%
+  Swap usage:              0%
+  Processes:               100
+  Users logged in:         1
+  IPv4 address for enp0s1: 192.168.64.5
+  IPv6 address for enp0s1: fd1c:7755:a134:49f:5054:ff:fe14:e377
+
+
+Expanded Security Maintenance for Applications is not enabled.
+
+16 updates can be applied immediately.
+12 of these updates are standard security updates.
+To see these additional updates run: apt list --upgradable
+
+Enable ESM Apps to receive additional future security updates.
+See https://ubuntu.com/esm or run: sudo pro status
+
+
+Last login: Mon Dec  2 17:28:07 2024 from 192.168.64.1
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ git clone https://github.com/noxrepo/pox.git ~/pox
+Cloning into '/home/ubuntu/pox'...
+remote: Enumerating objects: 13425, done.
+remote: Counting objects: 100% (650/650), done.
+remote: Compressing objects: 100% (221/221), done.
+remote: Total 13425 (delta 456), reused 600 (delta 424), pack-reused 12775 (from 1)
+Receiving objects: 100% (13425/13425), 5.13 MiB | 1.15 MiB/s, done.
+Resolving deltas: 100% (8705/8705), done.
+ubuntu@mininet-vm:~$ ~/pox/pox.py forwarding.l2_learning
+POX 0.7.0 (gar) / Copyright 2011-2020 James McCauley, et al.
+WARNING:version:POX requires one of the following versions of Python: 3.6 3.7 3.8 3.9
+WARNING:version:You're running Python 3.12.
+WARNING:version:If you run into problems, try using a supported version.
+INFO:core:POX 0.7.0 (gar) is up.
+INFO:openflow.of_01:[00-00-00-00-00-01 2] connected
+INFO:openflow.of_01:[00-00-00-00-00-02 3] connected
+INFO:openflow.of_01:[00-00-00-00-00-03 4] connected
+INFO:openflow.of_01:[00-00-00-00-00-01 2] closed
+INFO:openflow.of_01:[00-00-00-00-00-03 4] closed
+INFO:openflow.of_01:[00-00-00-00-00-02 3] closed
+INFO:openflow.of_01:[00-00-00-00-00-01 6] connected
+INFO:openflow.of_01:[00-00-00-00-00-02 7] connected
+INFO:openflow.of_01:[00-00-00-00-00-03 8] connected
+INFO:openflow.of_01:[00-00-00-00-00-01 6] closed
+INFO:openflow.of_01:[00-00-00-00-00-03 8] closed
+INFO:openflow.of_01:[00-00-00-00-00-02 7] closed
+INFO:openflow.of_01:[00-00-00-00-00-01 10] connected
+INFO:openflow.of_01:[00-00-00-00-00-02 11] connected
+INFO:openflow.of_01:[00-00-00-00-00-03 12] connected
+INFO:openflow.of_01:[00-00-00-00-00-01 10] closed
+INFO:openflow.of_01:[00-00-00-00-00-03 12] closed
+INFO:openflow.of_01:[00-00-00-00-00-02 11] closed
+INFO:openflow.of_01:[00-00-00-00-00-01 14] connected
+INFO:openflow.of_01:[00-00-00-00-00-02 15] connected
+INFO:openflow.of_01:[00-00-00-00-00-03 16] connected
+INFO:openflow.of_01:[00-00-00-00-00-01 14] closed
+INFO:openflow.of_01:[00-00-00-00-00-03 16] closed
+INFO:openflow.of_01:[00-00-00-00-00-02 15] closed
+Terminated
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ cd pox/
+ubuntu@mininet-vm:~/pox$ 
+ubuntu@mininet-vm:~/pox$ 
+ubuntu@mininet-vm:~/pox$ ls
+LICENSE  NOTICE  README.md  debug-pox.py  ext  pox  pox.py  setup.cfg  tests  tools
+ubuntu@mininet-vm:~/pox$ 
+ubuntu@mininet-vm:~/pox$ 
+ubuntu@mininet-vm:~/pox$ 
+ubuntu@mininet-vm:~/pox$ nano qos_policy.py
+ubuntu@mininet-vm:~/pox$ 
+ubuntu@mininet-vm:~/pox$ 
+ubuntu@mininet-vm:~/pox$ ./pox.py qos_policy
+POX 0.7.0 (gar) / Copyright 2011-2020 James McCauley, et al.
+Traceback (most recent call last):
+  File "/home/ubuntu/pox/pox/boot.py", line 74, in do_import2
+    __import__(name, level=0)
+ModuleNotFoundError: No module named 'pox.qos_policy'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ubuntu/pox/pox/boot.py", line 74, in do_import2
+    __import__(name, level=0)
+  File "/home/ubuntu/pox/qos_policy.py", line 17
+    flow_mod.actions.append(of.ofp_action_output(port=<h4_port>))
+                                                      ^
+SyntaxError: invalid syntax
+Could not import module: qos_policy
+ubuntu@mininet-vm:~/pox$ ls
+LICENSE  NOTICE  README.md  debug-pox.py  ext  pox  pox.py  qos_policy.py  setup.cfg  tests  tools
+ubuntu@mininet-vm:~/pox$ 
+ubuntu@mininet-vm:~/pox$ 
+ubuntu@mininet-vm:~/pox$ cd pox/
+ubuntu@mininet-vm:~/pox/pox$ 
+ubuntu@mininet-vm:~/pox/pox$ 
+ubuntu@mininet-vm:~/pox/pox$ nano qos_policy.py
+ubuntu@mininet-vm:~/pox/pox$ ./pox.py qos_policy
+-bash: ./pox.py: No such file or directory
+ubuntu@mininet-vm:~/pox/pox$ cd ..
+ubuntu@mininet-vm:~/pox$ 
+ubuntu@mininet-vm:~/pox$ 
+ubuntu@mininet-vm:~/pox$ ./pox.py qos_policy
+POX 0.7.0 (gar) / Copyright 2011-2020 James McCauley, et al.
+WARNING:version:POX requires one of the following versions of Python: 3.6 3.7 3.8 3.9
+WARNING:version:You're running Python 3.12.
+WARNING:version:If you run into problems, try using a supported version.
+INFO:core:POX 0.7.0 (gar) is up.
+ERROR:openflow.of_01:Error 98 while binding 0.0.0.0:6633: Address already in use
+ERROR:openflow.of_01: You may have another controller running.
+ERROR:openflow.of_01: Use openflow.of_01 --port=<port> to run POX on another port.
+^CINFO:core:Going down...
+INFO:core:Down.
+ubuntu@mininet-vm:~/pox$ ./pox.py qos_policy
+POX 0.7.0 (gar) / Copyright 2011-2020 James McCauley, et al.
+WARNING:version:POX requires one of the following versions of Python: 3.6 3.7 3.8 3.9
+WARNING:version:You're running Python 3.12.
+WARNING:version:If you run into problems, try using a supported version.
+INFO:core:POX 0.7.0 (gar) is up.
+INFO:openflow.of_01:[00-00-00-00-00-01 1] connected
+ERROR:core:Exception while handling OpenFlowNexus!ConnectionUp...
+Traceback (most recent call last):
+  File "/home/ubuntu/pox/pox/lib/revent/revent.py", line 242, in raiseEventNoErrors
+    return self.raiseEvent(event, *args, **kw)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/pox/pox/lib/revent/revent.py", line 295, in raiseEvent
+    rv = event._invoke(handler, *args, **kw)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/pox/pox/lib/revent/revent.py", line 168, in _invoke
+    return handler(self, *args, **kw)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/pox/pox/qos_policy.py", line 22, in <lambda>
+    core.openflow.addListenerByName("ConnectionUp", lambda event: install_qos_rules())
+                                                                  ^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/pox/pox/qos_policy.py", line 11, in install_qos_rules
+    match.nw_src = "2001:db8:1::1"  # Replace with h1's IPv6 address
+    ^^^^^^^^^^^^
+  File "/home/ubuntu/pox/pox/openflow/libopenflow_01.py", line 1133, in __setattr__
+    getattr(self, 'set_' + name)(value)
+  File "/home/ubuntu/pox/pox/openflow/libopenflow_01.py", line 1081, in set_nw_src
+    a = self._make_addr(*args, **kw)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/pox/pox/openflow/libopenflow_01.py", line 1111, in _make_addr
+    ip = IPAddr(ip)
+         ^^^^^^^^^^
+  File "/home/ubuntu/pox/pox/lib/addresses.py", line 286, in __init__
+    self._value = struct.unpack('i', socket.inet_aton(addr))[0]
+                                     ^^^^^^^^^^^^^^^^^^^^^^
+OSError: illegal IP address string passed to inet_aton
+INFO:openflow.of_01:[00-00-00-00-00-03 2] connected
+ERROR:core:Exception while handling OpenFlowNexus!ConnectionUp...
+Traceback (most recent call last):
+  File "/home/ubuntu/pox/pox/lib/revent/revent.py", line 242, in raiseEventNoErrors
+    return self.raiseEvent(event, *args, **kw)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/pox/pox/lib/revent/revent.py", line 295, in raiseEvent
+    rv = event._invoke(handler, *args, **kw)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/pox/pox/lib/revent/revent.py", line 168, in _invoke
+    return handler(self, *args, **kw)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/pox/pox/qos_policy.py", line 22, in <lambda>
+    core.openflow.addListenerByName("ConnectionUp", lambda event: install_qos_rules())
+                                                                  ^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/pox/pox/qos_policy.py", line 11, in install_qos_rules
+    match.nw_src = "2001:db8:1::1"  # Replace with h1's IPv6 address
+    ^^^^^^^^^^^^
+  File "/home/ubuntu/pox/pox/openflow/libopenflow_01.py", line 1133, in __setattr__
+    getattr(self, 'set_' + name)(value)
+  File "/home/ubuntu/pox/pox/openflow/libopenflow_01.py", line 1081, in set_nw_src
+    a = self._make_addr(*args, **kw)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/pox/pox/openflow/libopenflow_01.py", line 1111, in _make_addr
+    ip = IPAddr(ip)
+         ^^^^^^^^^^
+  File "/home/ubuntu/pox/pox/lib/addresses.py", line 286, in __init__
+    self._value = struct.unpack('i', socket.inet_aton(addr))[0]
+                                     ^^^^^^^^^^^^^^^^^^^^^^
+OSError: illegal IP address string passed to inet_aton
+INFO:openflow.of_01:[00-00-00-00-00-02 3] connected
+ERROR:core:Exception while handling OpenFlowNexus!ConnectionUp...
+Traceback (most recent call last):
+  File "/home/ubuntu/pox/pox/lib/revent/revent.py", line 242, in raiseEventNoErrors
+    return self.raiseEvent(event, *args, **kw)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/pox/pox/lib/revent/revent.py", line 295, in raiseEvent
+    rv = event._invoke(handler, *args, **kw)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/pox/pox/lib/revent/revent.py", line 168, in _invoke
+    return handler(self, *args, **kw)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/pox/pox/qos_policy.py", line 22, in <lambda>
+    core.openflow.addListenerByName("ConnectionUp", lambda event: install_qos_rules())
+                                                                  ^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/pox/pox/qos_policy.py", line 11, in install_qos_rules
+    match.nw_src = "2001:db8:1::1"  # Replace with h1's IPv6 address
+    ^^^^^^^^^^^^
+  File "/home/ubuntu/pox/pox/openflow/libopenflow_01.py", line 1133, in __setattr__
+    getattr(self, 'set_' + name)(value)
+  File "/home/ubuntu/pox/pox/openflow/libopenflow_01.py", line 1081, in set_nw_src
+    a = self._make_addr(*args, **kw)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/pox/pox/openflow/libopenflow_01.py", line 1111, in _make_addr
+    ip = IPAddr(ip)
+         ^^^^^^^^^^
+  File "/home/ubuntu/pox/pox/lib/addresses.py", line 286, in __init__
+    self._value = struct.unpack('i', socket.inet_aton(addr))[0]
+                                     ^^^^^^^^^^^^^^^^^^^^^^
+OSError: illegal IP address string passed to inet_aton
+^CINFO:core:Going down...
+INFO:openflow.of_01:[00-00-00-00-00-01 1] disconnected
+INFO:openflow.of_01:[00-00-00-00-00-03 2] disconnected
+INFO:openflow.of_01:[00-00-00-00-00-02 3] disconnected
+INFO:core:Down.
+ubuntu@mininet-vm:~/pox$ 
+ubuntu@mininet-vm:~/pox$ 
+ubuntu@mininet-vm:~/pox$ 
+ubuntu@mininet-vm:~/pox$ 
+ubuntu@mininet-vm:~/pox$ nano ~/pox/pox/lib/addresses.py
+ubuntu@mininet-vm:~/pox$ 
+ubuntu@mininet-vm:~/pox$ 
+ubuntu@mininet-vm:~/pox$ 
+ubuntu@mininet-vm:~/pox$ 
+ubuntu@mininet-vm:~/pox$ 
+ubuntu@mininet-vm:~/pox$ 
+ubuntu@mininet-vm:~/pox$ cd pox/
+ubuntu@mininet-vm:~/pox/pox$ 
+ubuntu@mininet-vm:~/pox/pox$ 
+ubuntu@mininet-vm:~/pox/pox$ 
+ubuntu@mininet-vm:~/pox/pox$ ls
+__init__.py  config     forwarding    info  messenger  proto          samples   web
+__pycache__  core.py    help.py       lib   misc       py.py          tk.py
+boot.py      datapaths  host_tracker  log   openflow   qos_policy.py  topology
+ubuntu@mininet-vm:~/pox/pox$ 
+ubuntu@mininet-vm:~/pox/pox$ 
+ubuntu@mininet-vm:~/pox/pox$ rm qos_policy.py 
+ubuntu@mininet-vm:~/pox/pox$ 
+ubuntu@mininet-vm:~/pox/pox$ 
+ubuntu@mininet-vm:~/pox/pox$ nano qos_policy.py
+ubuntu@mininet-vm:~/pox/pox$ 
+ubuntu@mininet-vm:~/pox/pox$ 
+ubuntu@mininet-vm:~/pox/pox$ cd ..
+ubuntu@mininet-vm:~/pox$ 
+ubuntu@mininet-vm:~/pox$ 
+ubuntu@mininet-vm:~/pox$ ls
+LICENSE  NOTICE  README.md  debug-pox.py  ext  pox  pox.py  qos_policy.py  setup.cfg  tests  tools
+ubuntu@mininet-vm:~/pox$ 
+ubuntu@mininet-vm:~/pox$ 
+ubuntu@mininet-vm:~/pox$ nano qos_policy.py
+ubuntu@mininet-vm:~/pox$ ./pox.py qos_policy
+POX 0.7.0 (gar) / Copyright 2011-2020 James McCauley, et al.
+WARNING:version:POX requires one of the following versions of Python: 3.6 3.7 3.8 3.9
+WARNING:version:You're running Python 3.12.
+WARNING:version:If you run into problems, try using a supported version.
+INFO:core:POX 0.7.0 (gar) is up.
+INFO:openflow.of_01:[00-00-00-00-00-01 1] connected
+INFO:qos_policy:QoS rules installed for [00-00-00-00-00-01 1]
+INFO:openflow.of_01:[00-00-00-00-00-03 2] connected
+INFO:qos_policy:QoS rules installed for [00-00-00-00-00-01 1]
+INFO:qos_policy:QoS rules installed for [00-00-00-00-00-03 2]
+INFO:openflow.of_01:[00-00-00-00-00-02 3] connected
+INFO:qos_policy:QoS rules installed for [00-00-00-00-00-01 1]
+INFO:qos_policy:QoS rules installed for [00-00-00-00-00-03 2]
+INFO:qos_policy:QoS rules installed for [00-00-00-00-00-02 3]
+INFO:openflow.of_01:[00-00-00-00-00-01 1] closed
+INFO:openflow.of_01:[00-00-00-00-00-03 2] closed
+INFO:openflow.of_01:[00-00-00-00-00-02 3] closed
+INFO:openflow.of_01:[00-00-00-00-00-01 5] connected
+INFO:qos_policy:QoS rules installed for [00-00-00-00-00-01 5]
+INFO:openflow.of_01:[00-00-00-00-00-03 6] connected
+INFO:qos_policy:QoS rules installed for [00-00-00-00-00-01 5]
+INFO:qos_policy:QoS rules installed for [00-00-00-00-00-03 6]
+INFO:openflow.of_01:[00-00-00-00-00-02 7] connected
+INFO:qos_policy:QoS rules installed for [00-00-00-00-00-01 5]
+INFO:qos_policy:QoS rules installed for [00-00-00-00-00-03 6]
+INFO:qos_policy:QoS rules installed for [00-00-00-00-00-02 7]
+^CINFO:core:Going down...
+INFO:openflow.of_01:[00-00-00-00-00-01 5] disconnected
+INFO:openflow.of_01:[00-00-00-00-00-03 6] disconnected
+INFO:openflow.of_01:[00-00-00-00-00-02 7] disconnected
+INFO:core:Down.
+ubuntu@mininet-vm:~/pox$ 
+ubuntu@mininet-vm:~/pox$ 
+ubuntu@mininet-vm:~/pox$ 
+ubuntu@mininet-vm:~/pox$ 
+ubuntu@mininet-vm:~/pox$ 
+ubuntu@mininet-vm:~/pox$ cd pox/
+ubuntu@mininet-vm:~/pox/pox$ 
+ubuntu@mininet-vm:~/pox/pox$ 
+ubuntu@mininet-vm:~/pox/pox$ 
+ubuntu@mininet-vm:~/pox/pox$ ls
+__init__.py  config     forwarding    info  messenger  proto          samples   web
+__pycache__  core.py    help.py       lib   misc       py.py          tk.py
+boot.py      datapaths  host_tracker  log   openflow   qos_policy.py  topology
+ubuntu@mininet-vm:~/pox/pox$ 
+ubuntu@mininet-vm:~/pox/pox$ 
+ubuntu@mininet-vm:~/pox/pox$ rm qos_policy.py 
+ubuntu@mininet-vm:~/pox/pox$ 
+ubuntu@mininet-vm:~/pox/pox$ 
+ubuntu@mininet-vm:~/pox/pox$ 
+ubuntu@mininet-vm:~/pox/pox$ nano qos_policy.py
+ubuntu@mininet-vm:~/pox/pox$ 
+ubuntu@mininet-vm:~/pox/pox$ 
+ubuntu@mininet-vm:~/pox/pox$ cd ..
+ubuntu@mininet-vm:~/pox$ 
+ubuntu@mininet-vm:~/pox$ 
+ubuntu@mininet-vm:~/pox$ ./pox.py qos_policy
+POX 0.7.0 (gar) / Copyright 2011-2020 James McCauley, et al.
+WARNING:version:POX requires one of the following versions of Python: 3.6 3.7 3.8 3.9
+WARNING:version:You're running Python 3.12.
+WARNING:version:If you run into problems, try using a supported version.
+INFO:core:POX 0.7.0 (gar) is up.
+mininet> pingall
+
+^CINFO:core:Going down...
+INFO:core:Down.
+ubuntu@mininet-vm:~/pox$ 
+ubuntu@mininet-vm:~/pox$ 
+ubuntu@mininet-vm:~/pox$ 
+ubuntu@mininet-vm:~/pox$ ./pox.py qos_policy
+POX 0.7.0 (gar) / Copyright 2011-2020 James McCauley, et al.
+WARNING:version:POX requires one of the following versions of Python: 3.6 3.7 3.8 3.9
+WARNING:version:You're running Python 3.12.
+WARNING:version:If you run into problems, try using a supported version.
+INFO:core:POX 0.7.0 (gar) is up.
+^CINFO:core:Going down...
+INFO:core:Down.
+ubuntu@mininet-vm:~/pox$ 
+ubuntu@mininet-vm:~/pox$ 
+ubuntu@mininet-vm:~/pox$ 
+ubuntu@mininet-vm:~/pox$ ./pox.py openflow.of_01 --port=6633 qos_policy
+POX 0.7.0 (gar) / Copyright 2011-2020 James McCauley, et al.
+WARNING:version:POX requires one of the following versions of Python: 3.6 3.7 3.8 3.9
+WARNING:version:You're running Python 3.12.
+WARNING:version:If you run into problems, try using a supported version.
+INFO:core:POX 0.7.0 (gar) is up.
+INFO:openflow.of_01:[00-00-00-00-00-01 2] connected
+INFO:openflow.of_01:[00-00-00-00-00-03 3] connected
+INFO:openflow.of_01:[00-00-00-00-00-02 4] connected
+^CINFO:core:Going down...
+INFO:openflow.of_01:[00-00-00-00-00-01 2] disconnected
+INFO:openflow.of_01:[00-00-00-00-00-03 3] disconnected
+INFO:openflow.of_01:[00-00-00-00-00-02 4] disconnected
+INFO:core:Down.
+ubuntu@mininet-vm:~/pox$ ./pox.py openflow.of_01 --port=6633 qos_policy
+POX 0.7.0 (gar) / Copyright 2011-2020 James McCauley, et al.
+WARNING:version:POX requires one of the following versions of Python: 3.6 3.7 3.8 3.9
+WARNING:version:You're running Python 3.12.
+WARNING:version:If you run into problems, try using a supported version.
+INFO:core:POX 0.7.0 (gar) is up.
+INFO:openflow.of_01:[00-00-00-00-00-01 2] connected
+INFO:openflow.of_01:[00-00-00-00-00-02 4] connected
+INFO:openflow.of_01:[00-00-00-00-00-03 3] connected
+h2 ip -6 route^CINFO:core:Going down...
+INFO:openflow.of_01:[00-00-00-00-00-01 2] disconnected
+INFO:openflow.of_01:[00-00-00-00-00-02 4] disconnected
+INFO:openflow.of_01:[00-00-00-00-00-03 3] disconnected
+INFO:core:Down.
+ubuntu@mininet-vm:~/pox$ 
+ubuntu@mininet-vm:~/pox$ 
+ubuntu@mininet-vm:~/pox$ 
+ubuntu@mininet-vm:~/pox$ cd pox/
+ubuntu@mininet-vm:~/pox/pox$ 
+ubuntu@mininet-vm:~/pox/pox$ 
+ubuntu@mininet-vm:~/pox/pox$ 
+ubuntu@mininet-vm:~/pox/pox$ ls
+__init__.py  config     forwarding    info  messenger  proto          samples   web
+__pycache__  core.py    help.py       lib   misc       py.py          tk.py
+boot.py      datapaths  host_tracker  log   openflow   qos_policy.py  topology
+ubuntu@mininet-vm:~/pox/pox$ rm qos_policy.py 
+ubuntu@mininet-vm:~/pox/pox$ 
+ubuntu@mininet-vm:~/pox/pox$ 
+ubuntu@mininet-vm:~/pox/pox$ nano qos_policy.py
+ubuntu@mininet-vm:~/pox/pox$ lscd ..
+Command 'lscd' not found, did you mean:
+  command 'lsd' from deb lsd (0.23.1-8)
+  command 'tscd' from deb tcm (2.20+TSQD-7)
+  command 'lsfd' from deb util-linux-extra (2.39.3-9ubuntu6.1)
+  command 'lshd' from deb lsh-server (2.1-14)
+  command 'lsc' from deb livescript (1.6.1+dfsg-3)
+  command 'ascd' from deb ascd (0.13.2-7)
+  command 'nscd' from deb nscd (2.39-0ubuntu8.3)
+  command 'nscd' from deb unscd (0.54-1build6)
+  command 'lscp' from deb nilfs-tools (2.2.9-1)
+  command 'lbcd' from deb lbcd (3.5.2-3)
+Try: sudo apt install <deb name>
+ubuntu@mininet-vm:~/pox/pox$ 
+ubuntu@mininet-vm:~/pox/pox$ 
+ubuntu@mininet-vm:~/pox/pox$ 
+ubuntu@mininet-vm:~/pox/pox$ cd ..
+ubuntu@mininet-vm:~/pox$ 
+ubuntu@mininet-vm:~/pox$ 
+ubuntu@mininet-vm:~/pox$ ./pox.py openflow.of_01 --port=6633 qos_policy
+POX 0.7.0 (gar) / Copyright 2011-2020 James McCauley, et al.
+WARNING:version:POX requires one of the following versions of Python: 3.6 3.7 3.8 3.9
+WARNING:version:You're running Python 3.12.
+WARNING:version:If you run into problems, try using a supported version.
+INFO:core:POX 0.7.0 (gar) is up.
+INFO:openflow.of_01:[00-00-00-00-00-01 1] connected
+INFO:openflow.of_01:[00-00-00-00-00-03 2] connected
+INFO:openflow.of_01:[00-00-00-00-00-02 3] connected
+INFO:openflow.of_01:[00-00-00-00-00-01 1] closed
+INFO:openflow.of_01:[00-00-00-00-00-03 2] closed
+INFO:openflow.of_01:[00-00-00-00-00-02 3] closed
+INFO:openflow.of_01:[00-00-00-00-00-03 6] connected
+INFO:openflow.of_01:[00-00-00-00-00-01 5] connected
+INFO:openflow.of_01:[00-00-00-00-00-02 7] connected
+INFO:openflow.of_01:[00-00-00-00-00-01 5] closed
+INFO:openflow.of_01:[00-00-00-00-00-03 6] closed
+INFO:openflow.of_01:[00-00-00-00-00-02 7] closed
+^CINFO:core:Going down...
+INFO:core:Down.
+ubuntu@mininet-vm:~/pox$ 
+ubuntu@mininet-vm:~/pox$ 
+ubuntu@mininet-vm:~/pox$ 
+ubuntu@mininet-vm:~/pox$ 
+ubuntu@mininet-vm:~/pox$ ./pox.py openflow.of_01 --port=6633 qos_policy
+POX 0.7.0 (gar) / Copyright 2011-2020 James McCauley, et al.
+WARNING:version:POX requires one of the following versions of Python: 3.6 3.7 3.8 3.9
+WARNING:version:You're running Python 3.12.
+WARNING:version:If you run into problems, try using a supported version.
+INFO:core:POX 0.7.0 (gar) is up.
+INFO:openflow.of_01:[00-00-00-00-00-01 2] connected
+INFO:openflow.of_01:[00-00-00-00-00-02 4] connected
+INFO:openflow.of_01:[00-00-00-00-00-03 3] connected
+^CINFO:core:Going down...
+INFO:openflow.of_01:[00-00-00-00-00-01 2] disconnected
+INFO:openflow.of_01:[00-00-00-00-00-02 4] disconnected
+INFO:openflow.of_01:[00-00-00-00-00-03 3] disconnected
+INFO:core:Down.
+ubuntu@mininet-vm:~/pox$ ./pox.py forwarding.l2_learning
+POX 0.7.0 (gar) / Copyright 2011-2020 James McCauley, et al.
+WARNING:version:POX requires one of the following versions of Python: 3.6 3.7 3.8 3.9
+WARNING:version:You're running Python 3.12.
+WARNING:version:If you run into problems, try using a supported version.
+INFO:core:POX 0.7.0 (gar) is up.
+INFO:openflow.of_01:[00-00-00-00-00-01 1] connected
+INFO:openflow.of_01:[00-00-00-00-00-03 2] connected
+INFO:openflow.of_01:[00-00-00-00-00-02 3] connected
+INFO:openflow.of_01:[00-00-00-00-00-01 1] closed
+INFO:openflow.of_01:[00-00-00-00-00-03 2] closed
+INFO:openflow.of_01:[00-00-00-00-00-02 3] closed
+INFO:openflow.of_01:[00-00-00-00-00-01 5] connected
+INFO:openflow.of_01:[00-00-00-00-00-03 6] connected
+INFO:openflow.of_01:[00-00-00-00-00-02 7] connected
+INFO:openflow.of_01:[00-00-00-00-00-01 5] closed
+INFO:openflow.of_01:[00-00-00-00-00-03 6] closed
+INFO:openflow.of_01:[00-00-00-00-00-02 7] closed
+^CINFO:core:Going down...
+INFO:core:Down.
+ubuntu@mininet-vm:~/pox$ 
+ubuntu@mininet-vm:~/pox$ 
+ubuntu@mininet-vm:~/pox$ 
+ubuntu@mininet-vm:~/pox$ ./pox.py openflow.of_01 --port=6633 qos_policy
+POX 0.7.0 (gar) / Copyright 2011-2020 James McCauley, et al.
+WARNING:version:POX requires one of the following versions of Python: 3.6 3.7 3.8 3.9
+WARNING:version:You're running Python 3.12.
+WARNING:version:If you run into problems, try using a supported version.
+INFO:core:POX 0.7.0 (gar) is up.
+INFO:openflow.of_01:[00-00-00-00-00-01 2] connected
+INFO:openflow.of_01:[00-00-00-00-00-02 4] connected
+INFO:openflow.of_01:[00-00-00-00-00-03 3] connected
+^CINFO:core:Going down...
+INFO:openflow.of_01:[00-00-00-00-00-01 2] disconnected
+INFO:openflow.of_01:[00-00-00-00-00-02 4] disconnected
+INFO:openflow.of_01:[00-00-00-00-00-03 3] disconnected
+INFO:core:Down.
+ubuntu@mininet-vm:~/pox$ 
+ubuntu@mininet-vm:~/pox$ 
+ubuntu@mininet-vm:~/pox$ 
+ubuntu@mininet-vm:~/pox$ cd pox/
+ubuntu@mininet-vm:~/pox/pox$ 
+ubuntu@mininet-vm:~/pox/pox$ 
+ubuntu@mininet-vm:~/pox/pox$ ls
+__init__.py  config     forwarding    info  messenger  proto          samples   web
+__pycache__  core.py    help.py       lib   misc       py.py          tk.py
+boot.py      datapaths  host_tracker  log   openflow   qos_policy.py  topology
+ubuntu@mininet-vm:~/pox/pox$ 
+ubuntu@mininet-vm:~/pox/pox$ rm qos_policy.py 
+ubuntu@mininet-vm:~/pox/pox$ 
+ubuntu@mininet-vm:~/pox/pox$ 
+ubuntu@mininet-vm:~/pox/pox$ nano qos_policy.py
+ubuntu@mininet-vm:~/pox/pox$ 
+ubuntu@mininet-vm:~/pox/pox$ 
+ubuntu@mininet-vm:~/pox/pox$ cd ..
+ubuntu@mininet-vm:~/pox$ 
+ubuntu@mininet-vm:~/pox$ 
+ubuntu@mininet-vm:~/pox$ ./pox.py openflow.of_01 --port=6633 qos_policy
+POX 0.7.0 (gar) / Copyright 2011-2020 James McCauley, et al.
+WARNING:version:POX requires one of the following versions of Python: 3.6 3.7 3.8 3.9
+WARNING:version:You're running Python 3.12.
+WARNING:version:If you run into problems, try using a supported version.
+INFO:core:POX 0.7.0 (gar) is up.
+INFO:openflow.of_01:[00-00-00-00-00-01 1] connected
+INFO:openflow.of_01:[00-00-00-00-00-03 2] connected
+INFO:openflow.of_01:[00-00-00-00-00-02 3] connected
+INFO:openflow.of_01:[00-00-00-00-00-01 1] closed
+INFO:openflow.of_01:[00-00-00-00-00-03 2] closed
+INFO:openflow.of_01:[00-00-00-00-00-02 3] closed
+INFO:openflow.of_01:[00-00-00-00-00-01 5] connected
+INFO:openflow.of_01:[00-00-00-00-00-03 6] connected
+INFO:openflow.of_01:[00-00-00-00-00-02 7] connected
+INFO:openflow.of_01:[00-00-00-00-00-01 5] closed
+INFO:openflow.of_01:[00-00-00-00-00-03 6] closed
+INFO:openflow.of_01:[00-00-00-00-00-02 7] closed
+^CINFO:core:Going down...
+INFO:core:Down.
+ubuntu@mininet-vm:~/pox$ 
+ubuntu@mininet-vm:~/pox$ 
+ubuntu@mininet-vm:~/pox$ 
+ubuntu@mininet-vm:~/pox$ ./pox.py openflow.of_01 --port=6653 qos_policy
+POX 0.7.0 (gar) / Copyright 2011-2020 James McCauley, et al.
+WARNING:version:POX requires one of the following versions of Python: 3.6 3.7 3.8 3.9
+WARNING:version:You're running Python 3.12.
+WARNING:version:If you run into problems, try using a supported version.
+INFO:core:POX 0.7.0 (gar) is up.
+INFO:openflow.of_01:[00-00-00-00-00-03 3] connected
+INFO:openflow.of_01:[00-00-00-00-00-01 2] connected
+INFO:openflow.of_01:[00-00-00-00-00-02 4] connected
+INFO:openflow.of_01:[00-00-00-00-00-01 2] closed
+INFO:openflow.of_01:[00-00-00-00-00-03 3] closed
+INFO:openflow.of_01:[00-00-00-00-00-02 4] closed
+INFO:openflow.of_01:[00-00-00-00-00-01 6] connected
+INFO:openflow.of_01:[00-00-00-00-00-03 7] connected
+INFO:openflow.of_01:[00-00-00-00-00-02 8] connected
+^CINFO:core:Going down...
+INFO:openflow.of_01:[00-00-00-00-00-01 6] disconnected
+INFO:openflow.of_01:[00-00-00-00-00-03 7] disconnected
+INFO:openflow.of_01:[00-00-00-00-00-02 8] disconnected
+INFO:core:Down.
+ubuntu@mininet-vm:~/pox$ 
+ubuntu@mininet-vm:~/pox$ 
+ubuntu@mininet-vm:~/pox$ 
+ubuntu@mininet-vm:~/pox$ 
+ubuntu@mininet-vm:~/pox$ ./pox.py openflow.of_01 --port=6653 qos_policy
+POX 0.7.0 (gar) / Copyright 2011-2020 James McCauley, et al.
+WARNING:version:POX requires one of the following versions of Python: 3.6 3.7 3.8 3.9
+WARNING:version:You're running Python 3.12.
+WARNING:version:If you run into problems, try using a supported version.
+INFO:core:POX 0.7.0 (gar) is up.
+INFO:openflow.of_01:[00-00-00-00-00-01 1] connected
+INFO:openflow.of_01:[00-00-00-00-00-03 2] connected
+INFO:openflow.of_01:[00-00-00-00-00-02 3] connected
+^CINFO:core:Going down...
+INFO:openflow.of_01:[00-00-00-00-00-01 1] disconnected
+INFO:openflow.of_01:[00-00-00-00-00-03 2] disconnected
+INFO:openflow.of_01:[00-00-00-00-00-02 3] disconnected
+INFO:core:Down.
+ubuntu@mininet-vm:~/pox$ cd pox/
+ubuntu@mininet-vm:~/pox/pox$ 
+ubuntu@mininet-vm:~/pox/pox$ 
+ubuntu@mininet-vm:~/pox/pox$ 
+ubuntu@mininet-vm:~/pox/pox$ ls
+__init__.py  config     forwarding    info  messenger  proto          samples   web
+__pycache__  core.py    help.py       lib   misc       py.py          tk.py
+boot.py      datapaths  host_tracker  log   openflow   qos_policy.py  topology
+ubuntu@mininet-vm:~/pox/pox$ 
+ubuntu@mininet-vm:~/pox/pox$ 
+ubuntu@mininet-vm:~/pox/pox$ rm qos_policy.py
+ubuntu@mininet-vm:~/pox/pox$ 
+ubuntu@mininet-vm:~/pox/pox$ 
+ubuntu@mininet-vm:~/pox/pox$ nano qos_policy.py
+ubuntu@mininet-vm:~/pox/pox$ 
+ubuntu@mininet-vm:~/pox/pox$ 
+ubuntu@mininet-vm:~/pox/pox$ cd ..
+ubuntu@mininet-vm:~/pox$ 
+ubuntu@mininet-vm:~/pox$ 
+ubuntu@mininet-vm:~/pox$ ./pox.py openflow.of_01 --port=6653 qos_policy
+POX 0.7.0 (gar) / Copyright 2011-2020 James McCauley, et al.
+WARNING:version:POX requires one of the following versions of Python: 3.6 3.7 3.8 3.9
+WARNING:version:You're running Python 3.12.
+WARNING:version:If you run into problems, try using a supported version.
+INFO:core:POX 0.7.0 (gar) is up.
+INFO:openflow.of_01:[00-00-00-00-00-01 2] connected
+INFO:openflow.of_01:[00-00-00-00-00-03 3] connected
+INFO:openflow.of_01:[00-00-00-00-00-02 4] connected
+INFO:openflow.of_01:[00-00-00-00-00-01 2] closed
+INFO:openflow.of_01:[00-00-00-00-00-03 3] closed
+INFO:openflow.of_01:[00-00-00-00-00-02 4] closed
+INFO:openflow.of_01:[00-00-00-00-00-01 6] connected
+INFO:openflow.of_01:[00-00-00-00-00-03 7] connected
+INFO:openflow.of_01:[00-00-00-00-00-02 8] connected
+^CINFO:core:Going down...
+INFO:openflow.of_01:[00-00-00-00-00-01 6] disconnected
+INFO:openflow.of_01:[00-00-00-00-00-03 7] disconnected
+INFO:openflow.of_01:[00-00-00-00-00-02 8] disconnected
+INFO:core:Down.
+ubuntu@mininet-vm:~/pox$ 
+ubuntu@mininet-vm:~/pox$ 
+ubuntu@mininet-vm:~/pox$ ./pox.py forwarding.l2_learning
+POX 0.7.0 (gar) / Copyright 2011-2020 James McCauley, et al.
+WARNING:version:POX requires one of the following versions of Python: 3.6 3.7 3.8 3.9
+WARNING:version:You're running Python 3.12.
+WARNING:version:If you run into problems, try using a supported version.
+INFO:core:POX 0.7.0 (gar) is up.
+INFO:openflow.of_01:[00-00-00-00-00-01 2] connected
+INFO:openflow.of_01:[00-00-00-00-00-03 3] connected
+INFO:openflow.of_01:[00-00-00-00-00-02 4] connected
+

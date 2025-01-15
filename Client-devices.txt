@@ -1,0 +1,4511 @@
+Last login: Mon Dec  2 17:30:02 on ttys001
+pauljose@Pauls-MacBook-Air ~ % multipass shell mininet-vm
+Welcome to Ubuntu 24.04.1 LTS (GNU/Linux 6.8.0-49-generic aarch64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/pro
+
+ System information as of Mon Dec  2 17:32:50 IST 2024
+
+  System load:             0.07
+  Usage of /:              51.0% of 3.80GB
+  Memory usage:            58%
+  Swap usage:              0%
+  Processes:               102
+  Users logged in:         1
+  IPv4 address for enp0s1: 192.168.64.5
+  IPv6 address for enp0s1: fd1c:7755:a134:49f:5054:ff:fe14:e377
+
+
+Expanded Security Maintenance for Applications is not enabled.
+
+16 updates can be applied immediately.
+12 of these updates are standard security updates.
+To see these additional updates run: apt list --upgradable
+
+Enable ESM Apps to receive additional future security updates.
+See https://ubuntu.com/esm or run: sudo pro status
+
+
+Last login: Mon Dec  2 17:30:38 2024 from 192.168.64.1
+ubuntu@mininet-vm:~$ sudo apt install iperf3 -y
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+The following additional packages will be installed:
+  libiperf0 libsctp1
+Suggested packages:
+  lksctp-tools
+The following NEW packages will be installed:
+  iperf3 libiperf0 libsctp1
+0 upgraded, 3 newly installed, 0 to remove and 16 not upgraded.
+Need to get 113 kB of archives.
+After this operation, 490 kB of additional disk space will be used.
+Get:1 http://ports.ubuntu.com/ubuntu-ports noble/main arm64 libsctp1 arm64 1.0.19+dfsg-2build1 [9356 B]
+Get:2 http://ports.ubuntu.com/ubuntu-ports noble/universe arm64 libiperf0 arm64 3.16-1build2 [85.3 kB]
+Get:3 http://ports.ubuntu.com/ubuntu-ports noble/universe arm64 iperf3 arm64 3.16-1build2 [18.6 kB]
+Fetched 113 kB in 1s (80.8 kB/s)
+Preconfiguring packages ...
+/usr/bin/deb-systemd-helper: error: unable to read iperf3.service
+update-rc.d: error: unable to read /etc/init.d/iperf3
+iperf3.service is a disabled or a static unit, not starting it.
+Selecting previously unselected package libsctp1:arm64.
+(Reading database ... 77842 files and directories currently installed.)
+Preparing to unpack .../libsctp1_1.0.19+dfsg-2build1_arm64.deb ...
+Unpacking libsctp1:arm64 (1.0.19+dfsg-2build1) ...
+Selecting previously unselected package libiperf0:arm64.
+Preparing to unpack .../libiperf0_3.16-1build2_arm64.deb ...
+Unpacking libiperf0:arm64 (3.16-1build2) ...
+Selecting previously unselected package iperf3.
+Preparing to unpack .../iperf3_3.16-1build2_arm64.deb ...
+Unpacking iperf3 (3.16-1build2) ...
+Setting up libsctp1:arm64 (1.0.19+dfsg-2build1) ...
+Setting up libiperf0:arm64 (3.16-1build2) ...
+Setting up iperf3 (3.16-1build2) ...
+Processing triggers for ufw (0.36.2-6) ...
+Processing triggers for man-db (2.12.0-4build2) ...
+Processing triggers for libc-bin (2.39-0ubuntu8.3) ...
+Scanning processes...                                                                              
+Scanning linux images...                                                                           
+
+Running kernel seems to be up-to-date.
+
+No services need to be restarted.
+
+No containers need to be restarted.
+
+No user sessions are running outdated binaries.
+
+No VM guests are running outdated hypervisor (qemu) binaries on this host.
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ sudo apt install iproute2 -y
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+iproute2 is already the newest version (6.1.0-1ubuntu6).
+iproute2 set to manually installed.
+0 upgraded, 0 newly installed, 0 to remove and 16 not upgraded.
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ nano custom_topology.py
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ ls
+custom_topology.py  pox
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ sudo python3 custom_topology.py
+Traceback (most recent call last):
+  File "/home/ubuntu/custom_topology.py", line 1, in <module>
+    from mininet.net import Mininet
+ModuleNotFoundError: No module named 'mininet'
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ sudo mn --version
+sudo: mn: command not found
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ sudo apt update
+sudo apt install mininet -y
+Hit:1 http://ports.ubuntu.com/ubuntu-ports noble InRelease
+Hit:2 http://ports.ubuntu.com/ubuntu-ports noble-updates InRelease    
+Hit:3 http://ports.ubuntu.com/ubuntu-ports noble-backports InRelease  
+Hit:4 http://ports.ubuntu.com/ubuntu-ports noble-security InRelease   
+Hit:5 https://packagecloud.io/fdio/release/ubuntu noble InRelease     
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+16 packages can be upgraded. Run 'apt list --upgradable' to see them.
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+The following additional packages will be installed:
+  cgroup-tools iperf libcgroup2 libevent-2.1-7t64 libunbound8 libxdp1 net-tools
+  openvswitch-common openvswitch-switch python3-openvswitch python3-sortedcontainers socat
+Suggested packages:
+  openvswitch-doc python-sortedcontainers-doc
+The following NEW packages will be installed:
+  cgroup-tools iperf libcgroup2 libevent-2.1-7t64 libunbound8 libxdp1 mininet net-tools
+  openvswitch-common openvswitch-switch python3-openvswitch python3-sortedcontainers socat
+0 upgraded, 13 newly installed, 0 to remove and 16 not upgraded.
+Need to get 5314 kB of archives.
+After this operation, 19.5 MB of additional disk space will be used.
+Get:1 http://ports.ubuntu.com/ubuntu-ports noble/main arm64 libevent-2.1-7t64 arm64 2.1.12-stable-9ubuntu2 [140 kB]
+Get:2 http://ports.ubuntu.com/ubuntu-ports noble-updates/main arm64 libunbound8 arm64 1.19.2-1ubuntu3.3 [425 kB]
+Get:3 http://ports.ubuntu.com/ubuntu-ports noble-updates/main arm64 openvswitch-common arm64 3.3.0-1ubuntu3 [1059 kB]
+Get:4 http://ports.ubuntu.com/ubuntu-ports noble/main arm64 python3-sortedcontainers all 2.4.0-2 [27.6 kB]
+Get:5 http://ports.ubuntu.com/ubuntu-ports noble/main arm64 libxdp1 arm64 1.4.2-1ubuntu4 [62.8 kB]
+Get:6 http://ports.ubuntu.com/ubuntu-ports noble-updates/main arm64 python3-openvswitch arm64 3.3.0-1ubuntu3 [1027 kB]
+Get:7 http://ports.ubuntu.com/ubuntu-ports noble-updates/main arm64 openvswitch-switch arm64 3.3.0-1ubuntu3 [1610 kB]
+Get:8 http://ports.ubuntu.com/ubuntu-ports noble/universe arm64 libcgroup2 arm64 2.0.2-2build1 [50.1 kB]
+Get:9 http://ports.ubuntu.com/ubuntu-ports noble/universe arm64 cgroup-tools arm64 2.0.2-2build1 [71.8 kB]
+Get:10 http://ports.ubuntu.com/ubuntu-ports noble/universe arm64 iperf arm64 2.1.9+dfsg-1 [130 kB]
+Get:11 http://ports.ubuntu.com/ubuntu-ports noble/main arm64 net-tools arm64 2.10-0.1ubuntu4 [207 kB]
+Get:12 http://ports.ubuntu.com/ubuntu-ports noble/main arm64 socat arm64 1.8.0.0-4build3 [372 kB]
+Get:13 http://ports.ubuntu.com/ubuntu-ports noble/universe arm64 mininet arm64 2.3.0-1.1 [131 kB]
+Fetched 5314 kB in 4s (1217 kB/s)
+Selecting previously unselected package libevent-2.1-7t64:arm64.
+(Reading database ... 77863 files and directories currently installed.)
+Preparing to unpack .../00-libevent-2.1-7t64_2.1.12-stable-9ubuntu2_arm64.deb ...
+Unpacking libevent-2.1-7t64:arm64 (2.1.12-stable-9ubuntu2) ...
+Selecting previously unselected package libunbound8:arm64.
+Preparing to unpack .../01-libunbound8_1.19.2-1ubuntu3.3_arm64.deb ...
+Unpacking libunbound8:arm64 (1.19.2-1ubuntu3.3) ...
+Selecting previously unselected package openvswitch-common.
+Preparing to unpack .../02-openvswitch-common_3.3.0-1ubuntu3_arm64.deb ...
+Unpacking openvswitch-common (3.3.0-1ubuntu3) ...
+Selecting previously unselected package python3-sortedcontainers.
+Preparing to unpack .../03-python3-sortedcontainers_2.4.0-2_all.deb ...
+Unpacking python3-sortedcontainers (2.4.0-2) ...
+Selecting previously unselected package libxdp1:arm64.
+Preparing to unpack .../04-libxdp1_1.4.2-1ubuntu4_arm64.deb ...
+Unpacking libxdp1:arm64 (1.4.2-1ubuntu4) ...
+Selecting previously unselected package python3-openvswitch.
+Preparing to unpack .../05-python3-openvswitch_3.3.0-1ubuntu3_arm64.deb ...
+Unpacking python3-openvswitch (3.3.0-1ubuntu3) ...
+Selecting previously unselected package openvswitch-switch.
+Preparing to unpack .../06-openvswitch-switch_3.3.0-1ubuntu3_arm64.deb ...
+Unpacking openvswitch-switch (3.3.0-1ubuntu3) ...
+Selecting previously unselected package libcgroup2:arm64.
+Preparing to unpack .../07-libcgroup2_2.0.2-2build1_arm64.deb ...
+Unpacking libcgroup2:arm64 (2.0.2-2build1) ...
+Selecting previously unselected package cgroup-tools.
+Preparing to unpack .../08-cgroup-tools_2.0.2-2build1_arm64.deb ...
+Unpacking cgroup-tools (2.0.2-2build1) ...
+Selecting previously unselected package iperf.
+Preparing to unpack .../09-iperf_2.1.9+dfsg-1_arm64.deb ...
+Unpacking iperf (2.1.9+dfsg-1) ...
+Selecting previously unselected package net-tools.
+Preparing to unpack .../10-net-tools_2.10-0.1ubuntu4_arm64.deb ...
+Unpacking net-tools (2.10-0.1ubuntu4) ...
+Selecting previously unselected package socat.
+Preparing to unpack .../11-socat_1.8.0.0-4build3_arm64.deb ...
+Unpacking socat (1.8.0.0-4build3) ...
+Selecting previously unselected package mininet.
+Preparing to unpack .../12-mininet_2.3.0-1.1_arm64.deb ...
+Unpacking mininet (2.3.0-1.1) ...
+Setting up libcgroup2:arm64 (2.0.2-2build1) ...
+Setting up net-tools (2.10-0.1ubuntu4) ...
+Setting up libevent-2.1-7t64:arm64 (2.1.12-stable-9ubuntu2) ...
+Setting up cgroup-tools (2.0.2-2build1) ...
+Setting up python3-sortedcontainers (2.4.0-2) ...
+Setting up libxdp1:arm64 (1.4.2-1ubuntu4) ...
+Setting up libunbound8:arm64 (1.19.2-1ubuntu3.3) ...
+Setting up iperf (2.1.9+dfsg-1) ...
+Setting up socat (1.8.0.0-4build3) ...
+Setting up openvswitch-common (3.3.0-1ubuntu3) ...
+Setting up mininet (2.3.0-1.1) ...
+Setting up python3-openvswitch (3.3.0-1ubuntu3) ...
+Setting up openvswitch-switch (3.3.0-1ubuntu3) ...
+update-alternatives: using /usr/lib/openvswitch-switch/ovs-vswitchd to provide /usr/sbin/ovs-vswitchd (ovs-vswitchd) in auto mode
+Created symlink /etc/systemd/system/openvswitch-switch.service.requires/ovs-record-hostname.service → /usr/lib/systemd/system/ovs-record-hostname.service.
+Created symlink /etc/systemd/system/multi-user.target.wants/openvswitch-switch.service → /usr/lib/systemd/system/openvswitch-switch.service.
+Processing triggers for ufw (0.36.2-6) ...
+Processing triggers for man-db (2.12.0-4build2) ...
+Processing triggers for libc-bin (2.39-0ubuntu8.3) ...
+Scanning processes...                                                                              
+Scanning linux images...                                                                           
+
+Running kernel seems to be up-to-date.
+
+No services need to be restarted.
+
+No containers need to be restarted.
+
+No user sessions are running outdated binaries.
+
+No VM guests are running outdated hypervisor (qemu) binaries on this host.
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ sudo mn --version
+2.3.0
+ubuntu@mininet-vm:~$ sudo python3 custom_topology.py
+(10.00Mbit 5ms delay) (10.00Mbit 5ms delay) (5.00Mbit 10ms delay) (5.00Mbit 10ms delay) (15.00Mbit 1ms delay) (15.00Mbit 1ms delay) (20.00Mbit 2ms delay) *** Error: Warning: sch_htb: quantum of class 50001 is big. Consider r2q change.
+(20.00Mbit 2ms delay) *** Error: Warning: sch_htb: quantum of class 50001 is big. Consider r2q change.
+(25.00Mbit 3ms delay) *** Error: Warning: sch_htb: quantum of class 50001 is big. Consider r2q change.
+(25.00Mbit 3ms delay) *** Error: Warning: sch_htb: quantum of class 50001 is big. Consider r2q change.
+*** Configuring hosts
+h1 h2 h3 
+(10.00Mbit 5ms delay) (20.00Mbit 2ms delay) *** Error: Warning: sch_htb: quantum of class 50001 is big. Consider r2q change.
+(5.00Mbit 10ms delay) (20.00Mbit 2ms delay) *** Error: Warning: sch_htb: quantum of class 50001 is big. Consider r2q change.
+(25.00Mbit 3ms delay) *** Error: Warning: sch_htb: quantum of class 50001 is big. Consider r2q change.
+(15.00Mbit 1ms delay) (25.00Mbit 3ms delay) *** Error: Warning: sch_htb: quantum of class 50001 is big. Consider r2q change.
+Testing network connectivity...
+*** Ping: testing ping reachability
+h1 -> h2 h3 
+h2 -> h1 h3 
+h3 -> h1 h2 
+*** Results: 0% dropped (6/6 received)
+*** Starting controller
+c0 
+*** Starting 3 switches
+s1 (10.00Mbit 5ms delay) (20.00Mbit 2ms delay) *** Error: Warning: sch_htb: quantum of class 50001 is big. Consider r2q change.
+s2 (5.00Mbit 10ms delay) (20.00Mbit 2ms delay) *** Error: Warning: sch_htb: quantum of class 50001 is big. Consider r2q change.
+(25.00Mbit 3ms delay) *** Error: Warning: sch_htb: quantum of class 50001 is big. Consider r2q change.
+s3 (15.00Mbit 1ms delay) (25.00Mbit 3ms delay) *** Error: Warning: sch_htb: quantum of class 50001 is big. Consider r2q change.
+...(10.00Mbit 5ms delay) (20.00Mbit 2ms delay) *** Error: Warning: sch_htb: quantum of class 50001 is big. Consider r2q change.
+(5.00Mbit 10ms delay) (20.00Mbit 2ms delay) *** Error: Warning: sch_htb: quantum of class 50001 is big. Consider r2q change.
+(25.00Mbit 3ms delay) *** Error: Warning: sch_htb: quantum of class 50001 is big. Consider r2q change.
+(15.00Mbit 1ms delay) (25.00Mbit 3ms delay) *** Error: Warning: sch_htb: quantum of class 50001 is big. Consider r2q change.
+
+*** Stopping 1 controllers
+c0 
+*** Stopping 5 links
+.....
+*** Stopping 3 switches
+s1 s2 s3 
+*** Stopping 3 hosts
+h1 h2 h3 
+*** Done
+ubuntu@mininet-vm:~$ sudo python3 custom_topology.py
+(10.00Mbit 5ms delay) (10.00Mbit 5ms delay) (5.00Mbit 10ms delay) (5.00Mbit 10ms delay) (15.00Mbit 1ms delay) (15.00Mbit 1ms delay) (20.00Mbit 2ms delay) *** Error: Warning: sch_htb: quantum of class 50001 is big. Consider r2q change.
+(20.00Mbit 2ms delay) *** Error: Warning: sch_htb: quantum of class 50001 is big. Consider r2q change.
+(25.00Mbit 3ms delay) *** Error: Warning: sch_htb: quantum of class 50001 is big. Consider r2q change.
+(25.00Mbit 3ms delay) *** Error: Warning: sch_htb: quantum of class 50001 is big. Consider r2q change.
+*** Configuring hosts
+h1 h2 h3 
+(10.00Mbit 5ms delay) (20.00Mbit 2ms delay) *** Error: Warning: sch_htb: quantum of class 50001 is big. Consider r2q change.
+(5.00Mbit 10ms delay) (20.00Mbit 2ms delay) *** Error: Warning: sch_htb: quantum of class 50001 is big. Consider r2q change.
+(25.00Mbit 3ms delay) *** Error: Warning: sch_htb: quantum of class 50001 is big. Consider r2q change.
+(15.00Mbit 1ms delay) (25.00Mbit 3ms delay) *** Error: Warning: sch_htb: quantum of class 50001 is big. Consider r2q change.
+Testing network connectivity...
+*** Ping: testing ping reachability
+h1 -> h2 h3 
+h2 -> h1 h3 
+h3 -> h1 h2 
+*** Results: 0% dropped (6/6 received)
+*** Starting controller
+c0 
+*** Starting 3 switches
+s1 (10.00Mbit 5ms delay) (20.00Mbit 2ms delay) *** Error: Warning: sch_htb: quantum of class 50001 is big. Consider r2q change.
+s2 (5.00Mbit 10ms delay) (20.00Mbit 2ms delay) *** Error: Warning: sch_htb: quantum of class 50001 is big. Consider r2q change.
+(25.00Mbit 3ms delay) *** Error: Warning: sch_htb: quantum of class 50001 is big. Consider r2q change.
+s3 (15.00Mbit 1ms delay) (25.00Mbit 3ms delay) *** Error: Warning: sch_htb: quantum of class 50001 is big. Consider r2q change.
+...(10.00Mbit 5ms delay) (20.00Mbit 2ms delay) *** Error: Warning: sch_htb: quantum of class 50001 is big. Consider r2q change.
+(5.00Mbit 10ms delay) (20.00Mbit 2ms delay) *** Error: Warning: sch_htb: quantum of class 50001 is big. Consider r2q change.
+(25.00Mbit 3ms delay) *** Error: Warning: sch_htb: quantum of class 50001 is big. Consider r2q change.
+(15.00Mbit 1ms delay) (25.00Mbit 3ms delay) *** Error: Warning: sch_htb: quantum of class 50001 is big. Consider r2q change.
+
+*** Stopping 1 controllers
+c0 
+*** Stopping 5 links
+.....
+*** Stopping 3 switches
+s1 s2 s3 
+*** Stopping 3 hosts
+h1 h2 h3 
+*** Done
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ sudo python3 custom_topology.py
+(10.00Mbit 5ms delay) (10.00Mbit 5ms delay) (5.00Mbit 10ms delay) (5.00Mbit 10ms delay) (15.00Mbit 1ms delay) (15.00Mbit 1ms delay) (20.00Mbit 2ms delay) *** Error: Warning: sch_htb: quantum of class 50001 is big. Consider r2q change.
+(20.00Mbit 2ms delay) *** Error: Warning: sch_htb: quantum of class 50001 is big. Consider r2q change.
+(25.00Mbit 3ms delay) *** Error: Warning: sch_htb: quantum of class 50001 is big. Consider r2q change.
+(25.00Mbit 3ms delay) *** Error: Warning: sch_htb: quantum of class 50001 is big. Consider r2q change.
+*** Configuring hosts
+h1 h2 h3 
+(10.00Mbit 5ms delay) (20.00Mbit 2ms delay) *** Error: Warning: sch_htb: quantum of class 50001 is big. Consider r2q change.
+(5.00Mbit 10ms delay) (20.00Mbit 2ms delay) *** Error: Warning: sch_htb: quantum of class 50001 is big. Consider r2q change.
+(25.00Mbit 3ms delay) *** Error: Warning: sch_htb: quantum of class 50001 is big. Consider r2q change.
+(15.00Mbit 1ms delay) (25.00Mbit 3ms delay) *** Error: Warning: sch_htb: quantum of class 50001 is big. Consider r2q change.
+Testing network connectivity...
+*** Ping: testing ping reachability
+h1 -> h2 h3 
+h2 -> h1 h3 
+h3 -> h1 h2 
+*** Results: 0% dropped (6/6 received)
+*** Starting controller
+c0 
+*** Starting 3 switches
+s1 (10.00Mbit 5ms delay) (20.00Mbit 2ms delay) *** Error: Warning: sch_htb: quantum of class 50001 is big. Consider r2q change.
+s2 (5.00Mbit 10ms delay) (20.00Mbit 2ms delay) *** Error: Warning: sch_htb: quantum of class 50001 is big. Consider r2q change.
+(25.00Mbit 3ms delay) *** Error: Warning: sch_htb: quantum of class 50001 is big. Consider r2q change.
+s3 (15.00Mbit 1ms delay) (25.00Mbit 3ms delay) *** Error: Warning: sch_htb: quantum of class 50001 is big. Consider r2q change.
+...(10.00Mbit 5ms delay) (20.00Mbit 2ms delay) *** Error: Warning: sch_htb: quantum of class 50001 is big. Consider r2q change.
+(5.00Mbit 10ms delay) (20.00Mbit 2ms delay) *** Error: Warning: sch_htb: quantum of class 50001 is big. Consider r2q change.
+(25.00Mbit 3ms delay) *** Error: Warning: sch_htb: quantum of class 50001 is big. Consider r2q change.
+(15.00Mbit 1ms delay) (25.00Mbit 3ms delay) *** Error: Warning: sch_htb: quantum of class 50001 is big. Consider r2q change.
+
+*** Stopping 1 controllers
+c0 
+*** Stopping 5 links
+.....
+*** Stopping 3 switches
+s1 s2 s3 
+*** Stopping 3 hosts
+h1 h2 h3 
+*** Done
+ubuntu@mininet-vm:~$ nano custom_topology.py
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ sudo python3 custom_topology.py
+(10.00Mbit 5ms delay) (10.00Mbit 5ms delay) (5.00Mbit 10ms delay) (5.00Mbit 10ms delay) (15.00Mbit 1ms delay) (15.00Mbit 1ms delay) (20.00Mbit 2ms delay) *** Error: Warning: sch_htb: quantum of class 50001 is big. Consider r2q change.
+(20.00Mbit 2ms delay) *** Error: Warning: sch_htb: quantum of class 50001 is big. Consider r2q change.
+(25.00Mbit 3ms delay) *** Error: Warning: sch_htb: quantum of class 50001 is big. Consider r2q change.
+(25.00Mbit 3ms delay) *** Error: Warning: sch_htb: quantum of class 50001 is big. Consider r2q change.
+*** Configuring hosts
+h1 h2 h3 
+(10.00Mbit 5ms delay) (20.00Mbit 2ms delay) *** Error: Warning: sch_htb: quantum of class 50001 is big. Consider r2q change.
+(5.00Mbit 10ms delay) (20.00Mbit 2ms delay) *** Error: Warning: sch_htb: quantum of class 50001 is big. Consider r2q change.
+(25.00Mbit 3ms delay) *** Error: Warning: sch_htb: quantum of class 50001 is big. Consider r2q change.
+(15.00Mbit 1ms delay) (25.00Mbit 3ms delay) *** Error: Warning: sch_htb: quantum of class 50001 is big. Consider r2q change.
+Testing network connectivity...
+*** Ping: testing ping reachability
+h1 -> h2 h3 
+h2 -> h1 h3 
+h3 -> h1 h2 
+*** Results: 0% dropped (6/6 received)
+*** Starting controller
+c0 
+*** Starting 3 switches
+s1 (10.00Mbit 5ms delay) (20.00Mbit 2ms delay) *** Error: Warning: sch_htb: quantum of class 50001 is big. Consider r2q change.
+s2 (5.00Mbit 10ms delay) (20.00Mbit 2ms delay) *** Error: Warning: sch_htb: quantum of class 50001 is big. Consider r2q change.
+(25.00Mbit 3ms delay) *** Error: Warning: sch_htb: quantum of class 50001 is big. Consider r2q change.
+s3 (15.00Mbit 1ms delay) (25.00Mbit 3ms delay) *** Error: Warning: sch_htb: quantum of class 50001 is big. Consider r2q change.
+...(10.00Mbit 5ms delay) (20.00Mbit 2ms delay) *** Error: Warning: sch_htb: quantum of class 50001 is big. Consider r2q change.
+(5.00Mbit 10ms delay) (20.00Mbit 2ms delay) *** Error: Warning: sch_htb: quantum of class 50001 is big. Consider r2q change.
+(25.00Mbit 3ms delay) *** Error: Warning: sch_htb: quantum of class 50001 is big. Consider r2q change.
+(15.00Mbit 1ms delay) (25.00Mbit 3ms delay) *** Error: Warning: sch_htb: quantum of class 50001 is big. Consider r2q change.
+
+ubuntu@mininet-vm:~$ nano custom_topology.py
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ sudo sysctl -w net.ipv6.conf.all.seg6_enabled=1
+sudo sysctl -w net.ipv6.conf.default.seg6_enabled=1
+net.ipv6.conf.all.seg6_enabled = 1
+net.ipv6.conf.default.seg6_enabled = 1
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ sudo ip -6 route add 2001:db8::1/64 encap seg6 mode encap segs 2001:db8::2,2001:db8::3 dev h1-eth0
+Cannot find device "h1-eth0"
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ ip link show
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+2: enp0s1: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP mode DEFAULT group default qlen 1000
+    link/ether 52:54:00:14:e3:77 brd ff:ff:ff:ff:ff:ff
+39: s2-eth2@s1-eth2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc htb master ovs-system state UP mode DEFAULT group default qlen 1000
+    link/ether 8a:40:9e:52:ff:85 brd ff:ff:ff:ff:ff:ff
+40: s1-eth2@s2-eth2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc htb master ovs-system state UP mode DEFAULT group default qlen 1000
+    link/ether 2a:6a:7b:d4:2f:42 brd ff:ff:ff:ff:ff:ff
+41: s3-eth2@s2-eth3: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc htb master ovs-system state UP mode DEFAULT group default qlen 1000
+    link/ether 32:2d:53:f8:76:2c brd ff:ff:ff:ff:ff:ff
+42: s2-eth3@s3-eth2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc htb master ovs-system state UP mode DEFAULT group default qlen 1000
+    link/ether ea:f7:d3:b9:1e:f0 brd ff:ff:ff:ff:ff:ff
+43: ovs-system: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN mode DEFAULT group default qlen 1000
+    link/ether ea:a7:b3:b9:7d:f1 brd ff:ff:ff:ff:ff:ff
+44: s1: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN mode DEFAULT group default qlen 1000
+    link/ether 96:64:4a:c4:40:47 brd ff:ff:ff:ff:ff:ff
+45: s2: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN mode DEFAULT group default qlen 1000
+    link/ether 76:51:bd:b0:fc:4d brd ff:ff:ff:ff:ff:ff
+46: s3: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN mode DEFAULT group default qlen 1000
+    link/ether 36:9c:ba:0f:6f:4b brd ff:ff:ff:ff:ff:ff
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ mininet> h1 ifconfig
+mininet: command not found
+ubuntu@mininet-vm:~$ sudo mn
+*** No default OpenFlow controller found for default switch!
+*** Falling back to OVS Bridge
+*** Creating network
+*** Adding controller
+*** Adding hosts:
+h1 h2 
+*** Adding switches:
+s1 
+*** Adding links:
+(h1, s1) --------------------------------------------------------------------------------
+Caught exception. Cleaning up...
+
+Exception: Error creating interface pair (h2-eth0,s1-eth2): RTNETLINK answers: File exists
+ 
+--------------------------------------------------------------------------------
+*** Removing excess controllers/ofprotocols/ofdatapaths/pings/noxes
+killall controller ofprotocol ofdatapath ping nox_corelt-nox_core ovs-openflowd ovs-controllerovs-testcontroller udpbwtest mnexec ivs ryu-manager 2> /dev/null
+killall -9 controller ofprotocol ofdatapath ping nox_corelt-nox_core ovs-openflowd ovs-controllerovs-testcontroller udpbwtest mnexec ivs ryu-manager 2> /dev/null
+pkill -9 -f "sudo mnexec"
+*** Removing junk from /tmp
+rm -f /tmp/vconn* /tmp/vlogs* /tmp/*.out /tmp/*.log
+*** Removing old X11 tunnels
+*** Removing excess kernel datapaths
+ps ax | egrep -o 'dp[0-9]+' | sed 's/dp/nl:/'
+***  Removing OVS datapaths
+ovs-vsctl --timeout=1 list-br
+ovs-vsctl --if-exists del-br s1 -- --if-exists del-br s2 -- --if-exists del-br s3
+ovs-vsctl --timeout=1 list-br
+*** Removing all links of the pattern foo-ethX
+ip link show | egrep -o '([-_.[:alnum:]]+-eth[[:digit:]]+)'
+( ip link del s2-eth2;ip link del s1-eth2;ip link del s1-eth2;ip link del s2-eth2;ip link del s3-eth2;ip link del s2-eth3;ip link del s2-eth3;ip link del s3-eth2;ip link del s1-eth1 ) 2> /dev/null
+ip link show
+*** Killing stale mininet node processes
+pkill -9 -f mininet:
+*** Shutting down stale tunnels
+pkill -9 -f Tunnel=Ethernet
+pkill -9 -f .ssh/mn
+rm -f ~/.ssh/mn/*
+*** Cleanup complete.
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ sudo mn
+*** No default OpenFlow controller found for default switch!
+*** Falling back to OVS Bridge
+*** Creating network
+*** Adding controller
+*** Adding hosts:
+h1 h2 
+*** Adding switches:
+s1 
+*** Adding links:
+(h1, s1) (h2, s1) 
+*** Configuring hosts
+h1 h2 
+*** Starting controller
+
+*** Starting 1 switches
+s1 ...
+*** Starting CLI:
+mininet> exit
+*** Stopping 0 controllers
+
+*** Stopping 2 links
+..
+*** Stopping 1 switches
+s1 
+*** Stopping 2 hosts
+h1 h2 
+*** Done
+completed in 79.443 seconds
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ ls
+custom_topology.py  h1  pox
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ sudo mn --custom custom_topo.py --topo CustomTopology --controller=remote
+--------------------------------------------------------------------------------
+Caught exception. Cleaning up...
+
+Exception: could not find custom file: custom_topo.py
+--------------------------------------------------------------------------------
+ubuntu@mininet-vm:~$ sudo mn --custom custom_topology.py --topo CustomTopology --controller=remote
+--------------------------------------------------------------------------------
+Caught exception. Cleaning up...
+
+Exception: Invalid topo name CustomTopology
+--------------------------------------------------------------------------------
+*** Removing excess controllers/ofprotocols/ofdatapaths/pings/noxes
+killall controller ofprotocol ofdatapath ping nox_corelt-nox_core ovs-openflowd ovs-controllerovs-testcontroller udpbwtest mnexec ivs ryu-manager 2> /dev/null
+killall -9 controller ofprotocol ofdatapath ping nox_corelt-nox_core ovs-openflowd ovs-controllerovs-testcontroller udpbwtest mnexec ivs ryu-manager 2> /dev/null
+pkill -9 -f "sudo mnexec"
+*** Removing junk from /tmp
+rm -f /tmp/vconn* /tmp/vlogs* /tmp/*.out /tmp/*.log
+*** Removing old X11 tunnels
+*** Removing excess kernel datapaths
+ps ax | egrep -o 'dp[0-9]+' | sed 's/dp/nl:/'
+***  Removing OVS datapaths
+ovs-vsctl --timeout=1 list-br
+ovs-vsctl --timeout=1 list-br
+*** Removing all links of the pattern foo-ethX
+ip link show | egrep -o '([-_.[:alnum:]]+-eth[[:digit:]]+)'
+ip link show
+*** Killing stale mininet node processes
+pkill -9 -f mininet:
+*** Shutting down stale tunnels
+pkill -9 -f Tunnel=Ethernet
+pkill -9 -f .ssh/mn
+rm -f ~/.ssh/mn/*
+*** Cleanup complete.
+ubuntu@mininet-vm:~$ nano custom_topology.py 
+ubuntu@mininet-vm:~$ sudo mn --custom custom_topology.py --topo custom_topology --controller=remote--------------------------------------------------------------------------------
+Caught exception. Cleaning up...
+
+Exception: Invalid topo name custom_topology
+--------------------------------------------------------------------------------
+*** Removing excess controllers/ofprotocols/ofdatapaths/pings/noxes
+killall controller ofprotocol ofdatapath ping nox_corelt-nox_core ovs-openflowd ovs-controllerovs-testcontroller udpbwtest mnexec ivs ryu-manager 2> /dev/null
+killall -9 controller ofprotocol ofdatapath ping nox_corelt-nox_core ovs-openflowd ovs-controllerovs-testcontroller udpbwtest mnexec ivs ryu-manager 2> /dev/null
+pkill -9 -f "sudo mnexec"
+*** Removing junk from /tmp
+rm -f /tmp/vconn* /tmp/vlogs* /tmp/*.out /tmp/*.log
+*** Removing old X11 tunnels
+*** Removing excess kernel datapaths
+ps ax | egrep -o 'dp[0-9]+' | sed 's/dp/nl:/'
+***  Removing OVS datapaths
+ovs-vsctl --timeout=1 list-br
+ovs-vsctl --timeout=1 list-br
+*** Removing all links of the pattern foo-ethX
+ip link show | egrep -o '([-_.[:alnum:]]+-eth[[:digit:]]+)'
+ip link show
+*** Killing stale mininet node processes
+pkill -9 -f mininet:
+*** Shutting down stale tunnels
+pkill -9 -f Tunnel=Ethernet
+pkill -9 -f .ssh/mn
+rm -f ~/.ssh/mn/*
+*** Cleanup complete.
+ubuntu@mininet-vm:~$ nano custom_topology.py 
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ ls
+custom_topology.py  h1  pox
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ sudo mn --custom /home/ubuntu/custom_topology.py --topo SRv6SDWANTopo --controller=remote
+--------------------------------------------------------------------------------
+Caught exception. Cleaning up...
+
+Exception: Invalid topo name SRv6SDWANTopo
+--------------------------------------------------------------------------------
+*** Removing excess controllers/ofprotocols/ofdatapaths/pings/noxes
+killall controller ofprotocol ofdatapath ping nox_corelt-nox_core ovs-openflowd ovs-controllerovs-testcontroller udpbwtest mnexec ivs ryu-manager 2> /dev/null
+killall -9 controller ofprotocol ofdatapath ping nox_corelt-nox_core ovs-openflowd ovs-controllerovs-testcontroller udpbwtest mnexec ivs ryu-manager 2> /dev/null
+pkill -9 -f "sudo mnexec"
+*** Removing junk from /tmp
+rm -f /tmp/vconn* /tmp/vlogs* /tmp/*.out /tmp/*.log
+*** Removing old X11 tunnels
+*** Removing excess kernel datapaths
+ps ax | egrep -o 'dp[0-9]+' | sed 's/dp/nl:/'
+***  Removing OVS datapaths
+ovs-vsctl --timeout=1 list-br
+ovs-vsctl --timeout=1 list-br
+*** Removing all links of the pattern foo-ethX
+ip link show | egrep -o '([-_.[:alnum:]]+-eth[[:digit:]]+)'
+ip link show
+*** Killing stale mininet node processes
+pkill -9 -f mininet:
+*** Shutting down stale tunnels
+pkill -9 -f Tunnel=Ethernet
+pkill -9 -f .ssh/mn
+rm -f ~/.ssh/mn/*
+*** Cleanup complete.
+ubuntu@mininet-vm:~$ sudo mn --clean
+*** Removing excess controllers/ofprotocols/ofdatapaths/pings/noxes
+killall controller ofprotocol ofdatapath ping nox_corelt-nox_core ovs-openflowd ovs-controllerovs-testcontroller udpbwtest mnexec ivs ryu-manager 2> /dev/null
+killall -9 controller ofprotocol ofdatapath ping nox_corelt-nox_core ovs-openflowd ovs-controllerovs-testcontroller udpbwtest mnexec ivs ryu-manager 2> /dev/null
+pkill -9 -f "sudo mnexec"
+*** Removing junk from /tmp
+rm -f /tmp/vconn* /tmp/vlogs* /tmp/*.out /tmp/*.log
+*** Removing old X11 tunnels
+*** Removing excess kernel datapaths
+ps ax | egrep -o 'dp[0-9]+' | sed 's/dp/nl:/'
+***  Removing OVS datapaths
+ovs-vsctl --timeout=1 list-br
+ovs-vsctl --timeout=1 list-br
+*** Removing all links of the pattern foo-ethX
+ip link show | egrep -o '([-_.[:alnum:]]+-eth[[:digit:]]+)'
+ip link show
+*** Killing stale mininet node processes
+pkill -9 -f mininet:
+*** Shutting down stale tunnels
+pkill -9 -f Tunnel=Ethernet
+pkill -9 -f .ssh/mn
+rm -f ~/.ssh/mn/*
+*** Cleanup complete.
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ sudo mn --custom /home/ubuntu/custom_topology.py --topo SRv6SDWANTopo --controller=remote
+--------------------------------------------------------------------------------
+Caught exception. Cleaning up...
+
+Exception: Invalid topo name SRv6SDWANTopo
+--------------------------------------------------------------------------------
+*** Removing excess controllers/ofprotocols/ofdatapaths/pings/noxes
+killall controller ofprotocol ofdatapath ping nox_corelt-nox_core ovs-openflowd ovs-controllerovs-testcontroller udpbwtest mnexec ivs ryu-manager 2> /dev/null
+killall -9 controller ofprotocol ofdatapath ping nox_corelt-nox_core ovs-openflowd ovs-controllerovs-testcontroller udpbwtest mnexec ivs ryu-manager 2> /dev/null
+pkill -9 -f "sudo mnexec"
+*** Removing junk from /tmp
+rm -f /tmp/vconn* /tmp/vlogs* /tmp/*.out /tmp/*.log
+*** Removing old X11 tunnels
+*** Removing excess kernel datapaths
+ps ax | egrep -o 'dp[0-9]+' | sed 's/dp/nl:/'
+***  Removing OVS datapaths
+ovs-vsctl --timeout=1 list-br
+ovs-vsctl --timeout=1 list-br
+*** Removing all links of the pattern foo-ethX
+ip link show | egrep -o '([-_.[:alnum:]]+-eth[[:digit:]]+)'
+ip link show
+*** Killing stale mininet node processes
+pkill -9 -f mininet:
+*** Shutting down stale tunnels
+pkill -9 -f Tunnel=Ethernet
+pkill -9 -f .ssh/mn
+rm -f ~/.ssh/mn/*
+*** Cleanup complete.
+ubuntu@mininet-vm:~$ sudo mn --custom /home/ubuntu/custom_topology.py --topo SRv6SDWANTopo --controller=remote
+--------------------------------------------------------------------------------
+Caught exception. Cleaning up...
+
+Exception: Invalid topo name SRv6SDWANTopo
+--------------------------------------------------------------------------------
+*** Removing excess controllers/ofprotocols/ofdatapaths/pings/noxes
+killall controller ofprotocol ofdatapath ping nox_corelt-nox_core ovs-openflowd ovs-controllerovs-testcontroller udpbwtest mnexec ivs ryu-manager 2> /dev/null
+killall -9 controller ofprotocol ofdatapath ping nox_corelt-nox_core ovs-openflowd ovs-controllerovs-testcontroller udpbwtest mnexec ivs ryu-manager 2> /dev/null
+pkill -9 -f "sudo mnexec"
+*** Removing junk from /tmp
+rm -f /tmp/vconn* /tmp/vlogs* /tmp/*.out /tmp/*.log
+*** Removing old X11 tunnels
+*** Removing excess kernel datapaths
+ps ax | egrep -o 'dp[0-9]+' | sed 's/dp/nl:/'
+***  Removing OVS datapaths
+ovs-vsctl --timeout=1 list-br
+ovs-vsctl --timeout=1 list-br
+*** Removing all links of the pattern foo-ethX
+ip link show | egrep -o '([-_.[:alnum:]]+-eth[[:digit:]]+)'
+ip link show
+*** Killing stale mininet node processes
+pkill -9 -f mininet:
+*** Shutting down stale tunnels
+pkill -9 -f Tunnel=Ethernet
+pkill -9 -f .ssh/mn
+rm -f ~/.ssh/mn/*
+*** Cleanup complete.
+ubuntu@mininet-vm:~$ nano custom_topology.py 
+ubuntu@mininet-vm:~$ sudo mn --custom /home/ubuntu/custom_topology.py --topo custom_topology --controller=remote
+--------------------------------------------------------------------------------
+Caught exception. Cleaning up...
+
+Exception: Invalid topo name custom_topology
+--------------------------------------------------------------------------------
+*** Removing excess controllers/ofprotocols/ofdatapaths/pings/noxes
+killall controller ofprotocol ofdatapath ping nox_corelt-nox_core ovs-openflowd ovs-controllerovs-testcontroller udpbwtest mnexec ivs ryu-manager 2> /dev/null
+killall -9 controller ofprotocol ofdatapath ping nox_corelt-nox_core ovs-openflowd ovs-controllerovs-testcontroller udpbwtest mnexec ivs ryu-manager 2> /dev/null
+pkill -9 -f "sudo mnexec"
+*** Removing junk from /tmp
+rm -f /tmp/vconn* /tmp/vlogs* /tmp/*.out /tmp/*.log
+*** Removing old X11 tunnels
+*** Removing excess kernel datapaths
+ps ax | egrep -o 'dp[0-9]+' | sed 's/dp/nl:/'
+***  Removing OVS datapaths
+ovs-vsctl --timeout=1 list-br
+ovs-vsctl --timeout=1 list-br
+*** Removing all links of the pattern foo-ethX
+ip link show | egrep -o '([-_.[:alnum:]]+-eth[[:digit:]]+)'
+ip link show
+*** Killing stale mininet node processes
+pkill -9 -f mininet:
+*** Shutting down stale tunnels
+pkill -9 -f Tunnel=Ethernet
+pkill -9 -f .ssh/mn
+rm -f ~/.ssh/mn/*
+*** Cleanup complete.
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ sudo mn --custom /path/to/custom_topo.py --topo CustomTopology --controller=remote
+--------------------------------------------------------------------------------
+Caught exception. Cleaning up...
+
+Exception: could not find custom file: /path/to/custom_topo.py
+--------------------------------------------------------------------------------
+ubuntu@mininet-vm:~$ ls
+custom_topology.py  h1  pox
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ nano custom_topology.py 
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ sudo mn --custom custom_topology.py --topo custom_topology --controller=remote--------------------------------------------------------------------------------
+Caught exception. Cleaning up...
+
+Exception: Invalid topo name custom_topology
+--------------------------------------------------------------------------------
+*** Removing excess controllers/ofprotocols/ofdatapaths/pings/noxes
+killall controller ofprotocol ofdatapath ping nox_corelt-nox_core ovs-openflowd ovs-controllerovs-testcontroller udpbwtest mnexec ivs ryu-manager 2> /dev/null
+killall -9 controller ofprotocol ofdatapath ping nox_corelt-nox_core ovs-openflowd ovs-controllerovs-testcontroller udpbwtest mnexec ivs ryu-manager 2> /dev/null
+pkill -9 -f "sudo mnexec"
+*** Removing junk from /tmp
+rm -f /tmp/vconn* /tmp/vlogs* /tmp/*.out /tmp/*.log
+*** Removing old X11 tunnels
+*** Removing excess kernel datapaths
+ps ax | egrep -o 'dp[0-9]+' | sed 's/dp/nl:/'
+***  Removing OVS datapaths
+ovs-vsctl --timeout=1 list-br
+ovs-vsctl --timeout=1 list-br
+*** Removing all links of the pattern foo-ethX
+ip link show | egrep -o '([-_.[:alnum:]]+-eth[[:digit:]]+)'
+ip link show
+*** Killing stale mininet node processes
+pkill -9 -f mininet:
+*** Shutting down stale tunnels
+pkill -9 -f Tunnel=Ethernet
+pkill -9 -f .ssh/mn
+rm -f ~/.ssh/mn/*
+*** Cleanup complete.
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ ls
+custom_topology.py  h1  pox
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ nano custom_topology.py 
+ubuntu@mininet-vm:~$ rm custom_topology.py 
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ nano custom_topology.py
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ sudo mn --custom custom_topology.py --topo SRv6SDWANTopo --controller=remote,ip=127.0.0.1,port=6633
+--------------------------------------------------------------------------------
+Caught exception. Cleaning up...
+
+Exception: Invalid topo name SRv6SDWANTopo
+--------------------------------------------------------------------------------
+*** Removing excess controllers/ofprotocols/ofdatapaths/pings/noxes
+killall controller ofprotocol ofdatapath ping nox_corelt-nox_core ovs-openflowd ovs-controllerovs-testcontroller udpbwtest mnexec ivs ryu-manager 2> /dev/null
+killall -9 controller ofprotocol ofdatapath ping nox_corelt-nox_core ovs-openflowd ovs-controllerovs-testcontroller udpbwtest mnexec ivs ryu-manager 2> /dev/null
+pkill -9 -f "sudo mnexec"
+*** Removing junk from /tmp
+rm -f /tmp/vconn* /tmp/vlogs* /tmp/*.out /tmp/*.log
+*** Removing old X11 tunnels
+*** Removing excess kernel datapaths
+ps ax | egrep -o 'dp[0-9]+' | sed 's/dp/nl:/'
+***  Removing OVS datapaths
+ovs-vsctl --timeout=1 list-br
+ovs-vsctl --timeout=1 list-br
+*** Removing all links of the pattern foo-ethX
+ip link show | egrep -o '([-_.[:alnum:]]+-eth[[:digit:]]+)'
+ip link show
+*** Killing stale mininet node processes
+pkill -9 -f mininet:
+*** Shutting down stale tunnels
+pkill -9 -f Tunnel=Ethernet
+pkill -9 -f .ssh/mn
+rm -f ~/.ssh/mn/*
+*** Cleanup complete.
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ sudo mn --topo single,2 --controller=remote,ip=127.0.0.1,port=6633
+*** Creating network
+*** Adding controller
+*** Adding hosts:
+h1 h2 
+*** Adding switches:
+s1 
+*** Adding links:
+(h1, s1) (h2, s1) 
+*** Configuring hosts
+h1 h2 
+*** Starting controller
+c0 
+*** Starting 1 switches
+s1 ...
+*** Starting CLI:
+mininet> 
+Interrupt
+mininet> 
+mininet> 
+mininet> exit
+*** Stopping 1 controllers
+c0 
+*** Stopping 2 links
+..
+*** Stopping 1 switches
+s1 
+*** Stopping 2 hosts
+h1 h2 
+*** Done
+completed in 5.420 seconds
+ubuntu@mininet-vm:~$ rm custom_topology.py 
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ nano custom_topology.py
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ sudo mn --custom custom_topology.py --topo SRv6SDWANTopo --controller=remote,ip=127.0.0.1,port=6633
+--------------------------------------------------------------------------------
+Caught exception. Cleaning up...
+
+Exception: Invalid topo name SRv6SDWANTopo
+--------------------------------------------------------------------------------
+*** Removing excess controllers/ofprotocols/ofdatapaths/pings/noxes
+killall controller ofprotocol ofdatapath ping nox_corelt-nox_core ovs-openflowd ovs-controllerovs-testcontroller udpbwtest mnexec ivs ryu-manager 2> /dev/null
+killall -9 controller ofprotocol ofdatapath ping nox_corelt-nox_core ovs-openflowd ovs-controllerovs-testcontroller udpbwtest mnexec ivs ryu-manager 2> /dev/null
+pkill -9 -f "sudo mnexec"
+*** Removing junk from /tmp
+rm -f /tmp/vconn* /tmp/vlogs* /tmp/*.out /tmp/*.log
+*** Removing old X11 tunnels
+*** Removing excess kernel datapaths
+ps ax | egrep -o 'dp[0-9]+' | sed 's/dp/nl:/'
+***  Removing OVS datapaths
+ovs-vsctl --timeout=1 list-br
+ovs-vsctl --timeout=1 list-br
+*** Removing all links of the pattern foo-ethX
+ip link show | egrep -o '([-_.[:alnum:]]+-eth[[:digit:]]+)'
+ip link show
+*** Killing stale mininet node processes
+pkill -9 -f mininet:
+*** Shutting down stale tunnels
+pkill -9 -f Tunnel=Ethernet
+pkill -9 -f .ssh/mn
+rm -f ~/.ssh/mn/*
+*** Cleanup complete.
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ chmod +r custom_topology.py
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ sudo mn --custom custom_topology.py --topo SRv6SDWANTopo --controller=remote,ip=127.0.0.1,port=6633
+--------------------------------------------------------------------------------
+Caught exception. Cleaning up...
+
+Exception: Invalid topo name SRv6SDWANTopo
+--------------------------------------------------------------------------------
+*** Removing excess controllers/ofprotocols/ofdatapaths/pings/noxes
+killall controller ofprotocol ofdatapath ping nox_corelt-nox_core ovs-openflowd ovs-controllerovs-testcontroller udpbwtest mnexec ivs ryu-manager 2> /dev/null
+killall -9 controller ofprotocol ofdatapath ping nox_corelt-nox_core ovs-openflowd ovs-controllerovs-testcontroller udpbwtest mnexec ivs ryu-manager 2> /dev/null
+pkill -9 -f "sudo mnexec"
+*** Removing junk from /tmp
+rm -f /tmp/vconn* /tmp/vlogs* /tmp/*.out /tmp/*.log
+*** Removing old X11 tunnels
+*** Removing excess kernel datapaths
+ps ax | egrep -o 'dp[0-9]+' | sed 's/dp/nl:/'
+***  Removing OVS datapaths
+ovs-vsctl --timeout=1 list-br
+ovs-vsctl --timeout=1 list-br
+*** Removing all links of the pattern foo-ethX
+ip link show | egrep -o '([-_.[:alnum:]]+-eth[[:digit:]]+)'
+ip link show
+*** Killing stale mininet node processes
+pkill -9 -f mininet:
+*** Shutting down stale tunnels
+pkill -9 -f Tunnel=Ethernet
+pkill -9 -f .ssh/mn
+rm -f ~/.ssh/mn/*
+*** Cleanup complete.
+ubuntu@mininet-vm:~$ sudo mn --custom custom_topology.py --topo SRv6SDWANTopo --controller=remote,ip=0.0.0.0,port=6633
+--------------------------------------------------------------------------------
+Caught exception. Cleaning up...
+
+Exception: Invalid topo name SRv6SDWANTopo
+--------------------------------------------------------------------------------
+*** Removing excess controllers/ofprotocols/ofdatapaths/pings/noxes
+killall controller ofprotocol ofdatapath ping nox_corelt-nox_core ovs-openflowd ovs-controllerovs-testcontroller udpbwtest mnexec ivs ryu-manager 2> /dev/null
+killall -9 controller ofprotocol ofdatapath ping nox_corelt-nox_core ovs-openflowd ovs-controllerovs-testcontroller udpbwtest mnexec ivs ryu-manager 2> /dev/null
+pkill -9 -f "sudo mnexec"
+*** Removing junk from /tmp
+rm -f /tmp/vconn* /tmp/vlogs* /tmp/*.out /tmp/*.log
+*** Removing old X11 tunnels
+*** Removing excess kernel datapaths
+ps ax | egrep -o 'dp[0-9]+' | sed 's/dp/nl:/'
+***  Removing OVS datapaths
+ovs-vsctl --timeout=1 list-br
+ovs-vsctl --timeout=1 list-br
+*** Removing all links of the pattern foo-ethX
+ip link show | egrep -o '([-_.[:alnum:]]+-eth[[:digit:]]+)'
+ip link show
+*** Killing stale mininet node processes
+pkill -9 -f mininet:
+*** Shutting down stale tunnels
+pkill -9 -f Tunnel=Ethernet
+pkill -9 -f .ssh/mn
+rm -f ~/.ssh/mn/*
+*** Cleanup complete.
+ubuntu@mininet-vm:~$ sudo mn --custom custom_topology.py --topo SRv6SDWANTopo --controller=remote,ip=127.0.0.1,port=6633
+--------------------------------------------------------------------------------
+Caught exception. Cleaning up...
+
+Exception: Invalid topo name SRv6SDWANTopo
+--------------------------------------------------------------------------------
+*** Removing excess controllers/ofprotocols/ofdatapaths/pings/noxes
+killall controller ofprotocol ofdatapath ping nox_corelt-nox_core ovs-openflowd ovs-controllerovs-testcontroller udpbwtest mnexec ivs ryu-manager 2> /dev/null
+killall -9 controller ofprotocol ofdatapath ping nox_corelt-nox_core ovs-openflowd ovs-controllerovs-testcontroller udpbwtest mnexec ivs ryu-manager 2> /dev/null
+pkill -9 -f "sudo mnexec"
+*** Removing junk from /tmp
+rm -f /tmp/vconn* /tmp/vlogs* /tmp/*.out /tmp/*.log
+*** Removing old X11 tunnels
+*** Removing excess kernel datapaths
+ps ax | egrep -o 'dp[0-9]+' | sed 's/dp/nl:/'
+***  Removing OVS datapaths
+ovs-vsctl --timeout=1 list-br
+ovs-vsctl --timeout=1 list-br
+*** Removing all links of the pattern foo-ethX
+ip link show | egrep -o '([-_.[:alnum:]]+-eth[[:digit:]]+)'
+ip link show
+*** Killing stale mininet node processes
+pkill -9 -f mininet:
+*** Shutting down stale tunnels
+pkill -9 -f Tunnel=Ethernet
+pkill -9 -f .ssh/mn
+rm -f ~/.ssh/mn/*
+*** Cleanup complete.
+ubuntu@mininet-vm:~$ sudo mn --custom=./custom_topology.py --topo=SRv6SDWANTopo --controller=remote,ip=127.0.0.1,port=6633
+--------------------------------------------------------------------------------
+Caught exception. Cleaning up...
+
+Exception: Invalid topo name SRv6SDWANTopo
+--------------------------------------------------------------------------------
+*** Removing excess controllers/ofprotocols/ofdatapaths/pings/noxes
+killall controller ofprotocol ofdatapath ping nox_corelt-nox_core ovs-openflowd ovs-controllerovs-testcontroller udpbwtest mnexec ivs ryu-manager 2> /dev/null
+killall -9 controller ofprotocol ofdatapath ping nox_corelt-nox_core ovs-openflowd ovs-controllerovs-testcontroller udpbwtest mnexec ivs ryu-manager 2> /dev/null
+pkill -9 -f "sudo mnexec"
+*** Removing junk from /tmp
+rm -f /tmp/vconn* /tmp/vlogs* /tmp/*.out /tmp/*.log
+*** Removing old X11 tunnels
+*** Removing excess kernel datapaths
+ps ax | egrep -o 'dp[0-9]+' | sed 's/dp/nl:/'
+***  Removing OVS datapaths
+ovs-vsctl --timeout=1 list-br
+ovs-vsctl --timeout=1 list-br
+*** Removing all links of the pattern foo-ethX
+ip link show | egrep -o '([-_.[:alnum:]]+-eth[[:digit:]]+)'
+ip link show
+*** Killing stale mininet node processes
+pkill -9 -f mininet:
+*** Shutting down stale tunnels
+pkill -9 -f Tunnel=Ethernet
+pkill -9 -f .ssh/mn
+rm -f ~/.ssh/mn/*
+*** Cleanup complete.
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ ls ./custom_topology.py
+./custom_topology.py
+ubuntu@mininet-vm:~$ sudo mn --custom=custom_topology.py --topo=SRv6SDWANTopo --controller=remote,ip=127.0.0.1,port=6633
+--------------------------------------------------------------------------------
+Caught exception. Cleaning up...
+
+Exception: Invalid topo name SRv6SDWANTopo
+--------------------------------------------------------------------------------
+*** Removing excess controllers/ofprotocols/ofdatapaths/pings/noxes
+killall controller ofprotocol ofdatapath ping nox_corelt-nox_core ovs-openflowd ovs-controllerovs-testcontroller udpbwtest mnexec ivs ryu-manager 2> /dev/null
+killall -9 controller ofprotocol ofdatapath ping nox_corelt-nox_core ovs-openflowd ovs-controllerovs-testcontroller udpbwtest mnexec ivs ryu-manager 2> /dev/null
+pkill -9 -f "sudo mnexec"
+*** Removing junk from /tmp
+rm -f /tmp/vconn* /tmp/vlogs* /tmp/*.out /tmp/*.log
+*** Removing old X11 tunnels
+*** Removing excess kernel datapaths
+ps ax | egrep -o 'dp[0-9]+' | sed 's/dp/nl:/'
+***  Removing OVS datapaths
+ovs-vsctl --timeout=1 list-br
+ovs-vsctl --timeout=1 list-br
+*** Removing all links of the pattern foo-ethX
+ip link show | egrep -o '([-_.[:alnum:]]+-eth[[:digit:]]+)'
+ip link show
+*** Killing stale mininet node processes
+pkill -9 -f mininet:
+*** Shutting down stale tunnels
+pkill -9 -f Tunnel=Ethernet
+pkill -9 -f .ssh/mn
+rm -f ~/.ssh/mn/*
+*** Cleanup complete.
+ubuntu@mininet-vm:~$ nano custom_topology.py 
+ubuntu@mininet-vm:~$ sudo python custom_topology.py 
+sudo: python: command not found
+ubuntu@mininet-vm:~$ sudo python3 custom_topology.py 
+*** Error: Warning: sch_htb: quantum of class 50001 is big. Consider r2q change.
+*** Error: Warning: sch_htb: quantum of class 50001 is big. Consider r2q change.
+*** Error: Warning: sch_htb: quantum of class 50001 is big. Consider r2q change.
+*** Error: Warning: sch_htb: quantum of class 50001 is big. Consider r2q change.
+Cannot find required executable controller.
+Please make sure that it is installed and available in your $PATH:
+(/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin)
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ sudo mn --custom=custom_topology.py --topo=SRv6SDWANTopo --controller=remote,ip=127.0.0.1,port=6633,controller_path=/home/ubuntu/pox/pox.py
+--------------------------------------------------------------------------------
+Caught exception. Cleaning up...
+
+Exception: Invalid topo name SRv6SDWANTopo
+--------------------------------------------------------------------------------
+*** Removing excess controllers/ofprotocols/ofdatapaths/pings/noxes
+killall controller ofprotocol ofdatapath ping nox_corelt-nox_core ovs-openflowd ovs-controllerovs-testcontroller udpbwtest mnexec ivs ryu-manager 2> /dev/null
+killall -9 controller ofprotocol ofdatapath ping nox_corelt-nox_core ovs-openflowd ovs-controllerovs-testcontroller udpbwtest mnexec ivs ryu-manager 2> /dev/null
+pkill -9 -f "sudo mnexec"
+*** Removing junk from /tmp
+rm -f /tmp/vconn* /tmp/vlogs* /tmp/*.out /tmp/*.log
+*** Removing old X11 tunnels
+*** Removing excess kernel datapaths
+ps ax | egrep -o 'dp[0-9]+' | sed 's/dp/nl:/'
+***  Removing OVS datapaths
+ovs-vsctl --timeout=1 list-br
+ovs-vsctl --timeout=1 list-br
+*** Removing all links of the pattern foo-ethX
+ip link show | egrep -o '([-_.[:alnum:]]+-eth[[:digit:]]+)'
+( ip link del r2-eth2;ip link del r1-eth2;ip link del r1-eth2;ip link del r2-eth2;ip link del r3-eth2;ip link del r2-eth3;ip link del r2-eth3;ip link del r3-eth2 ) 2> /dev/null
+ip link show
+*** Killing stale mininet node processes
+pkill -9 -f mininet:
+*** Shutting down stale tunnels
+pkill -9 -f Tunnel=Ethernet
+pkill -9 -f .ssh/mn
+rm -f ~/.ssh/mn/*
+*** Cleanup complete.
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ nano simple_topology.py
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ sudo python3 simple_topology.py
+Cannot find required executable controller.
+Please make sure that it is installed and available in your $PATH:
+(/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin)
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ nano simple_topology.py
+ubuntu@mininet-vm:~$ rm simple_topology.py 
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ nano simple_topology.py
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ sudo python3 simple_topology.py
+  File "/home/ubuntu/simple_topology.py", line 19
+    net = Mininet(topo=topo, controller=Controller, controller=remote, ip='127.0.0.1', port=6633)
+                                                    ^^^^^^^^^^^^^^^^^
+SyntaxError: keyword argument repeated: controller
+ubuntu@mininet-vm:~$ nano simple_topology.py
+ubuntu@mininet-vm:~$ sudo python3 simple_topology.py
+Traceback (most recent call last):
+  File "/home/ubuntu/simple_topology.py", line 19, in <module>
+    net = Mininet(topo=topo, controller=remote, ip='127.0.0.1', port=6633)
+                                        ^^^^^^
+NameError: name 'remote' is not defined
+ubuntu@mininet-vm:~$ nano simple_topology.py
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ nano simple_topology.py
+ubuntu@mininet-vm:~$ sudo python3 simple_topology.py
+Traceback (most recent call last):
+  File "/home/ubuntu/simple_topology.py", line 19, in <module>
+    net = Mininet(topo=topo, controller=Controller, ip='127.0.0.1', port=6633)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Mininet.__init__() got an unexpected keyword argument 'ip'
+ubuntu@mininet-vm:~$ rm simple_topology.py
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ nano simple_topology.py
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ sudo python3 simple_topology.py
+Traceback (most recent call last):
+  File "/home/ubuntu/simple_topology.py", line 21, in <module>
+    controller = Controller(name='c0', ip='127.0.0.1', port=6633)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/mininet/node.py", line 1417, in __init__
+    self.checkListening()
+  File "/usr/lib/python3/dist-packages/mininet/node.py", line 1433, in checkListening
+    raise Exception( "Please shut down the controller which is"
+Exception: Please shut down the controller which is running on port 6633:
+Active Internet connections (servers and established)
+tcp        0      0 0.0.0.0:6633            0.0.0.0:*               LISTEN      6277/python3        
+ubuntu@mininet-vm:~$ sudo python3 simple_topology.py
+Cannot find required executable controller.
+Please make sure that it is installed and available in your $PATH:
+(/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin)
+ubuntu@mininet-vm:~$ sudo python3 simple_topology.py
+Traceback (most recent call last):
+  File "/home/ubuntu/simple_topology.py", line 21, in <module>
+    controller = Controller(name='c0', ip='127.0.0.1', port=6633)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/mininet/node.py", line 1417, in __init__
+    self.checkListening()
+  File "/usr/lib/python3/dist-packages/mininet/node.py", line 1433, in checkListening
+    raise Exception( "Please shut down the controller which is"
+Exception: Please shut down the controller which is running on port 6633:
+Active Internet connections (servers and established)
+tcp        0      0 0.0.0.0:6633            0.0.0.0:*               LISTEN      6811/python3        
+tcp        0      0 127.0.0.1:33868         127.0.0.1:6633          TIME_WAIT   -                   
+ubuntu@mininet-vm:~$ sudo python3 simple_topology.py
+Traceback (most recent call last):
+  File "/home/ubuntu/simple_topology.py", line 21, in <module>
+    controller = Controller(name='c0', ip='127.0.0.1', port=6633)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/mininet/node.py", line 1417, in __init__
+    self.checkListening()
+  File "/usr/lib/python3/dist-packages/mininet/node.py", line 1433, in checkListening
+    raise Exception( "Please shut down the controller which is"
+Exception: Please shut down the controller which is running on port 6633:
+Active Internet connections (servers and established)
+tcp        0      0 0.0.0.0:6633            0.0.0.0:*               LISTEN      6811/python3        
+tcp        0      0 127.0.0.1:33868         127.0.0.1:6633          TIME_WAIT   -                   
+ubuntu@mininet-vm:~$ nano simple_topology.py
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ sudo python3 simple_topology.py
+Traceback (most recent call last):
+  File "/home/ubuntu/simple_topology.py", line 24, in <module>
+    net = Mininet(topo=topo, controller=remote, link=TCLink)
+                                        ^^^^^^
+NameError: name 'remote' is not defined
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ sudo mn --topo=single,3 --controller=remote
+*** Creating network
+*** Adding controller
+Unable to contact the remote controller at 127.0.0.1:6653
+Connecting to remote controller at 127.0.0.1:6633
+*** Adding hosts:
+h1 h2 h3 
+*** Adding switches:
+s1 
+*** Adding links:
+(h1, s1) (h2, s1) (h3, s1) 
+*** Configuring hosts
+h1 h2 h3 
+*** Starting controller
+c0 
+*** Starting 1 switches
+s1 ...
+*** Starting CLI:
+mininet> exit
+*** Stopping 1 controllers
+c0 
+*** Stopping 3 links
+...
+*** Stopping 1 switches
+s1 
+*** Stopping 3 hosts
+h1 h2 h3 
+*** Done
+completed in 87.861 seconds
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ sudo mn --topo=single,3 --controller=remote
+*** Creating network
+*** Adding controller
+Unable to contact the remote controller at 127.0.0.1:6653
+Connecting to remote controller at 127.0.0.1:6633
+*** Adding hosts:
+h1 h2 h3 
+*** Adding switches:
+s1 
+*** Adding links:
+(h1, s1) (h2, s1) (h3, s1) 
+*** Configuring hosts
+h1 h2 h3 
+*** Starting controller
+c0 
+*** Starting 1 switches
+s1 ...
+*** Starting CLI:
+mininet> mininet> pingall
+*** Unknown command: mininet> pingall
+mininet> 
+mininet> pingall
+*** Ping: testing ping reachability
+h1 -> X X 
+h2 -> X X 
+h3 -> X X 
+*** Results: 100% dropped (0/6 received)
+mininet> h1 ifconfig h1-eth0 2001:db8::1/64
+2001:db8::1: Unknown host
+ifconfig: `--help' gives usage information.
+mininet> 
+mininet> 
+mininet> 
+mininet> h1 ifconfig h1-eth0 2001:db8::1/64
+2001:db8::1: Unknown host
+ifconfig: `--help' gives usage information.
+mininet> exit
+*** Stopping 1 controllers
+c0 
+*** Stopping 3 links
+...
+*** Stopping 1 switches
+s1 
+*** Stopping 3 hosts
+h1 h2 h3 
+*** Done
+completed in 122.051 seconds
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ sudo mn --topo=s,3 --controller=remote
+--------------------------------------------------------------------------------
+Caught exception. Cleaning up...
+
+Exception: Invalid topo name s
+--------------------------------------------------------------------------------
+*** Removing excess controllers/ofprotocols/ofdatapaths/pings/noxes
+killall controller ofprotocol ofdatapath ping nox_corelt-nox_core ovs-openflowd ovs-controllerovs-testcontroller udpbwtest mnexec ivs ryu-manager 2> /dev/null
+
+
+
+killall -9 controller ofprotocol ofdatapath ping nox_corelt-nox_core ovs-openflowd ovs-controllerovs-testcontroller udpbwtest mnexec ivs ryu-manager 2> /dev/null
+pkill -9 -f "sudo mnexec"
+*** Removing junk from /tmp
+rm -f /tmp/vconn* /tmp/vlogs* /tmp/*.out /tmp/*.log
+*** Removing old X11 tunnels
+*** Removing excess kernel datapaths
+ps ax | egrep -o 'dp[0-9]+' | sed 's/dp/nl:/'
+***  Removing OVS datapaths
+ovs-vsctl --timeout=1 list-br
+ovs-vsctl --timeout=1 list-br
+*** Removing all links of the pattern foo-ethX
+ip link show | egrep -o '([-_.[:alnum:]]+-eth[[:digit:]]+)'
+ip link show
+*** Killing stale mininet node processes
+pkill -9 -f mininet:
+*** Shutting down stale tunnels
+pkill -9 -f Tunnel=Ethernet
+pkill -9 -f .ssh/mn
+rm -f ~/.ssh/mn/*
+*** Cleanup complete.
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ sudo mn --topo=tree,2,2 --controller=remote
+*** Creating network
+*** Adding controller
+Unable to contact the remote controller at 127.0.0.1:6653
+Connecting to remote controller at 127.0.0.1:6633
+*** Adding hosts:
+h1 h2 h3 h4 
+*** Adding switches:
+s1 s2 s3 
+*** Adding links:
+(s1, s2) (s1, s3) (s2, h1) (s2, h2) (s3, h3) (s3, h4) 
+*** Configuring hosts
+h1 h2 h3 h4 
+*** Starting controller
+c0 
+*** Starting 3 switches
+s1 s2 s3 ...
+*** Starting CLI:
+mininet> nodes
+available nodes are: 
+c0 h1 h2 h3 h4 s1 s2 s3
+mininet> 
+mininet> h1 ifconfig h1-eth0 inet6 add 2001:db8::1/64
+mininet> h2 ifconfig h2-eth0 inet6 add 2001:db8::2/64
+mininet> h3 ifconfig h3-eth0 inet6 add 2001:db8::3/64
+mininet> h4 ifconfig h4-eth0 inet6 add 2001:db8::4/64
+mininet> h1 ifconfig h1-eth0 inet6 add 2001:db8::1/64
+SIOCSIFADDR: File exists
+mininet> h2 ifconfig h2-eth0 inet6 add 2001:db8::2/64
+SIOCSIFADDR: File exists
+mininet> h3 ifconfig h3-eth0 inet6 add 2001:db8::3/64
+SIOCSIFADDR: File exists
+mininet> h4 ifconfig h4-eth0 inet6 add 2001:db8::4/64
+SIOCSIFADDR: File exists
+mininet> pingall
+*** Ping: testing ping reachability
+h1 -> X X X 
+h2 -> X X X 
+h3 -> X X X 
+h4 -> X X X 
+*** Results: 100% dropped (0/12 received)
+mininet> sudo sysctl -w net.ipv6.conf.all.seg6_enabled=1
+*** Unknown command: sudo sysctl -w net.ipv6.conf.all.seg6_enabled=1
+mininet> sudo sysctl -w net.ipv6.conf.default.seg6_enabled=1
+*** Unknown command: sudo sysctl -w net.ipv6.conf.default.seg6_enabled=1
+mininet> sudo sysctl -w net.ipv6.conf.all.seg6_enabled=1
+*** Unknown command: sudo sysctl -w net.ipv6.conf.all.seg6_enabled=1
+mininet> sudo sysctl -w net.ipv6.conf.default.seg6_enabled=1
+*** Unknown command: sudo sysctl -w net.ipv6.conf.default.seg6_enabled=1
+mininet> exit
+*** Stopping 1 controllers
+c0 
+*** Stopping 6 links
+......
+*** Stopping 3 switches
+s1 s2 s3 
+*** Stopping 4 hosts
+h1 h2 h3 h4 
+*** Done
+completed in 227.941 seconds
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ sudo sysctl -w net.ipv6.conf.all.seg6_enabled=1
+sudo sysctl -w net.ipv6.conf.default.seg6_enabled=1
+net.ipv6.conf.all.seg6_enabled = 1
+net.ipv6.conf.default.seg6_enabled = 1
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ sudo mn
+*** No default OpenFlow controller found for default switch!
+*** Falling back to OVS Bridge
+*** Creating network
+*** Adding controller
+*** Adding hosts:
+h1 h2 
+*** Adding switches:
+s1 
+*** Adding links:
+(h1, s1) (h2, s1) 
+*** Configuring hosts
+h1 h2 
+*** Starting controller
+
+*** Starting 1 switches
+s1 ...
+*** Starting CLI:
+mininet> 
+mininet> 
+mininet> 
+mininet> exit
+*** Stopping 0 controllers
+
+*** Stopping 2 links
+..
+*** Stopping 1 switches
+s1 
+*** Stopping 2 hosts
+h1 h2 
+*** Done
+completed in 6.044 seconds
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ sudo mn --topo=tree,2,2 --controller=remote
+*** Creating network
+*** Adding controller
+Unable to contact the remote controller at 127.0.0.1:6653
+Connecting to remote controller at 127.0.0.1:6633
+*** Adding hosts:
+h1 h2 h3 h4 
+*** Adding switches:
+s1 s2 s3 
+*** Adding links:
+(s1, s2) (s1, s3) (s2, h1) (s2, h2) (s3, h3) (s3, h4) 
+*** Configuring hosts
+h1 h2 h3 h4 
+*** Starting controller
+c0 
+*** Starting 3 switches
+s1 s2 s3 ...
+*** Starting CLI:
+mininet> h1 ifconfig
+h1-eth0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 10.0.0.1  netmask 255.0.0.0  broadcast 10.255.255.255
+        inet6 fe80::54fe:fdff:fe12:e9b8  prefixlen 64  scopeid 0x20<link>
+        ether 56:fe:fd:12:e9:b8  txqueuelen 1000  (Ethernet)
+        RX packets 6  bytes 516 (516.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 6  bytes 516 (516.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+        loop  txqueuelen 1000  (Local Loopback)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+mininet> h1 ifconfig h1-eth0 inet6 add 2001:db8::1/64
+mininet> 
+mininet> 
+mininet> 
+mininet> h1 ifconfig
+h1-eth0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 10.0.0.1  netmask 255.0.0.0  broadcast 10.255.255.255
+        inet6 fe80::54fe:fdff:fe12:e9b8  prefixlen 64  scopeid 0x20<link>
+        inet6 2001:db8::1  prefixlen 64  scopeid 0x0<global>
+        ether 56:fe:fd:12:e9:b8  txqueuelen 1000  (Ethernet)
+        RX packets 8  bytes 656 (656.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 11  bytes 962 (962.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+        loop  txqueuelen 1000  (Local Loopback)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+mininet> h2 ifconfig h2-eth0 inet6 add 2001:db8::2/64
+mininet> h3 ifconfig h3-eth0 inet6 add 2001:db8::3/64
+mininet> h4 ifconfig h4-eth0 inet6 add 2001:db8::4/64
+mininet> h3 ifconfig
+h3-eth0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 10.0.0.3  netmask 255.0.0.0  broadcast 10.255.255.255
+        inet6 fe80::f471:75ff:fe1a:b262  prefixlen 64  scopeid 0x20<link>
+        inet6 2001:db8::3  prefixlen 64  scopeid 0x0<global>
+        ether f6:71:75:1a:b2:62  txqueuelen 1000  (Ethernet)
+        RX packets 9  bytes 726 (726.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 12  bytes 1032 (1.0 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+        loop  txqueuelen 1000  (Local Loopback)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+mininet> pingall
+*** Ping: testing ping reachability
+h1 -> X X ^C
+Interrupt
+stopping h1 
+mininet> exit
+*** Stopping 1 controllers
+c0 
+*** Stopping 6 links
+......
+*** Stopping 3 switches
+s1 s2 s3 
+*** Stopping 4 hosts
+h1 h2 h3 h4 
+*** Done
+completed in 65.249 seconds
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ sudo mn --topo=tree,2,2 --controller=remote
+*** Creating network
+*** Adding controller
+Unable to contact the remote controller at 127.0.0.1:6653
+Connecting to remote controller at 127.0.0.1:6633
+*** Adding hosts:
+h1 h2 h3 h4 
+*** Adding switches:
+s1 s2 s3 
+*** Adding links:
+(s1, s2) (s1, s3) (s2, h1) (s2, h2) (s3, h3) (s3, h4) 
+*** Configuring hosts
+h1 h2 h3 h4 
+*** Starting controller
+c0 
+*** Starting 3 switches
+s1 s2 s3 ...
+*** Starting CLI:
+mininet> h1 ifconfig
+h1-eth0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 10.0.0.1  netmask 255.0.0.0  broadcast 10.255.255.255
+        inet6 fe80::809c:6fff:fe9b:4535  prefixlen 64  scopeid 0x20<link>
+        ether 82:9c:6f:9b:45:35  txqueuelen 1000  (Ethernet)
+        RX packets 7  bytes 586 (586.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 7  bytes 586 (586.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+        loop  txqueuelen 1000  (Local Loopback)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+mininet> 
+mininet> 
+mininet> dump
+<Host h1: h1-eth0:10.0.0.1 pid=7636> 
+<Host h2: h2-eth0:10.0.0.2 pid=7638> 
+<Host h3: h3-eth0:10.0.0.3 pid=7640> 
+<Host h4: h4-eth0:10.0.0.4 pid=7642> 
+<OVSSwitch s1: lo:127.0.0.1,s1-eth1:None,s1-eth2:None pid=7647> 
+<OVSSwitch s2: lo:127.0.0.1,s2-eth1:None,s2-eth2:None,s2-eth3:None pid=7650> 
+<OVSSwitch s3: lo:127.0.0.1,s3-eth1:None,s3-eth2:None,s3-eth3:None pid=7653> 
+<RemoteController c0: 127.0.0.1:6633 pid=7628> 
+mininet> 
+mininet> 
+mininet> 
+mininet> exit
+*** Stopping 1 controllers
+c0 
+*** Stopping 6 links
+......
+*** Stopping 3 switches
+s1 s2 s3 
+*** Stopping 4 hosts
+h1 h2 h3 h4 
+*** Done
+completed in 137.544 seconds
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ sudo sysctl -w net.ipv6.conf.all.seg6_enabled=1
+net.ipv6.conf.all.seg6_enabled = 1
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ sudo mn --topo=tree,2,2 --controller=remote
+*** Creating network
+*** Adding controller
+Unable to contact the remote controller at 127.0.0.1:6653
+Unable to contact the remote controller at 127.0.0.1:6633
+Setting remote controller to 127.0.0.1:6653
+*** Adding hosts:
+h1 h2 h3 h4 
+*** Adding switches:
+s1 s2 s3 
+*** Adding links:
+(s1, s2) (s1, s3) (s2, h1) (s2, h2) (s3, h3) (s3, h4) 
+*** Configuring hosts
+h1 h2 h3 h4 
+*** Starting controller
+c0 
+*** Starting 3 switches
+s1 s2 s3 ...
+*** Starting CLI:
+mininet> h1 ifconfig
+h1-eth0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 10.0.0.1  netmask 255.0.0.0  broadcast 10.255.255.255
+        inet6 fe80::2c55:16ff:fe21:b6f5  prefixlen 64  scopeid 0x20<link>
+        ether 2e:55:16:21:b6:f5  txqueuelen 1000  (Ethernet)
+        RX packets 7  bytes 586 (586.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 7  bytes 586 (586.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+        loop  txqueuelen 1000  (Local Loopback)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+mininet> h1 ifconfig h1-eth0 inet6 add 2001:db8::1/64
+mininet> 
+mininet> 
+mininet> h1 sysctl -w net.ipv6.conf.all.forwarding=1
+net.ipv6.conf.all.forwarding = 1
+mininet> 
+mininet> 
+mininet> h2 ifconfig h2-eth0 inet6 add 2001:db8::2/64
+mininet> 
+mininet> 
+mininet> h2 sysctl -w net.ipv6.conf.all.forwarding=1
+net.ipv6.conf.all.forwarding = 1
+mininet> 
+mininet> 
+mininet> h3 ifconfig h3-eth0 inet6 add 2001:db8::3/64
+mininet> 
+mininet> 
+mininet> h3 sysctl -w net.ipv6.conf.all.forwarding=1
+net.ipv6.conf.all.forwarding = 1
+mininet> 
+mininet> 
+mininet> h4 ifconfig h4-eth0 inet6 add 2001:db8::4/64
+mininet> 
+mininet> 
+mininet> h4 sysctl -w net.ipv6.conf.all.forwarding=1
+net.ipv6.conf.all.forwarding = 1
+mininet> 
+mininet> 
+mininet> 
+mininet> sv
+*** Unknown command: sv
+mininet> 
+mininet> 
+mininet> s
+*** Unknown command: s
+mininet> dump
+<Host h1: h1-eth0:10.0.0.1 pid=7835> 
+<Host h2: h2-eth0:10.0.0.2 pid=7837> 
+<Host h3: h3-eth0:10.0.0.3 pid=7839> 
+<Host h4: h4-eth0:10.0.0.4 pid=7841> 
+<OVSSwitch s1: lo:127.0.0.1,s1-eth1:None,s1-eth2:None pid=7846> 
+<OVSSwitch s2: lo:127.0.0.1,s2-eth1:None,s2-eth2:None,s2-eth3:None pid=7849> 
+<OVSSwitch s3: lo:127.0.0.1,s3-eth1:None,s3-eth2:None,s3-eth3:None pid=7852> 
+<RemoteController c0: 127.0.0.1:6653 pid=7827> 
+mininet> h1 ifconfig
+h1-eth0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 10.0.0.1  netmask 255.0.0.0  broadcast 10.255.255.255
+        inet6 fe80::2c55:16ff:fe21:b6f5  prefixlen 64  scopeid 0x20<link>
+        inet6 2001:db8::1  prefixlen 64  scopeid 0x0<global>
+        ether 2e:55:16:21:b6:f5  txqueuelen 1000  (Ethernet)
+        RX packets 11  bytes 866 (866.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 14  bytes 1292 (1.2 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+        loop  txqueuelen 1000  (Local Loopback)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+mininet> exit
+*** Stopping 1 controllers
+c0 
+*** Stopping 6 links
+......
+*** Stopping 3 switches
+s1 s2 s3 
+*** Stopping 4 hosts
+h1 h2 h3 h4 
+*** Done
+completed in 164.756 seconds
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ sudo mn --topo=tree,2,2 --controller=remote
+*** Creating network
+*** Adding controller
+Unable to contact the remote controller at 127.0.0.1:6653
+Unable to contact the remote controller at 127.0.0.1:6633
+Setting remote controller to 127.0.0.1:6653
+*** Adding hosts:
+h1 h2 h3 h4 
+*** Adding switches:
+s1 s2 s3 
+*** Adding links:
+(s1, s2) (s1, s3) (s2, h1) (s2, h2) (s3, h3) (s3, h4) 
+*** Configuring hosts
+h1 h2 h3 h4 
+*** Starting controller
+c0 
+*** Starting 3 switches
+s1 s2 s3 ...
+*** Starting CLI:
+mininet> h1 ifconfig
+h1-eth0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 10.0.0.1  netmask 255.0.0.0  broadcast 10.255.255.255
+        inet6 fe80::2cae:cbff:fe8b:a3b6  prefixlen 64  scopeid 0x20<link>
+        ether 2e:ae:cb:8b:a3:b6  txqueuelen 1000  (Ethernet)
+        RX packets 6  bytes 516 (516.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 6  bytes 516 (516.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+        loop  txqueuelen 1000  (Local Loopback)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+mininet> 
+Interrupt
+mininet> exit
+*** Stopping 1 controllers
+c0 
+*** Stopping 6 links
+......
+*** Stopping 3 switches
+
+s1 s2 s3 
+*** Stopping 4 hosts
+h1 h2 h3 h4 
+*** Done
+completed in 11.975 seconds
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ sudo mn --topo=tree,2,2 --controller=remote
+*** Creating network
+*** Adding controller
+Unable to contact the remote controller at 127.0.0.1:6653
+Connecting to remote controller at 127.0.0.1:6633
+*** Adding hosts:
+h1 h2 h3 h4 
+*** Adding switches:
+s1 s2 s3 
+*** Adding links:
+(s1, s2) (s1, s3) (s2, h1) (s2, h2) (s3, h3) (s3, h4) 
+*** Configuring hosts
+h1 h2 h3 h4 
+*** Starting controller
+c0 
+*** Starting 3 switches
+s1 s2 s3 ...
+*** Starting CLI:
+mininet> h1 sysctl -w net.ipv6.conf.all.forwarding=1
+net.ipv6.conf.all.forwarding = 1
+mininet> h1 ifconfig h1-eth0 inet6 add 2001:db8::1/64
+mininet> h2 sysctl -w net.ipv6.conf.all.forwarding=1
+net.ipv6.conf.all.forwarding = 1
+mininet> h2 ifconfig h2-eth0 inet6 add 2001:db8::2/64
+mininet> h3 sysctl -w net.ipv6.conf.all.forwarding=1
+net.ipv6.conf.all.forwarding = 1
+mininet> h3 ifconfig h3-eth0 inet6 add 2001:db8::3/64
+mininet> h4 sysctl -w net.ipv6.conf.all.forwarding=1
+net.ipv6.conf.all.forwarding = 1
+mininet> h4 ifconfig h4-eth0 inet6 add 2001:db8::4/64
+mininet> 
+mininet> 
+mininet> 
+mininet> 
+mininet> pingall
+*** Ping: testing ping reachability
+h1 -> h2 h3 h4 
+h2 -> h1 h3 h4 
+h3 -> h1 h2 h4 
+h4 -> h1 h2 h3 
+*** Results: 0% dropped (12/12 received)
+mininet> h1 ifconfig h1-eth0 inet6 add 2001:db8::1/64
+SIOCSIFADDR: File exists
+mininet> 
+mininet> h2 ifconfig h2-eth0 inet6 add 2001:db8::2/64
+SIOCSIFADDR: File exists
+mininet> 
+mininet> h3 ifconfig h3-eth0 inet6 add 2001:db8::3/64
+SIOCSIFADDR: File exists
+mininet> 
+mininet> 
+mininet> h4 ifconfig h4-eth0 inet6 add 2001:db8::4/64
+SIOCSIFADDR: File exists
+mininet> 
+mininet> 
+mininet> 
+mininet> h1 route -A inet6 add 2001:db8::4/128 gw 2001:db8::2
+SIOCADDRT: No such device
+mininet> 
+mininet> 
+mininet> 
+mininet> h1 route -A inet6 add 2001:db8::4/128 gw 2001:db8::2
+SIOCADDRT: No such device
+mininet> h2 ifconfig
+h2-eth0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 10.0.0.2  netmask 255.0.0.0  broadcast 10.255.255.255
+        inet6 2001:db8::2  prefixlen 64  scopeid 0x0<global>
+        inet6 fe80::a8bc:3fff:fea6:82a9  prefixlen 64  scopeid 0x20<link>
+        ether aa:bc:3f:a6:82:a9  txqueuelen 1000  (Ethernet)
+        RX packets 87  bytes 8054 (8.0 KB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 28  bytes 2592 (2.5 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+        loop  txqueuelen 1000  (Local Loopback)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+mininet> h1 ifconfig
+h1-eth0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 10.0.0.1  netmask 255.0.0.0  broadcast 10.255.255.255
+        inet6 fe80::c025:65ff:fe40:b7f  prefixlen 64  scopeid 0x20<link>
+        inet6 2001:db8::1  prefixlen 64  scopeid 0x0<global>
+        ether c2:25:65:40:0b:7f  txqueuelen 1000  (Ethernet)
+        RX packets 89  bytes 8194 (8.1 KB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 26  bytes 2452 (2.4 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+        loop  txqueuelen 1000  (Local Loopback)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+mininet> h1 route -A inet6
+Kernel IPv6 routing table
+Destination                    Next Hop                   Flag Met Ref  Use If
+2001:db8::/64                  [::]                       U    256 1      0 h1-eth0
+fe80::/64                      [::]                       U    256 1      0 h1-eth0
+[::]/0                         [::]                       !n   -1  1      0 lo
+localhost/128                  [::]                       Un   0   3      0 lo
+2001:db8::/128                 [::]                       Un   0   3      0 h1-eth0
+2001:db8::1/128                [::]                       Un   0   3      0 h1-eth0
+fe80::/128                     [::]                       Un   0   3      0 h1-eth0
+fe80::c025:65ff:fe40:b7f/128   [::]                       Un   0   3      0 h1-eth0
+ff00::/8                       [::]                       U    256 3      0 h1-eth0
+[::]/0                         [::]                       !n   -1  1      0 lo
+mininet> 
+mininet> 
+mininet> h1 route -A inet6 add 2001:db8::2/128 gw 2001:db8::1
+SIOCADDRT: No such device
+mininet> 
+mininet> 
+mininet> h1 ifconfig
+h1-eth0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 10.0.0.1  netmask 255.0.0.0  broadcast 10.255.255.255
+        inet6 fe80::c025:65ff:fe40:b7f  prefixlen 64  scopeid 0x20<link>
+        inet6 2001:db8::1  prefixlen 64  scopeid 0x0<global>
+        ether c2:25:65:40:0b:7f  txqueuelen 1000  (Ethernet)
+        RX packets 92  bytes 8404 (8.4 KB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 26  bytes 2452 (2.4 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+        loop  txqueuelen 1000  (Local Loopback)
+        RX packets 28  bytes 4004 (4.0 KB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 28  bytes 4004 (4.0 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+mininet> h1 route -A inet6
+Kernel IPv6 routing table
+Destination                    Next Hop                   Flag Met Ref  Use If
+2001:db8::/64                  [::]                       U    256 1      0 h1-eth0
+fe80::/64                      [::]                       U    256 1      0 h1-eth0
+[::]/0                         [::]                       !n   -1  1      0 lo
+localhost/128                  [::]                       Un   0   3      0 lo
+2001:db8::/128                 [::]                       Un   0   3      0 h1-eth0
+2001:db8::1/128                [::]                       Un   0   3      0 h1-eth0
+fe80::/128                     [::]                       Un   0   3      0 h1-eth0
+fe80::c025:65ff:fe40:b7f/128   [::]                       Un   0   3      0 h1-eth0
+ff00::/8                       [::]                       U    256 3      0 h1-eth0
+[::]/0                         [::]                       !n   -1  1      0 lo
+mininet> 
+mininet> 
+mininet> h1 route -A inet6 add 2001:db8::2/128 gw 2001:db8::1
+SIOCADDRT: No such device
+mininet> 
+mininet> 
+mininet> 
+mininet> h1 route -A inet6 add 2001:db8::2/128 gw 2001:db8::1
+SIOCADDRT: No such device
+mininet> 
+mininet> 
+mininet> h1 route -A inet6 add 2001:db8::2/128 gw 2001:db8::1
+SIOCADDRT: No such device
+mininet> 
+mininet> 
+mininet> 
+mininet> pingall
+*** Ping: testing ping reachability
+h1 -> h2 h3 h4 
+h2 -> h1 h3 h4 
+h3 -> h1 h2 h4 
+h4 -> h1 h2 h3 
+*** Results: 0% dropped (12/12 received)
+mininet> 
+mininet> 
+mininet> 
+mininet> h1 ping6 2001:db8::2
+PING 2001:db8::2 (2001:db8::2) 56 data bytes
+64 bytes from 2001:db8::2: icmp_seq=1 ttl=64 time=7.72 ms
+64 bytes from 2001:db8::2: icmp_seq=2 ttl=64 time=0.297 ms
+64 bytes from 2001:db8::2: icmp_seq=3 ttl=64 time=0.105 ms
+64 bytes from 2001:db8::2: icmp_seq=4 ttl=64 time=0.088 ms
+^C
+--- 2001:db8::2 ping statistics ---
+4 packets transmitted, 4 received, 0% packet loss, time 3154ms
+rtt min/avg/max/mdev = 0.088/2.051/7.717/3.271 ms
+mininet> h1 route -A inet6 add 2001:db8::2/128 gw 2001:db8::1
+SIOCADDRT: No such device
+mininet> h1 route -A inet6
+Kernel IPv6 routing table
+Destination                    Next Hop                   Flag Met Ref  Use If
+2001:db8::/64                  [::]                       U    256 2      0 h1-eth0
+fe80::/64                      [::]                       U    256 1      0 h1-eth0
+[::]/0                         [::]                       !n   -1  1      0 lo
+localhost/128                  [::]                       Un   0   3      0 lo
+2001:db8::/128                 [::]                       Un   0   3      0 h1-eth0
+2001:db8::1/128                [::]                       Un   0   4      0 h1-eth0
+fe80::/128                     [::]                       Un   0   3      0 h1-eth0
+fe80::c025:65ff:fe40:b7f/128   [::]                       Un   0   4      0 h1-eth0
+ff00::/8                       [::]                       U    256 3      0 h1-eth0
+[::]/0                         [::]                       !n   -1  1      0 lo
+mininet> h1 route -A inet6 add 2001:db8::2/128 gw fe80::c025:65ff:fe40:b7f
+SIOCADDRT: No such device
+mininet> 
+mininet> 
+mininet> h1 route -A inet6 add 2001:db8::2/128 gw fe80::c025:65ff:fe40:b7f
+SIOCADDRT: No such device
+mininet> 
+mininet> 
+mininet> h1 route -A inet6 add default gw fe80::1
+SIOCADDRT: Invalid argument
+mininet> 
+mininet> 
+mininet> 
+mininet> h1 route -A inet6 add default gw fe80::1
+SIOCADDRT: Invalid argument
+mininet> 
+mininet> 
+mininet> 
+mininet> net
+h1 h1-eth0:s2-eth1
+h2 h2-eth0:s2-eth2
+h3 h3-eth0:s3-eth1
+h4 h4-eth0:s3-eth2
+s1 lo:  s1-eth1:s2-eth3 s1-eth2:s3-eth3
+s2 lo:  s2-eth1:h1-eth0 s2-eth2:h2-eth0 s2-eth3:s1-eth1
+s3 lo:  s3-eth1:h3-eth0 s3-eth2:h4-eth0 s3-eth3:s1-eth2
+c0
+mininet> h1 route -A inet6 add 2001:db8::2/128 gw fe80::c025:65ff:fe40:b7f
+SIOCADDRT: No such device
+mininet> 
+mininet> 
+mininet> h1 route -A inet6 add 2001:db8::2/128 gw 2001:db8::1
+SIOCADDRT: No such device
+mininet> h1 route -A inet6 add 2001:db8::4/128 gw 2001:db8::2
+SIOCADDRT: No such device
+mininet> 
+mininet> 
+mininet> sudo sysctl -w net.ipv6.conf.all.seg6_enabled=1
+*** Unknown command: sudo sysctl -w net.ipv6.conf.all.seg6_enabled=1
+mininet> 
+mininet> 
+mininet> exit
+*** Stopping 1 controllers
+c0 
+*** Stopping 6 links
+......
+*** Stopping 3 switches
+s1 s2 s3 
+*** Stopping 4 hosts
+h1 h2 h3 h4 
+*** Done
+completed in 717.646 seconds
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ sudo sysctl -w net.ipv6.conf.all.seg6_enabled=1
+net.ipv6.conf.all.seg6_enabled = 1
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ sudo mn --topo=tree,2,2 --controller=remote
+*** Creating network
+*** Adding controller
+Unable to contact the remote controller at 127.0.0.1:6653
+Connecting to remote controller at 127.0.0.1:6633
+*** Adding hosts:
+h1 h2 h3 h4 
+*** Adding switches:
+s1 s2 s3 
+*** Adding links:
+(s1, s2) (s1, s3) (s2, h1) (s2, h2) (s3, h3) (s3, h4) 
+*** Configuring hosts
+h1 h2 h3 h4 
+*** Starting controller
+c0 
+*** Starting 3 switches
+s1 s2 s3 ...
+*** Starting CLI:
+mininet> pingall
+*** Ping: testing ping reachability
+h1 -> h2 h3 h4 
+h2 -> h1 h3 h4 
+h3 -> h1 h2 h4 
+h4 -> h1 h2 h3 
+*** Results: 0% dropped (12/12 received)
+mininet> h1 ping6 2001:db8::2
+ping6: connect: Network is unreachable
+mininet> pingall
+*** Ping: testing ping reachability
+h1 -> h2 h3 h4 
+h2 -> h1 h3 h4 
+h3 -> h1 h2 h4 
+h4 -> h1 h2 h3 
+*** Results: 0% dropped (12/12 received)
+mininet> h1 ping h2
+PING 10.0.0.2 (10.0.0.2) 56(84) bytes of data.
+64 bytes from 10.0.0.2: icmp_seq=1 ttl=64 time=3.55 ms
+64 bytes from 10.0.0.2: icmp_seq=2 ttl=64 time=0.371 ms
+64 bytes from 10.0.0.2: icmp_seq=3 ttl=64 time=0.097 ms
+64 bytes from 10.0.0.2: icmp_seq=4 ttl=64 time=0.082 ms
+^C
+--- 10.0.0.2 ping statistics ---
+4 packets transmitted, 4 received, 0% packet loss, time 3128ms
+rtt min/avg/max/mdev = 0.082/1.024/3.548/1.461 ms
+mininet> h1 ping6 h2
+ping6: 10.0.0.2: Address family for hostname not supported
+mininet> mininet> h1 route -A inet6
+*** Unknown command: mininet> h1 route -A inet6
+mininet> 
+mininet> 
+mininet> 
+mininet> mininet> h1 route -A inet6
+*** Unknown command: mininet> h1 route -A inet6
+mininet> h1 route -A inet6
+Kernel IPv6 routing table
+Destination                    Next Hop                   Flag Met Ref  Use If
+fe80::/64                      [::]                       U    256 1      0 h1-eth0
+[::]/0                         [::]                       !n   -1  1      0 lo
+localhost/128                  [::]                       Un   0   2      0 lo
+fe80::c8e9:28ff:fe41:770f/128  [::]                       Un   0   2      0 h1-eth0
+ff00::/8                       [::]                       U    256 3      0 h1-eth0
+[::]/0                         [::]                       !n   -1  1      0 lo
+mininet> h1 route -A inet6 add 2001:db8::2/128 gw fe80::c025:65ff:fe40:b7f
+SIOCADDRT: No such device
+mininet> h1 route -A inet6 add 2001:db8::2/128 gw fe80::1
+SIOCADDRT: No such device
+mininet> 
+mininet> 
+mininet> 
+mininet> h1 route -A inet6 add 2001:db8::2/128 dev h1-eth0
+mininet> 
+mininet> 
+mininet> h1 route -A inet6
+Kernel IPv6 routing table
+Destination                    Next Hop                   Flag Met Ref  Use If
+2001:db8::2/128                [::]                       UH   1   1      0 h1-eth0
+fe80::/64                      [::]                       U    256 1      0 h1-eth0
+[::]/0                         [::]                       !n   -1  1      0 lo
+localhost/128                  [::]                       Un   0   2      0 lo
+fe80::c8e9:28ff:fe41:770f/128  [::]                       Un   0   2      0 h1-eth0
+ff00::/8                       [::]                       U    256 3      0 h1-eth0
+[::]/0                         [::]                       !n   -1  1      0 lo
+mininet> h1 ping6 h2
+ping6: 10.0.0.2: Address family for hostname not supported
+mininet> h1 ping6 2001:db8::2
+PING 2001:db8::2 (2001:db8::2) 56 data bytes
+From fe80::c8e9:28ff:fe41:770f%h1-eth0 icmp_seq=1 Destination unreachable: Address unreachable
+From fe80::c8e9:28ff:fe41:770f%h1-eth0 icmp_seq=2 Destination unreachable: Address unreachable
+From fe80::c8e9:28ff:fe41:770f%h1-eth0 icmp_seq=3 Destination unreachable: Address unreachable
+^C
+--- 2001:db8::2 ping statistics ---
+6 packets transmitted, 0 received, +3 errors, 100% packet loss, time 5351ms
+
+mininet> h2 route -A inet6 add 2001:db8::1/128 dev h2-eth0
+mininet> 
+mininet> 
+mininet> 
+mininet> h1 ping6 2001:db8::2
+PING 2001:db8::2 (2001:db8::2) 56 data bytes
+From fe80::c8e9:28ff:fe41:770f%h1-eth0 icmp_seq=1 Destination unreachable: Address unreachable
+From fe80::c8e9:28ff:fe41:770f%h1-eth0 icmp_seq=2 Destination unreachable: Address unreachable
+From fe80::c8e9:28ff:fe41:770f%h1-eth0 icmp_seq=3 Destination unreachable: Address unreachable
+From fe80::c8e9:28ff:fe41:770f%h1-eth0 icmp_seq=4 Destination unreachable: Address unreachable
+From fe80::c8e9:28ff:fe41:770f%h1-eth0 icmp_seq=5 Destination unreachable: Address unreachable
+From fe80::c8e9:28ff:fe41:770f%h1-eth0 icmp_seq=6 Destination unreachable: Address unreachable
+From fe80::c8e9:28ff:fe41:770f%h1-eth0 icmp_seq=7 Destination unreachable: Address unreachable
+From fe80::c8e9:28ff:fe41:770f%h1-eth0 icmp_seq=8 Destination unreachable: Address unreachable
+From fe80::c8e9:28ff:fe41:770f%h1-eth0 icmp_seq=9 Destination unreachable: Address unreachable
+^C
+--- 2001:db8::2 ping statistics ---
+10 packets transmitted, 0 received, +9 errors, 100% packet loss, time 9536ms
+
+mininet> 
+mininet> 
+mininet> h1 route -A inet6
+Kernel IPv6 routing table
+Destination                    Next Hop                   Flag Met Ref  Use If
+2001:db8::2/128                [::]                       UH   1   2      0 h1-eth0
+fe80::/64                      [::]                       U    256 1      0 h1-eth0
+[::]/0                         [::]                       !n   -1  1      0 lo
+localhost/128                  [::]                       Un   0   2      0 lo
+fe80::c8e9:28ff:fe41:770f/128  [::]                       Un   0   3      0 h1-eth0
+ff00::/8                       [::]                       U    256 3      0 h1-eth0
+[::]/0                         [::]                       !n   -1  1      0 lo
+mininet> h2 route -A inet6
+Kernel IPv6 routing table
+Destination                    Next Hop                   Flag Met Ref  Use If
+2001:db8::1/128                [::]                       UH   1   1      0 h2-eth0
+fe80::/64                      [::]                       U    256 1      0 h2-eth0
+[::]/0                         [::]                       !n   -1  1      0 lo
+localhost/128                  [::]                       Un   0   2      0 lo
+fe80::ccb5:caff:fee0:d49c/128  [::]                       Un   0   2      0 h2-eth0
+ff00::/8                       [::]                       U    256 3      0 h2-eth0
+[::]/0                         [::]                       !n   -1  1      0 lo
+mininet> 
+mininet> 
+mininet> 
+mininet> mininet> h3 route -A inet6 add 2001:db8::1/128 dev h3-eth0
+*** Unknown command: mininet> h3 route -A inet6 add 2001:db8::1/128 dev h3-eth0
+mininet> 
+mininet> mininet> h3 route -A inet6 add 2001:db8::1/128 dev h3-eth0
+*** Unknown command: mininet> h3 route -A inet6 add 2001:db8::1/128 dev h3-eth0
+mininet> h3 route -A inet6 add 2001:db8::1/128 dev h3-eth0
+mininet> 
+mininet> 
+mininet> h4 route -A inet6 add 2001:db8::1/128 dev h4-eth0
+mininet> 
+mininet> 
+mininet> 
+mininet> 
+mininet> h1 ifconfig
+h1-eth0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 10.0.0.1  netmask 255.0.0.0  broadcast 10.255.255.255
+        inet6 fe80::c8e9:28ff:fe41:770f  prefixlen 64  scopeid 0x20<link>
+        ether ca:e9:28:41:77:0f  txqueuelen 1000  (Ethernet)
+        RX packets 93  bytes 7154 (7.1 KB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 53  bytes 4346 (4.3 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+        loop  txqueuelen 1000  (Local Loopback)
+        RX packets 60  bytes 8724 (8.7 KB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 60  bytes 8724 (8.7 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+mininet> h2 ifconfig
+h2-eth0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 10.0.0.2  netmask 255.0.0.0  broadcast 10.255.255.255
+        inet6 fe80::ccb5:caff:fee0:d49c  prefixlen 64  scopeid 0x20<link>
+        ether ce:b5:ca:e0:d4:9c  txqueuelen 1000  (Ethernet)
+        RX packets 111  bytes 8702 (8.7 KB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 36  bytes 2888 (2.8 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+        loop  txqueuelen 1000  (Local Loopback)
+        RX packets 16  bytes 2288 (2.2 KB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 16  bytes 2288 (2.2 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+mininet> h2 route -A inet6 add 2001:db8::1/128 gw fe80::c8e9:28ff:fe41:770f
+SIOCADDRT: No such device
+mininet> 
+mininet> 
+mininet> 
+mininet> h1 ping6 fe80::ccb5:caff:fee0:d49c
+PING fe80::ccb5:caff:fee0:d49c (fe80::ccb5:caff:fee0:d49c) 56 data bytes
+64 bytes from fe80::ccb5:caff:fee0:d49c%h1-eth0: icmp_seq=1 ttl=64 time=6.86 ms
+64 bytes from fe80::ccb5:caff:fee0:d49c%h1-eth0: icmp_seq=2 ttl=64 time=0.347 ms
+64 bytes from fe80::ccb5:caff:fee0:d49c%h1-eth0: icmp_seq=3 ttl=64 time=0.066 ms
+64 bytes from fe80::ccb5:caff:fee0:d49c%h1-eth0: icmp_seq=4 ttl=64 time=0.087 ms
+^C
+--- fe80::ccb5:caff:fee0:d49c ping statistics ---
+4 packets transmitted, 4 received, 0% packet loss, time 3171ms
+rtt min/avg/max/mdev = 0.066/1.840/6.863/2.901 ms
+mininet> 
+mininet> 
+mininet> h1 ping6 2001:db8::2
+PING 2001:db8::2 (2001:db8::2) 56 data bytes
+From fe80::c8e9:28ff:fe41:770f%h1-eth0 icmp_seq=1 Destination unreachable: Address unreachable
+From fe80::c8e9:28ff:fe41:770f%h1-eth0 icmp_seq=2 Destination unreachable: Address unreachable
+From fe80::c8e9:28ff:fe41:770f%h1-eth0 icmp_seq=3 Destination unreachable: Address unreachable
+^C
+--- 2001:db8::2 ping statistics ---
+5 packets transmitted, 0 received, +3 errors, 100% packet loss, time 4216ms
+
+mininet> h1 ip -6 addr show
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 state UNKNOWN qlen 1000
+    inet6 ::1/128 scope host 
+       valid_lft forever preferred_lft forever
+2: h1-eth0@if157: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 state UP qlen 1000
+    inet6 fe80::c8e9:28ff:fe41:770f/64 scope link 
+       valid_lft forever preferred_lft forever
+mininet> 
+mininet> 
+mininet> h1 route -A inet6 add 2001:db8::2/128 gw fe80::h2-eth0
+fe80::h2-eth0: Resolver Error 0 (no error)
+mininet> h1 route -A inet6 add 2001:db8::2/128 gw fe80::h2-eth0
+fe80::h2-eth0: Resolver Error 0 (no error)
+mininet> 
+mininet> 
+mininet> h1 ping6 fe80::h2-eth0
+ping6: fe80::h2-eth0: Name or service not known
+mininet> 
+mininet> 
+mininet> h1 ping6 fe80::h2-eth0
+ping6: fe80::h2-eth0: Name or service not known
+mininet> h1 ping6 fe80::h2-eth0%h2
+ping6: fe80::h2-eth0%h2: Name or service not known
+mininet> 
+mininet> 
+mininet> 
+mininet> h1 route -A inet6 add 2001:db8::2/128 gw fe80::h2-eth0%h2
+fe80::h2-eth0%h2: Resolver Error 0 (no error)
+mininet> 
+mininet> 
+mininet> h2 route -A inet6 add 2001:db8::1/128 gw fe80::h1-eth0%h1
+fe80::h1-eth0%h1: Resolver Error 0 (no error)
+mininet> 
+mininet> 
+mininet> 
+mininet> 
+mininet> 
+mininet> 
+mininet> 
+mininet> ping6 fd00::2 
+*** Unknown command: ping6 fd00::2
+mininet> 
+mininet> 
+mininet> h1 ping -6 fd00::2
+ping: connect: Network is unreachable
+mininet> 
+mininet> 
+mininet> h1 ifconfig h1-eth0 up
+mininet> 
+mininet> 
+mininet> h2 ifconfig h2-eth0 up
+mininet> h3 ifconfig h3-eth0 up
+mininet> h4 ifconfig h4-eth0 up
+mininet> h1 route -A inet6
+Kernel IPv6 routing table
+Destination                    Next Hop                   Flag Met Ref  Use If
+2001:db8::2/128                [::]                       UH   1   2      0 h1-eth0
+fe80::/64                      [::]                       U    256 2      0 h1-eth0
+[::]/0                         [::]                       !n   -1  1      0 lo
+localhost/128                  [::]                       Un   0   2      0 lo
+fe80::c8e9:28ff:fe41:770f/128  [::]                       Un   0   3      0 h1-eth0
+ff00::/8                       [::]                       U    256 3      0 h1-eth0
+[::]/0                         [::]                       !n   -1  1      0 lo
+mininet> h1 route -A inet6 add fd00::/64 dev h1-eth0
+mininet> 
+mininet> 
+mininet> h2 route -A inet6 add fd00::/64 dev h2-eth0
+mininet> 
+mininet> h3 route -A inet6 add fd00::/64 dev h3-eth0
+mininet> 
+mininet> h4 route -A inet6 add fd00::/64 dev h4-eth0
+mininet> 
+mininet> 
+mininet> h1 ping -6 fd00::2
+PING fd00::2 (fd00::2) 56 data bytes
+From fe80::c8e9:28ff:fe41:770f%h1-eth0 icmp_seq=1 Destination unreachable: Address unreachable
+From fe80::c8e9:28ff:fe41:770f%h1-eth0 icmp_seq=2 Destination unreachable: Address unreachable
+From fe80::c8e9:28ff:fe41:770f%h1-eth0 icmp_seq=3 Destination unreachable: Address unreachable
+^C
+--- fd00::2 ping statistics ---
+6 packets transmitted, 0 received, +3 errors, 100% packet loss, time 5322ms
+
+mininet> h1 ping6 fe80::h1-eth0
+ping6: fe80::h1-eth0: Name or service not known
+mininet> h1 route -A inet6 add fd00::/64 dev h1-eth0
+SIOCADDRT: File exists
+mininet> h2 route -A inet6 add fd00::/64 dev h2-eth0
+SIOCADDRT: File exists
+mininet> 
+mininet> 
+mininet> h1 ping -6 fd00::2
+PING fd00::2 (fd00::2) 56 data bytes
+From fe80::c8e9:28ff:fe41:770f%h1-eth0 icmp_seq=1 Destination unreachable: Address unreachable
+From fe80::c8e9:28ff:fe41:770f%h1-eth0 icmp_seq=2 Destination unreachable: Address unreachable
+From fe80::c8e9:28ff:fe41:770f%h1-eth0 icmp_seq=3 Destination unreachable: Address unreachable
+^C
+--- fd00::2 ping statistics ---
+6 packets transmitted, 0 received, +3 errors, 100% packet loss, time 5236ms
+
+mininet> 
+mininet> 
+mininet> 
+mininet> 
+mininet> pingall
+*** Ping: testing ping reachability
+h1 -> h2 h3 h4 
+h2 -> h1 h3 h4 
+h3 -> h1 h2 h4 
+h4 -> h1 h2 h3 
+*** Results: 0% dropped (12/12 received)
+mininet> 
+mininet> 
+mininet> 
+mininet> dump
+<Host h1: h1-eth0:10.0.0.1 pid=8719> 
+<Host h2: h2-eth0:10.0.0.2 pid=8721> 
+<Host h3: h3-eth0:10.0.0.3 pid=8723> 
+<Host h4: h4-eth0:10.0.0.4 pid=8725> 
+<OVSSwitch s1: lo:127.0.0.1,s1-eth1:None,s1-eth2:None pid=8730> 
+<OVSSwitch s2: lo:127.0.0.1,s2-eth1:None,s2-eth2:None,s2-eth3:None pid=8733> 
+<OVSSwitch s3: lo:127.0.0.1,s3-eth1:None,s3-eth2:None,s3-eth3:None pid=8736> 
+<RemoteController c0: 127.0.0.1:6633 pid=8711> 
+mininet> 
+mininet> 
+mininet> 
+mininet> exit
+*** Stopping 1 controllers
+c0 
+*** Stopping 6 links
+......
+*** Stopping 3 switches
+s1 s2 s3 
+*** Stopping 4 hosts
+h1 h2 h3 h4 
+*** Done
+completed in 2076.801 seconds
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ sudo mn --topo=tree,2,2 --controller=remote
+*** Creating network
+*** Adding controller
+Unable to contact the remote controller at 127.0.0.1:6653
+Connecting to remote controller at 127.0.0.1:6633
+*** Adding hosts:
+h1 h2 h3 h4 
+*** Adding switches:
+s1 s2 s3 
+*** Adding links:
+(s1, s2) (s1, s3) (s2, h1) (s2, h2) (s3, h3) (s3, h4) 
+*** Configuring hosts
+h1 h2 h3 h4 
+*** Starting controller
+c0 
+*** Starting 3 switches
+s1 s2 s3 ...
+*** Starting CLI:
+mininet> 
+mininet> 
+mininet> 
+mininet> 
+mininet> net
+h1 h1-eth0:s2-eth1
+h2 h2-eth0:s2-eth2
+h3 h3-eth0:s3-eth1
+h4 h4-eth0:s3-eth2
+s1 lo:  s1-eth1:s2-eth3 s1-eth2:s3-eth3
+s2 lo:  s2-eth1:h1-eth0 s2-eth2:h2-eth0 s2-eth3:s1-eth1
+s3 lo:  s3-eth1:h3-eth0 s3-eth2:h4-eth0 s3-eth3:s1-eth2
+c0
+mininet> h1 ip -6 addr show
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 state UNKNOWN qlen 1000
+    inet6 ::1/128 scope host 
+       valid_lft forever preferred_lft forever
+2: h1-eth0@if169: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 state UP qlen 1000
+    inet6 fe80::cc36:93ff:fe8a:c91c/64 scope link 
+       valid_lft forever preferred_lft forever
+mininet> h1 ip addr show
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host 
+       valid_lft forever preferred_lft forever
+2: h1-eth0@if169: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP group default qlen 1000
+    link/ether ce:36:93:8a:c9:1c brd ff:ff:ff:ff:ff:ff link-netnsid 0
+    inet 10.0.0.1/8 brd 10.255.255.255 scope global h1-eth0
+       valid_lft forever preferred_lft forever
+    inet6 fe80::cc36:93ff:fe8a:c91c/64 scope link 
+       valid_lft forever preferred_lft forever
+mininet> 
+mininet> 
+mininet> 
+mininet> h1 ifconfig h1-eth0 inet6 add 2001:db8::1/64
+mininet> 
+mininet> 
+mininet> h2 ifconfig h2-eth0 inet6 add 2001:db8::2/64
+mininet> 
+mininet> 
+mininet> h3 ifconfig h3-eth0 inet6 add 2001:db8::3/64
+mininet> 
+mininet> 
+mininet> h4 ifconfig h4-eth0 inet6 add 2001:db8::4/64
+mininet> 
+mininet> 
+mininet> 
+mininet> h1 ip addr show
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host 
+       valid_lft forever preferred_lft forever
+2: h1-eth0@if169: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP group default qlen 1000
+    link/ether ce:36:93:8a:c9:1c brd ff:ff:ff:ff:ff:ff link-netnsid 0
+    inet 10.0.0.1/8 brd 10.255.255.255 scope global h1-eth0
+       valid_lft forever preferred_lft forever
+    inet6 2001:db8::1/64 scope global 
+       valid_lft forever preferred_lft forever
+    inet6 fe80::cc36:93ff:fe8a:c91c/64 scope link 
+       valid_lft forever preferred_lft forever
+mininet> 
+mininet> 
+mininet> 
+mininet> h1 ip route
+10.0.0.0/8 dev h1-eth0 proto kernel scope link src 10.0.0.1 
+mininet> h1 ip -6 route
+2001:db8::/64 dev h1-eth0 proto kernel metric 256 pref medium
+fe80::/64 dev h1-eth0 proto kernel metric 256 pref medium
+mininet> 
+mininet> 
+mininet> 
+mininet> route add default gw 10.0.0.254
+*** Unknown command: route add default gw 10.0.0.254
+mininet> 
+mininet> 
+mininet> h1 route add default gw 10.0.0.254
+mininet> 
+mininet> 
+mininet> h1 route -A inet6 add default gw fd00::1
+SIOCADDRT: No route to host
+mininet> 
+mininet> 
+mininet> h1 ip -6 route
+2001:db8::/64 dev h1-eth0 proto kernel metric 256 pref medium
+fe80::/64 dev h1-eth0 proto kernel metric 256 pref medium
+mininet> h1 ip route
+default via 10.0.0.254 dev h1-eth0 
+10.0.0.0/8 dev h1-eth0 proto kernel scope link src 10.0.0.1 
+mininet> pingall
+*** Ping: testing ping reachability
+h1 -> h2 h3 h4 
+h2 -> h1 h3 h4 
+h3 -> h1 h2 h4 
+h4 -> h1 h2 h3 
+*** Results: 0% dropped (12/12 received)
+mininet> h1 route -A inet6 add default gw fd00::1
+SIOCADDRT: No route to host
+mininet> h1 ip addr show
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host 
+       valid_lft forever preferred_lft forever
+2: h1-eth0@if169: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP group default qlen 1000
+    link/ether ce:36:93:8a:c9:1c brd ff:ff:ff:ff:ff:ff link-netnsid 0
+    inet 10.0.0.1/8 brd 10.255.255.255 scope global h1-eth0
+       valid_lft forever preferred_lft forever
+    inet6 2001:db8::1/64 scope global 
+       valid_lft forever preferred_lft forever
+    inet6 fe80::cc36:93ff:fe8a:c91c/64 scope link 
+       valid_lft forever preferred_lft forever
+mininet> h1 route -A inet6 add default gw 2001:db8::1
+SIOCADDRT: Invalid argument
+mininet> 
+mininet> 
+mininet> 
+mininet> h1 route -A inet6 add default gw 2001:db8::1
+SIOCADDRT: Invalid argument
+mininet> 
+mininet> 
+mininet> 
+mininet> h1 route -A inet6
+Kernel IPv6 routing table
+Destination                    Next Hop                   Flag Met Ref  Use If
+2001:db8::/64                  [::]                       U    256 1      0 h1-eth0
+fe80::/64                      [::]                       U    256 1      0 h1-eth0
+[::]/0                         [::]                       !n   -1  1      0 lo
+localhost/128                  [::]                       Un   0   3      0 lo
+2001:db8::1/128                [::]                       Un   0   2      0 h1-eth0
+fe80::cc36:93ff:fe8a:c91c/128  [::]                       Un   0   2      0 h1-eth0
+ff00::/8                       [::]                       U    256 3      0 h1-eth0
+[::]/0                         [::]                       !n   -1  1      0 lo
+mininet> ping -6 
+*** Unknown command: ping -6
+mininet> h1 ping -6 2001:db8::2
+PING 2001:db8::2 (2001:db8::2) 56 data bytes
+64 bytes from 2001:db8::2: icmp_seq=1 ttl=64 time=4.66 ms
+64 bytes from 2001:db8::2: icmp_seq=2 ttl=64 time=0.292 ms
+64 bytes from 2001:db8::2: icmp_seq=3 ttl=64 time=0.085 ms
+64 bytes from 2001:db8::2: icmp_seq=4 ttl=64 time=0.085 ms
+64 bytes from 2001:db8::2: icmp_seq=5 ttl=64 time=0.086 ms
+64 bytes from 2001:db8::2: icmp_seq=6 ttl=64 time=0.037 ms
+^C
+--- 2001:db8::2 ping statistics ---
+6 packets transmitted, 6 received, 0% packet loss, time 5437ms
+rtt min/avg/max/mdev = 0.037/0.874/4.659/1.694 ms
+mininet> h1 ping -6 2001:db8::3
+PING 2001:db8::3 (2001:db8::3) 56 data bytes
+64 bytes from 2001:db8::3: icmp_seq=1 ttl=64 time=9.96 ms
+64 bytes from 2001:db8::3: icmp_seq=2 ttl=64 time=0.310 ms
+64 bytes from 2001:db8::3: icmp_seq=3 ttl=64 time=0.093 ms
+64 bytes from 2001:db8::3: icmp_seq=4 ttl=64 time=0.095 ms
+^C
+--- 2001:db8::3 ping statistics ---
+4 packets transmitted, 4 received, 0% packet loss, time 3213ms
+rtt min/avg/max/mdev = 0.093/2.615/9.964/4.243 ms
+mininet> h1 ping -6 2001:db8::4
+PING 2001:db8::4 (2001:db8::4) 56 data bytes
+64 bytes from 2001:db8::4: icmp_seq=1 ttl=64 time=9.39 ms
+64 bytes from 2001:db8::4: icmp_seq=2 ttl=64 time=0.098 ms
+64 bytes from 2001:db8::4: icmp_seq=3 ttl=64 time=0.091 ms
+64 bytes from 2001:db8::4: icmp_seq=4 ttl=64 time=0.090 ms
+^C
+--- 2001:db8::4 ping statistics ---
+4 packets transmitted, 4 received, 0% packet loss, time 3124ms
+rtt min/avg/max/mdev = 0.090/2.417/9.389/4.025 ms
+mininet> 
+mininet> h1 route -A inet6 add default gw 2001:db8::1
+SIOCADDRT: Invalid argument
+mininet> 
+mininet> 
+mininet> pingall
+*** Ping: testing ping reachability
+h1 -> h2 h3 h4 
+h2 -> h1 h3 h4 
+h3 -> h1 h2 h4 
+h4 -> h1 h2 h3 
+*** Results: 0% dropped (12/12 received)
+mininet> 
+mininet> 
+mininet> 
+mininet> 
+mininet> net
+h1 h1-eth0:s2-eth1
+h2 h2-eth0:s2-eth2
+h3 h3-eth0:s3-eth1
+h4 h4-eth0:s3-eth2
+s1 lo:  s1-eth1:s2-eth3 s1-eth2:s3-eth3
+s2 lo:  s2-eth1:h1-eth0 s2-eth2:h2-eth0 s2-eth3:s1-eth1
+s3 lo:  s3-eth1:h3-eth0 s3-eth2:h4-eth0 s3-eth3:s1-eth2
+c0
+mininet> 
+mininet> 
+mininet> h1 ip addr show
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host 
+       valid_lft forever preferred_lft forever
+2: h1-eth0@if169: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP group default qlen 1000
+    link/ether ce:36:93:8a:c9:1c brd ff:ff:ff:ff:ff:ff link-netnsid 0
+    inet 10.0.0.1/8 brd 10.255.255.255 scope global h1-eth0
+       valid_lft forever preferred_lft forever
+    inet6 2001:db8::1/64 scope global 
+       valid_lft forever preferred_lft forever
+    inet6 fe80::cc36:93ff:fe8a:c91c/64 scope link 
+       valid_lft forever preferred_lft forever
+mininet> h1 ping -6 2001:db8::2
+PING 2001:db8::2 (2001:db8::2) 56 data bytes
+64 bytes from 2001:db8::2: icmp_seq=1 ttl=64 time=7.30 ms
+64 bytes from 2001:db8::2: icmp_seq=2 ttl=64 time=0.396 ms
+64 bytes from 2001:db8::2: icmp_seq=3 ttl=64 time=0.067 ms
+^C
+--- 2001:db8::2 ping statistics ---
+3 packets transmitted, 3 received, 0% packet loss, time 2127ms
+rtt min/avg/max/mdev = 0.067/2.589/7.304/3.336 ms
+mininet> h1 ping -6 2001:db8::3
+PING 2001:db8::3 (2001:db8::3) 56 data bytes
+64 bytes from 2001:db8::3: icmp_seq=1 ttl=64 time=8.16 ms
+64 bytes from 2001:db8::3: icmp_seq=2 ttl=64 time=0.483 ms
+64 bytes from 2001:db8::3: icmp_seq=3 ttl=64 time=0.098 ms
+^C
+--- 2001:db8::3 ping statistics ---
+3 packets transmitted, 3 received, 0% packet loss, time 2093ms
+rtt min/avg/max/mdev = 0.098/2.913/8.160/3.713 ms
+mininet> h1 ping -6 2001:db8::4
+PING 2001:db8::4 (2001:db8::4) 56 data bytes
+64 bytes from 2001:db8::4: icmp_seq=1 ttl=64 time=6.78 ms
+64 bytes from 2001:db8::4: icmp_seq=2 ttl=64 time=0.281 ms
+64 bytes from 2001:db8::4: icmp_seq=3 ttl=64 time=0.094 ms
+^C
+--- 2001:db8::4 ping statistics ---
+3 packets transmitted, 3 received, 0% packet loss, time 2079ms
+rtt min/avg/max/mdev = 0.094/2.386/6.783/3.110 ms
+mininet> h4 ping -6 2001:db8::1
+PING 2001:db8::1 (2001:db8::1) 56 data bytes
+64 bytes from 2001:db8::1: icmp_seq=1 ttl=64 time=0.093 ms
+64 bytes from 2001:db8::1: icmp_seq=2 ttl=64 time=0.098 ms
+64 bytes from 2001:db8::1: icmp_seq=3 ttl=64 time=0.097 ms
+^C
+--- 2001:db8::1 ping statistics ---
+3 packets transmitted, 3 received, 0% packet loss, time 2044ms
+rtt min/avg/max/mdev = 0.093/0.096/0.098/0.002 ms
+mininet> h1 traceroute h2
+bash: traceroute: command not found
+mininet> 
+mininet> 
+mininet> 
+mininet> net
+h1 h1-eth0:s2-eth1
+h2 h2-eth0:s2-eth2
+h3 h3-eth0:s3-eth1
+h4 h4-eth0:s3-eth2
+s1 lo:  s1-eth1:s2-eth3 s1-eth2:s3-eth3
+s2 lo:  s2-eth1:h1-eth0 s2-eth2:h2-eth0 s2-eth3:s1-eth1
+s3 lo:  s3-eth1:h3-eth0 s3-eth2:h4-eth0 s3-eth3:s1-eth2
+c0
+mininet> h4 iperf -s -V
+------------------------------------------------------------
+Server listening on TCP port 5001
+TCP window size: 85.3 KByte (default)
+------------------------------------------------------------
+^Cmininet> 
+mininet> 
+mininet> 
+mininet> h4 ip addr show
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host 
+       valid_lft forever preferred_lft forever
+2: h4-eth0@if172: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP group default qlen 1000
+    link/ether 2e:48:50:a2:ea:d5 brd ff:ff:ff:ff:ff:ff link-netnsid 0
+    inet 10.0.0.4/8 brd 10.255.255.255 scope global h4-eth0
+       valid_lft forever preferred_lft forever
+    inet6 2001:db8::4/64 scope global 
+       valid_lft forever preferred_lft forever
+    inet6 fe80::2c48:50ff:fea2:ead5/64 scope link 
+       valid_lft forever preferred_lft forever
+mininet> 
+mininet> 
+mininet> 
+mininet> h4 iperf -s -V &
+mininet> h1 iperf -c 2001:db8::4 -V -b 10M
+------------------------------------------------------------
+Client connecting to 2001:db8::4, TCP port 5001
+TCP window size: 85.3 KByte (default)
+------------------------------------------------------------
+[  1] local 2001:db8::1 port 40234 connected with 2001:db8::4 port 5001 (icwnd/mss/irtt=13/1428/11816)
+[ ID] Interval       Transfer     Bandwidth
+[  1] 0.0000-10.1042 sec  12.7 MBytes  10.6 Mbits/sec
+mininet> 
+mininet> 
+mininet> 
+mininet> h1 ifconfig
+h1-eth0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 10.0.0.1  netmask 255.0.0.0  broadcast 10.255.255.255
+        inet6 fe80::cc36:93ff:fe8a:c91c  prefixlen 64  scopeid 0x20<link>
+        inet6 2001:db8::1  prefixlen 64  scopeid 0x0<global>
+        ether ce:36:93:8a:c9:1c  txqueuelen 1000  (Ethernet)
+        RX packets 382  bytes 31728 (31.7 KB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 421  bytes 13396546 (13.3 MB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+        loop  txqueuelen 1000  (Local Loopback)
+        RX packets 20  bytes 2860 (2.8 KB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 20  bytes 2860 (2.8 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+mininet> h4 ifconfig
+------------------------------------------------------------
+Server listening on TCP port 5001
+TCP window size: 85.3 KByte (default)
+------------------------------------------------------------
+[  1] local 2001:db8::4 port 5001 connected with 2001:db8::1 port 40234 (icwnd/mss/irtt=13/1428/3319)
+[ ID] Interval       Transfer     Bandwidth
+[  1] 0.0000-10.0949 sec  12.7 MBytes  10.6 Mbits/sec
+h4-eth0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 10.0.0.4  netmask 255.0.0.0  broadcast 10.255.255.255
+        inet6 fe80::2c48:50ff:fea2:ead5  prefixlen 64  scopeid 0x20<link>
+        inet6 2001:db8::4  prefixlen 64  scopeid 0x0<global>
+        ether 2e:48:50:a2:ea:d5  txqueuelen 1000  (Ethernet)
+        RX packets 504  bytes 13401888 (13.4 MB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 241  bytes 20470 (20.4 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+        loop  txqueuelen 1000  (Local Loopback)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+mininet> sh ovs-ofctl show s1
+OFPT_FEATURES_REPLY (xid=0x2): dpid:0000000000000001
+n_tables:254, n_buffers:0
+capabilities: FLOW_STATS TABLE_STATS PORT_STATS QUEUE_STATS ARP_MATCH_IP
+actions: output enqueue set_vlan_vid set_vlan_pcp strip_vlan mod_dl_src mod_dl_dst mod_nw_src mod_nw_dst mod_nw_tos mod_tp_src mod_tp_dst
+ 1(s1-eth1): addr:66:a7:ef:2a:be:97
+     config:     0
+     state:      0
+     current:    10GB-FD COPPER
+     speed: 10000 Mbps now, 0 Mbps max
+ 2(s1-eth2): addr:9e:44:5f:43:27:fc
+     config:     0
+     state:      0
+     current:    10GB-FD COPPER
+     speed: 10000 Mbps now, 0 Mbps max
+ LOCAL(s1): addr:12:ea:cf:54:ed:48
+     config:     PORT_DOWN
+     state:      LINK_DOWN
+     speed: 0 Mbps now, 0 Mbps max
+OFPT_GET_CONFIG_REPLY (xid=0x4): frags=normal miss_send_len=0
+mininet> net
+h1 h1-eth0:s2-eth1
+h2 h2-eth0:s2-eth2
+h3 h3-eth0:s3-eth1
+h4 h4-eth0:s3-eth2
+s1 lo:  s1-eth1:s2-eth3 s1-eth2:s3-eth3
+s2 lo:  s2-eth1:h1-eth0 s2-eth2:h2-eth0 s2-eth3:s1-eth1
+s3 lo:  s3-eth1:h3-eth0 s3-eth2:h4-eth0 s3-eth3:s1-eth2
+c0
+mininet> sh ovs-ofctl show s3
+OFPT_FEATURES_REPLY (xid=0x2): dpid:0000000000000003
+n_tables:254, n_buffers:0
+capabilities: FLOW_STATS TABLE_STATS PORT_STATS QUEUE_STATS ARP_MATCH_IP
+actions: output enqueue set_vlan_vid set_vlan_pcp strip_vlan mod_dl_src mod_dl_dst mod_nw_src mod_nw_dst mod_nw_tos mod_tp_src mod_tp_dst
+ 1(s3-eth1): addr:a2:61:f1:2f:12:00
+     config:     0
+     state:      0
+     current:    10GB-FD COPPER
+     speed: 10000 Mbps now, 0 Mbps max
+ 2(s3-eth2): addr:56:45:75:b8:89:83
+     config:     0
+     state:      0
+     current:    10GB-FD COPPER
+     speed: 10000 Mbps now, 0 Mbps max
+ 3(s3-eth3): addr:3a:24:ff:d4:8e:02
+     config:     0
+     state:      0
+     current:    10GB-FD COPPER
+     speed: 10000 Mbps now, 0 Mbps max
+ LOCAL(s3): addr:a6:05:f0:b5:91:4b
+     config:     PORT_DOWN
+     state:      LINK_DOWN
+     speed: 0 Mbps now, 0 Mbps max
+OFPT_GET_CONFIG_REPLY (xid=0x4): frags=normal miss_send_len=0
+mininet> 
+Interrupt
+mininet> exit
+*** Stopping 1 controllers
+c0 
+*** Stopping 6 links
+......
+*** Stopping 3 switches
+s1 s2 s3 
+*** Stopping 4 hosts
+h1 h2 h3 h4 
+*** Done
+completed in 54804.446 seconds
+
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ sudo mn --topo=tree,2,2 --controller=remote
+*** Creating network
+*** Adding controller
+Unable to contact the remote controller at 127.0.0.1:6653
+Connecting to remote controller at 127.0.0.1:6633
+*** Adding hosts:
+h1 h2 h3 h4 
+*** Adding switches:
+s1 s2 s3 
+*** Adding links:
+(s1, s2) (s1, s3) (s2, h1) (s2, h2) (s3, h3) (s3, h4) 
+*** Configuring hosts
+h1 h2 h3 h4 
+*** Starting controller
+c0 
+*** Starting 3 switches
+s1 s2 s3 ...
+*** Starting CLI:
+mininet> net
+h1 h1-eth0:s2-eth1
+h2 h2-eth0:s2-eth2
+h3 h3-eth0:s3-eth1
+h4 h4-eth0:s3-eth2
+s1 lo:  s1-eth1:s2-eth3 s1-eth2:s3-eth3
+s2 lo:  s2-eth1:h1-eth0 s2-eth2:h2-eth0 s2-eth3:s1-eth1
+s3 lo:  s3-eth1:h3-eth0 s3-eth2:h4-eth0 s3-eth3:s1-eth2
+c0
+mininet> 
+mininet> 
+mininet> pingall
+*** Ping: testing ping reachability
+h1 -> X X X 
+h2 -> X ^C
+Interrupt
+stopping h2 
+mininet> 
+mininet> 
+mininet> 
+mininet> 
+mininet> net
+h1 h1-eth0:s2-eth1
+h2 h2-eth0:s2-eth2
+h3 h3-eth0:s3-eth1
+h4 h4-eth0:s3-eth2
+s1 lo:  s1-eth1:s2-eth3 s1-eth2:s3-eth3
+s2 lo:  s2-eth1:h1-eth0 s2-eth2:h2-eth0 s2-eth3:s1-eth1
+s3 lo:  s3-eth1:h3-eth0 s3-eth2:h4-eth0 s3-eth3:s1-eth2
+c0
+mininet> h4 ifconfig
+h4-eth0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 10.0.0.4  netmask 255.0.0.0  broadcast 10.255.255.255
+        inet6 fe80::a403:58ff:fe54:a254  prefixlen 64  scopeid 0x20<link>
+        ether a6:03:58:54:a2:54  txqueuelen 1000  (Ethernet)
+        RX packets 9  bytes 726 (726.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 9  bytes 726 (726.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+        loop  txqueuelen 1000  (Local Loopback)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+mininet> pingall
+*** Ping: testing ping reachability
+h1 -> X X X 
+h2 -> X X X 
+h3 -> X X X 
+h4 -> X X X 
+*** Results: 100% dropped (0/12 received)
+mininet> sh ovs-ofctl dump-flows s1
+ cookie=0x0, duration=145.746s, table=0, n_packets=0, n_bytes=0, ip,nw_src=10.0.0.1,nw_dst=10.0.0.4 actions=output:"s1-eth2"
+mininet> sh ovs-ofctl show s1
+OFPT_FEATURES_REPLY (xid=0x2): dpid:0000000000000001
+n_tables:254, n_buffers:0
+capabilities: FLOW_STATS TABLE_STATS PORT_STATS QUEUE_STATS ARP_MATCH_IP
+actions: output enqueue set_vlan_vid set_vlan_pcp strip_vlan mod_dl_src mod_dl_dst mod_nw_src mod_nw_dst mod_nw_tos mod_tp_src mod_tp_dst
+ 1(s1-eth1): addr:72:23:ef:95:96:b0
+     config:     0
+     state:      0
+     current:    10GB-FD COPPER
+     speed: 10000 Mbps now, 0 Mbps max
+ 2(s1-eth2): addr:32:10:c3:92:ee:25
+     config:     0
+     state:      0
+     current:    10GB-FD COPPER
+     speed: 10000 Mbps now, 0 Mbps max
+ LOCAL(s1): addr:ea:ab:2c:29:fb:46
+     config:     PORT_DOWN
+     state:      LINK_DOWN
+     speed: 0 Mbps now, 0 Mbps max
+OFPT_GET_CONFIG_REPLY (xid=0x4): frags=normal miss_send_len=0
+mininet> h1 ping h2
+PING 10.0.0.2 (10.0.0.2) 56(84) bytes of data.
+From 10.0.0.1 icmp_seq=1 Destination Host Unreachable
+From 10.0.0.1 icmp_seq=2 Destination Host Unreachable
+From 10.0.0.1 icmp_seq=3 Destination Host Unreachable
+^C
+--- 10.0.0.2 ping statistics ---
+6 packets transmitted, 0 received, +3 errors, 100% packet loss, time 5248ms
+pipe 4
+mininet> 
+mininet> 
+mininet> 
+mininet> sh ovs-ofctl dump-flows s2
+ cookie=0x0, duration=337.863s, table=0, n_packets=0, n_bytes=0, ip,nw_src=10.0.0.1,nw_dst=10.0.0.4 actions=output:"s2-eth2"
+mininet> sh ovs-ofctl dump-flows s3
+ cookie=0x0, duration=342.349s, table=0, n_packets=0, n_bytes=0, ip,nw_src=10.0.0.1,nw_dst=10.0.0.4 actions=output:"s3-eth2"
+mininet> net
+h1 h1-eth0:s2-eth1
+h2 h2-eth0:s2-eth2
+h3 h3-eth0:s3-eth1
+h4 h4-eth0:s3-eth2
+s1 lo:  s1-eth1:s2-eth3 s1-eth2:s3-eth3
+s2 lo:  s2-eth1:h1-eth0 s2-eth2:h2-eth0 s2-eth3:s1-eth1
+s3 lo:  s3-eth1:h3-eth0 s3-eth2:h4-eth0 s3-eth3:s1-eth2
+c0
+mininet> h1 route
+Kernel IP routing table
+Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
+10.0.0.0        0.0.0.0         255.0.0.0       U     0      0        0 h1-eth0
+mininet> 
+Interrupt
+mininet> exit
+*** Stopping 1 controllers
+c0 
+*** Stopping 6 links
+......
+*** Stopping 3 switches
+s1 s2 s3 
+*** Stopping 4 hosts
+h1 h2 h3 h4 
+*** Done
+completed in 851.857 seconds
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ sudo mn --topo=tree,2,2 --controller=remote
+*** Creating network
+*** Adding controller
+Unable to contact the remote controller at 127.0.0.1:6653
+Unable to contact the remote controller at 127.0.0.1:6633
+Setting remote controller to 127.0.0.1:6653
+*** Adding hosts:
+h1 h2 h3 h4 
+*** Adding switches:
+s1 s2 s3 
+*** Adding links:
+(s1, s2) (s1, s3) (s2, h1) (s2, h2) (s3, h3) (s3, h4) 
+*** Configuring hosts
+h1 h2 h3 h4 
+*** Starting controller
+c0 
+*** Starting 3 switches
+s1 s2 s3 ...
+*** Starting CLI:
+mininet> mininet> pingall
+*** Unknown command: mininet> pingall
+mininet> pingall
+*** Ping: testing ping reachability
+h1 -> X X X 
+h2 -> ^C
+Interrupt
+stopping h2 
+mininet> 
+mininet> 
+mininet> exit
+*** Stopping 1 controllers
+c0 
+*** Stopping 6 links
+......
+*** Stopping 3 switches
+s1 s2 s3 
+*** Stopping 4 hosts
+h1 h2 h3 h4 
+*** Done
+completed in 36.531 seconds
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ sudo mn --topo=tree,2,2 --controller=remote
+*** Creating network
+*** Adding controller
+Unable to contact the remote controller at 127.0.0.1:6653
+Unable to contact the remote controller at 127.0.0.1:6633
+Setting remote controller to 127.0.0.1:6653
+*** Adding hosts:
+h1 h2 h3 h4 
+*** Adding switches:
+s1 s2 s3 
+*** Adding links:
+(s1, s2) (s1, s3) (s2, h1) (s2, h2) (s3, h3) (s3, h4) 
+*** Configuring hosts
+h1 h2 h3 h4 
+*** Starting controller
+c0 
+*** Starting 3 switches
+s1 s2 s3 ...
+*** Starting CLI:
+mininet> 
+Interrupt
+mininet> 
+mininet> 
+mininet> 
+mininet> exit
+*** Stopping 1 controllers
+c0 
+*** Stopping 6 links
+......
+*** Stopping 3 switches
+s1 s2 s3 
+*** Stopping 4 hosts
+h1 h2 h3 h4 
+*** Done
+completed in 77.953 seconds
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ sudo mn --topo=tree,2,2 --controller=remote
+*** Creating network
+*** Adding controller
+Unable to contact the remote controller at 127.0.0.1:6653
+Connecting to remote controller at 127.0.0.1:6633
+*** Adding hosts:
+h1 h2 h3 h4 
+*** Adding switches:
+s1 s2 s3 
+*** Adding links:
+(s1, s2) (s1, s3) (s2, h1) (s2, h2) (s3, h3) (s3, h4) 
+*** Configuring hosts
+h1 h2 h3 h4 
+*** Starting controller
+c0 
+*** Starting 3 switches
+s1 s2 s3 ...
+*** Starting CLI:
+mininet> pingall
+*** Ping: testing ping reachability
+h1 -> X X X 
+h2 -> X X X 
+h3 -> X X X 
+h4 -> X X X 
+*** Results: 100% dropped (0/12 received)
+mininet> sh ovs-vsctl show
+7bd9c72f-643e-43e2-a757-f36e3cd278d5
+    Bridge s3
+        Controller "ptcp:6656"
+        Controller "tcp:127.0.0.1:6633"
+            is_connected: true
+        fail_mode: secure
+        Port s3-eth1
+            Interface s3-eth1
+        Port s3
+            Interface s3
+                type: internal
+        Port s3-eth2
+            Interface s3-eth2
+        Port s3-eth3
+            Interface s3-eth3
+    Bridge s2
+        Controller "ptcp:6655"
+        Controller "tcp:127.0.0.1:6633"
+            is_connected: true
+        fail_mode: secure
+        Port s2-eth3
+            Interface s2-eth3
+        Port s2
+            Interface s2
+                type: internal
+        Port s2-eth2
+            Interface s2-eth2
+        Port s2-eth1
+            Interface s2-eth1
+    Bridge s1
+        Controller "ptcp:6654"
+        Controller "tcp:127.0.0.1:6633"
+            is_connected: true
+        fail_mode: secure
+        Port s1-eth2
+            Interface s1-eth2
+        Port s1-eth1
+            Interface s1-eth1
+        Port s1
+            Interface s1
+                type: internal
+    ovs_version: "3.3.0"
+mininet> pingall
+*** Ping: testing ping reachability
+h1 -> X X X 
+h2 -> X X X 
+h3 -> X X X 
+h4 -> X X X 
+*** Results: 100% dropped (0/12 received)
+mininet> h1 route
+Kernel IP routing table
+Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
+10.0.0.0        0.0.0.0         255.0.0.0       U     0      0        0 h1-eth0
+mininet> net
+h1 h1-eth0:s2-eth1
+h2 h2-eth0:s2-eth2
+h3 h3-eth0:s3-eth1
+h4 h4-eth0:s3-eth2
+s1 lo:  s1-eth1:s2-eth3 s1-eth2:s3-eth3
+s2 lo:  s2-eth1:h1-eth0 s2-eth2:h2-eth0 s2-eth3:s1-eth1
+s3 lo:  s3-eth1:h3-eth0 s3-eth2:h4-eth0 s3-eth3:s1-eth2
+c0
+mininet> s1
+*** Please enter a command for node: s1 <cmd>
+mininet> 
+mininet> 
+mininet> 
+mininet> pingall
+*** Ping: testing ping reachability
+h1 -> X X X 
+h2 -> X X X 
+h3 -> X X X 
+h4 -> X X X 
+*** Results: 100% dropped (0/12 received)
+mininet> h1 ifconfig
+h1-eth0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 10.0.0.1  netmask 255.0.0.0  broadcast 10.255.255.255
+        inet6 fe80::788e:efff:fe13:e9c9  prefixlen 64  scopeid 0x20<link>
+        ether 7a:8e:ef:13:e9:c9  txqueuelen 1000  (Ethernet)
+        RX packets 12  bytes 936 (936.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 39  bytes 2070 (2.0 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+        loop  txqueuelen 1000  (Local Loopback)
+        RX packets 9  bytes 1008 (1.0 KB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 9  bytes 1008 (1.0 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+mininet> h2 ifconfig
+h2-eth0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 10.0.0.2  netmask 255.0.0.0  broadcast 10.255.255.255
+        inet6 fe80::2870:5cff:fe97:cc31  prefixlen 64  scopeid 0x20<link>
+        ether 2a:70:5c:97:cc:31  txqueuelen 1000  (Ethernet)
+        RX packets 12  bytes 936 (936.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 39  bytes 2070 (2.0 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+        loop  txqueuelen 1000  (Local Loopback)
+        RX packets 9  bytes 1008 (1.0 KB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 9  bytes 1008 (1.0 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+mininet> exit
+*** Stopping 1 controllers
+c0 
+*** Stopping 6 links
+......
+*** Stopping 3 switches
+s1 s2 s3 
+*** Stopping 4 hosts
+h1 h2 h3 h4 
+*** Done
+completed in 4547.407 seconds
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ sudo mn --topo=tree,2,2 --controller=remote
+*** Creating network
+*** Adding controller
+Unable to contact the remote controller at 127.0.0.1:6653
+Connecting to remote controller at 127.0.0.1:6633
+*** Adding hosts:
+h1 h2 h3 h4 
+*** Adding switches:
+s1 s2 s3 
+*** Adding links:
+(s1, s2) (s1, s3) (s2, h1) (s2, h2) (s3, h3) (s3, h4) 
+*** Configuring hosts
+h1 h2 h3 h4 
+*** Starting controller
+c0 
+*** Starting 3 switches
+s1 s2 s3 ...
+*** Starting CLI:
+mininet> h1 ifconfig h1-eth0 inet6 add 2001:db8:1::1/64
+mininet> h2 ifconfig
+h2-eth0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 10.0.0.2  netmask 255.0.0.0  broadcast 10.255.255.255
+        inet6 fe80::6874:82ff:fefc:3b71  prefixlen 64  scopeid 0x20<link>
+        ether 6a:74:82:fc:3b:71  txqueuelen 1000  (Ethernet)
+        RX packets 8  bytes 656 (656.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 8  bytes 656 (656.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+        loop  txqueuelen 1000  (Local Loopback)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+mininet> h2 ifconfig h2-eth0 inet6 add 2001:db8:1::2/64
+mininet> h3 ifconfig h3-eth0 inet6 add 2001:db8:2::3/64
+mininet> h4 ifconfig h4-eth0 inet6 add 2001:db8:2::4/64
+mininet> h2 ifconfig
+h2-eth0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 10.0.0.2  netmask 255.0.0.0  broadcast 10.255.255.255
+        inet6 fe80::6874:82ff:fefc:3b71  prefixlen 64  scopeid 0x20<link>
+        inet6 2001:db8:1::2  prefixlen 64  scopeid 0x0<global>
+        ether 6a:74:82:fc:3b:71  txqueuelen 1000  (Ethernet)
+        RX packets 9  bytes 726 (726.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 12  bytes 1032 (1.0 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+        loop  txqueuelen 1000  (Local Loopback)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+mininet> pingall
+*** Ping: testing ping reachability
+h1 -> X ^C
+Interrupt
+stopping h1 
+mininet> 
+mininet> 
+mininet> h1 ping -6 2001:db8:1::2
+PING 2001:db8:1::2 (2001:db8:1::2) 56 data bytes
+From 2001:db8:1::1 icmp_seq=1 Destination unreachable: Address unreachable
+From 2001:db8:1::1 icmp_seq=2 Destination unreachable: Address unreachable
+From 2001:db8:1::1 icmp_seq=3 Destination unreachable: Address unreachable
+From 2001:db8:1::1 icmp_seq=4 Destination unreachable: Address unreachable
+From 2001:db8:1::1 icmp_seq=5 Destination unreachable: Address unreachable
+From 2001:db8:1::1 icmp_seq=6 Destination unreachable: Address unreachable
+^C
+--- 2001:db8:1::2 ping statistics ---
+8 packets transmitted, 0 received, +6 errors, 100% packet loss, time 7444ms
+
+mininet> 
+mininet> 
+mininet> h1 ip -6 route add 2001:db8:1::1 encap seg6 mode encap segs 2001:db8:1::1 dev h1-eth0
+mininet> h2 ip -6 route add 2001:db8:1::2 encap seg6 mode encap segs 2001:db8:1::2 dev h2-eth0
+mininet> h3 ip -6 route add 2001:db8:2::3 encap seg6 mode encap segs 2001:db8:2::3 dev h3-eth0
+mininet> h4 ip -6 route add 2001:db8:2::4 encap seg6 mode encap segs 2001:db8:2::4 dev h4-eth0
+mininet> h1 ip -6 route
+2001:db8:1::1  encap seg6 mode encap segs 1 [ 2001:db8:1::1 ] dev h1-eth0 metric 1024 pref medium
+2001:db8:1::/64 dev h1-eth0 proto kernel metric 256 pref medium
+fe80::/64 dev h1-eth0 proto kernel metric 256 pref medium
+mininet> pingall
+*** Ping: testing ping reachability
+h1 -> X X ^C
+Interrupt
+stopping h1 
+mininet> h1 ping6 2001:
+ping6: 2001:: Name or service not known
+mininet> h1 ping6 2001:1
+ping6: 2001:1: Name or service not known
+mininet> h1 ping -6 2001:1
+ping: 2001:1: Name or service not known
+mininet> h1 ping -6 2001::1
+ping: connect: Network is unreachable
+mininet> h1 ping -6 2001:db8:1::2
+PING 2001:db8:1::2 (2001:db8:1::2) 56 data bytes
+From 2001:db8:1::1 icmp_seq=1 Destination unreachable: Address unreachable
+From 2001:db8:1::1 icmp_seq=2 Destination unreachable: Address unreachable
+From 2001:db8:1::1 icmp_seq=3 Destination unreachable: Address unreachable
+From 2001:db8:1::1 icmp_seq=4 Destination unreachable: Address unreachable
+From 2001:db8:1::1 icmp_seq=5 Destination unreachable: Address unreachable
+From 2001:db8:1::1 icmp_seq=6 Destination unreachable: Address unreachable
+^C
+--- 2001:db8:1::2 ping statistics ---
+9 packets transmitted, 0 received, +6 errors, 100% packet loss, time 8407ms
+
+mininet> h2 ip -6 route
+2001:db8:1::2  encap seg6 mode encap segs 1 [ 2001:db8:1::2 ] dev h2-eth0 metric 1024 pref medium
+2001:db8:1::/64 dev h2-eth0 proto kernel metric 256 pref medium
+fe80::/64 dev h2-eth0 proto kernel metric 256 pref medium
+mininet> sh ovs-vsctl list-ports s1
+s1-eth1
+s1-eth2
+mininet> sh ovs-vsctl list bridge s1
+_uuid               : 6a8d1d6e-7f35-4977-929a-0fe9f9a24ead
+auto_attach         : []
+controller          : [019596ac-8bbf-460e-8033-b5067683386b, a82281cc-b817-4ea8-a27b-65dfb7d67253]
+datapath_id         : "0000000000000001"
+datapath_type       : ""
+datapath_version    : "<unknown>"
+external_ids        : {}
+fail_mode           : secure
+flood_vlans         : []
+flow_tables         : {}
+ipfix               : []
+mcast_snooping_enable: false
+mirrors             : []
+name                : s1
+netflow             : []
+other_config        : {datapath-id="0000000000000001", disable-in-band="true", dp-desc=s1}
+ports               : [154a1f66-07ca-4e19-af26-a9ba96a6b9b2, 2887b750-4fa1-4f18-9657-83b7a5d2e00f, 3068b7f0-7946-4d89-8a9d-6b1b89c4885c]
+protocols           : []
+rstp_enable         : false
+rstp_status         : {}
+sflow               : []
+status              : {}
+stp_enable          : false
+mininet> sh ovs-ofctl dump-flows s1
+mininet> sh ovs-vsctl show
+7bd9c72f-643e-43e2-a757-f36e3cd278d5
+    Bridge s1
+        Controller "ptcp:6654"
+        Controller "tcp:127.0.0.1:6633"
+            is_connected: true
+        fail_mode: secure
+        Port s1-eth1
+            Interface s1-eth1
+        Port s1
+            Interface s1
+                type: internal
+        Port s1-eth2
+            Interface s1-eth2
+    Bridge s3
+        Controller "tcp:127.0.0.1:6633"
+            is_connected: true
+        Controller "ptcp:6656"
+        fail_mode: secure
+        Port s3
+            Interface s3
+                type: internal
+        Port s3-eth3
+            Interface s3-eth3
+        Port s3-eth2
+            Interface s3-eth2
+        Port s3-eth1
+            Interface s3-eth1
+    Bridge s2
+        Controller "ptcp:6655"
+        Controller "tcp:127.0.0.1:6633"
+            is_connected: true
+        fail_mode: secure
+        Port s2
+            Interface s2
+                type: internal
+        Port s2-eth2
+            Interface s2-eth2
+        Port s2-eth1
+            Interface s2-eth1
+        Port s2-eth3
+            Interface s2-eth3
+    ovs_version: "3.3.0"
+mininet> 
+mininet> 
+mininet> sh ovs-ofctl dump-flows s1
+mininet> sh ovs-vsctl list-ports s1
+s1-eth1
+s1-eth2
+mininet> net
+h1 h1-eth0:s2-eth1
+h2 h2-eth0:s2-eth2
+h3 h3-eth0:s3-eth1
+h4 h4-eth0:s3-eth2
+s1 lo:  s1-eth1:s2-eth3 s1-eth2:s3-eth3
+s2 lo:  s2-eth1:h1-eth0 s2-eth2:h2-eth0 s2-eth3:s1-eth1
+s3 lo:  s3-eth1:h3-eth0 s3-eth2:h4-eth0 s3-eth3:s1-eth2
+c0
+mininet> exit
+*** Stopping 1 controllers
+c0 
+*** Stopping 6 links
+......
+*** Stopping 3 switches
+s1 s2 s3 
+*** Stopping 4 hosts
+h1 h2 h3 h4 
+*** Done
+completed in 2136.016 seconds
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ sudo mn --topo=tree,2,2 --controller=remote
+*** Creating network
+*** Adding controller
+Unable to contact the remote controller at 127.0.0.1:6653
+Connecting to remote controller at 127.0.0.1:6633
+*** Adding hosts:
+h1 h2 h3 h4 
+*** Adding switches:
+s1 s2 s3 
+*** Adding links:
+(s1, s2) (s1, s3) (s2, h1) (s2, h2) (s3, h3) (s3, h4) 
+*** Configuring hosts
+h1 h2 h3 h4 
+*** Starting controller
+c0 
+*** Starting 3 switches
+s1 s2 s3 ...
+*** Starting CLI:
+mininet> pingall
+*** Ping: testing ping reachability
+h1 -> X X X 
+h2 -> X X X 
+h3 -> X X X 
+h4 -> ^C
+Interrupt
+stopping h4 
+mininet> 
+mininet> 
+mininet> 
+mininet> exit
+*** Stopping 1 controllers
+c0 
+*** Stopping 6 links
+......
+*** Stopping 3 switches
+s1 s2 s3 
+*** Stopping 4 hosts
+h1 h2 h3 h4 
+*** Done
+completed in 39.062 seconds
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ sudo mn --topo=tree,2,2 --controller=remote
+*** Creating network
+*** Adding controller
+Unable to contact the remote controller at 127.0.0.1:6653
+Connecting to remote controller at 127.0.0.1:6633
+*** Adding hosts:
+h1 h2 h3 h4 
+*** Adding switches:
+s1 s2 s3 
+*** Adding links:
+(s1, s2) (s1, s3) (s2, h1) (s2, h2) (s3, h3) (s3, h4) 
+*** Configuring hosts
+h1 h2 h3 h4 
+*** Starting controller
+c0 
+*** Starting 3 switches
+s1 s2 s3 ...
+*** Starting CLI:
+mininet> sh ovs-ofctl dump-flows s1
+mininet> h1 ifconfig
+h1-eth0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 10.0.0.1  netmask 255.0.0.0  broadcast 10.255.255.255
+        inet6 fe80::244c:6fff:fe65:86a0  prefixlen 64  scopeid 0x20<link>
+        ether 26:4c:6f:65:86:a0  txqueuelen 1000  (Ethernet)
+        RX packets 10  bytes 796 (796.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 10  bytes 796 (796.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+        loop  txqueuelen 1000  (Local Loopback)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+mininet> h1 route
+Kernel IP routing table
+Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
+10.0.0.0        0.0.0.0         255.0.0.0       U     0      0        0 h1-eth0
+mininet> 
+Interrupt
+mininet> 
+mininet> 
+mininet> exit
+*** Stopping 1 controllers
+c0 
+*** Stopping 6 links
+......
+*** Stopping 3 switches
+s1 s2 s3 
+*** Stopping 4 hosts
+h1 h2 h3 h4 
+*** Done
+completed in 191.572 seconds
+
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ sudo mn --topo=tree,2,2 --controller=remote
+*** Creating network
+*** Adding controller
+Unable to contact the remote controller at 127.0.0.1:6653
+Connecting to remote controller at 127.0.0.1:6633
+*** Adding hosts:
+h1 h2 h3 h4 
+*** Adding switches:
+s1 s2 s3 
+*** Adding links:
+(s1, s2) (s1, s3) (s2, h1) (s2, h2) (s3, h3) (s3, h4) 
+*** Configuring hosts
+h1 h2 h3 h4 
+*** Starting controller
+c0 
+*** Starting 3 switches
+s1 s2 s3 ...
+*** Starting CLI:
+mininet> pingall
+*** Ping: testing ping reachability
+h1 -> h2 h3 h4 
+h2 -> h1 h3 h4 
+h3 -> h1 h2 h4 
+h4 -> h1 h2 h3 
+*** Results: 0% dropped (12/12 received)
+mininet> exit
+*** Stopping 1 controllers
+c0 
+*** Stopping 6 links
+......
+*** Stopping 3 switches
+s1 s2 s3 
+*** Stopping 4 hosts
+h1 h2 h3 h4 
+*** Done
+completed in 31.813 seconds
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ sudo mn -c  # Clean up the Mininet environment
+sudo ovs-vsctl --if-exists del-br s1  # Reset s1
+sudo ovs-vsctl --if-exists del-br s2  # Reset s2
+sudo ovs-vsctl --if-exists del-br s3  # Reset s3
+*** Removing excess controllers/ofprotocols/ofdatapaths/pings/noxes
+killall controller ofprotocol ofdatapath ping nox_corelt-nox_core ovs-openflowd ovs-controllerovs-testcontroller udpbwtest mnexec ivs ryu-manager 2> /dev/null
+killall -9 controller ofprotocol ofdatapath ping nox_corelt-nox_core ovs-openflowd ovs-controllerovs-testcontroller udpbwtest mnexec ivs ryu-manager 2> /dev/null
+pkill -9 -f "sudo mnexec"
+*** Removing junk from /tmp
+rm -f /tmp/vconn* /tmp/vlogs* /tmp/*.out /tmp/*.log
+*** Removing old X11 tunnels
+*** Removing excess kernel datapaths
+ps ax | egrep -o 'dp[0-9]+' | sed 's/dp/nl:/'
+***  Removing OVS datapaths
+ovs-vsctl --timeout=1 list-br
+ovs-vsctl --timeout=1 list-br
+*** Removing all links of the pattern foo-ethX
+ip link show | egrep -o '([-_.[:alnum:]]+-eth[[:digit:]]+)'
+ip link show
+*** Killing stale mininet node processes
+pkill -9 -f mininet:
+*** Shutting down stale tunnels
+pkill -9 -f Tunnel=Ethernet
+pkill -9 -f .ssh/mn
+rm -f ~/.ssh/mn/*
+*** Cleanup complete.
+ubuntu@mininet-vm:~$ sudo mn --topo=tree,2,2 --controller=remote
+*** Creating network
+*** Adding controller
+Unable to contact the remote controller at 127.0.0.1:6653
+Connecting to remote controller at 127.0.0.1:6633
+*** Adding hosts:
+h1 h2 h3 h4 
+*** Adding switches:
+s1 s2 s3 
+*** Adding links:
+(s1, s2) (s1, s3) (s2, h1) (s2, h2) (s3, h3) (s3, h4) 
+*** Configuring hosts
+h1 h2 h3 h4 
+*** Starting controller
+c0 
+*** Starting 3 switches
+s1 s2 s3 ...
+*** Starting CLI:
+mininet> net
+h1 h1-eth0:s2-eth1
+h2 h2-eth0:s2-eth2
+h3 h3-eth0:s3-eth1
+h4 h4-eth0:s3-eth2
+s1 lo:  s1-eth1:s2-eth3 s1-eth2:s3-eth3
+s2 lo:  s2-eth1:h1-eth0 s2-eth2:h2-eth0 s2-eth3:s1-eth1
+s3 lo:  s3-eth1:h3-eth0 s3-eth2:h4-eth0 s3-eth3:s1-eth2
+c0
+mininet> 
+mininet> 
+mininet> exit
+*** Stopping 1 controllers
+c0 
+*** Stopping 6 links
+......
+*** Stopping 3 switches
+s1 s2 s3 
+*** Stopping 4 hosts
+h1 h2 h3 h4 
+*** Done
+completed in 111.468 seconds
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ sudo mn --topo=tree,2,2 --controller=remote
+*** Creating network
+*** Adding controller
+Unable to contact the remote controller at 127.0.0.1:6653
+Connecting to remote controller at 127.0.0.1:6633
+*** Adding hosts:
+h1 h2 h3 h4 
+*** Adding switches:
+s1 s2 s3 
+*** Adding links:
+(s1, s2) (s1, s3) (s2, h1) (s2, h2) (s3, h3) (s3, h4) 
+*** Configuring hosts
+h1 h2 h3 h4 
+*** Starting controller
+c0 
+*** Starting 3 switches
+s1 s2 s3 ...
+*** Starting CLI:
+mininet> 
+Interrupt
+mininet> exit
+*** Stopping 1 controllers
+c0 
+*** Stopping 6 links
+......
+*** Stopping 3 switches
+s1 s2 s3 
+*** Stopping 4 hosts
+h1 h2 h3 h4 
+*** Done
+completed in 24.629 seconds
+ubuntu@mininet-vm:~$ sudo mn --topo=tree,2,2 --controller=remote
+*** Creating network
+*** Adding controller
+Connecting to remote controller at 127.0.0.1:6653
+*** Adding hosts:
+h1 h2 h3 h4 
+*** Adding switches:
+s1 s2 s3 
+*** Adding links:
+(s1, s2) (s1, s3) (s2, h1) (s2, h2) (s3, h3) (s3, h4) 
+*** Configuring hosts
+h1 h2 h3 h4 
+*** Starting controller
+c0 
+*** Starting 3 switches
+s1 s2 s3 ...
+*** Starting CLI:
+mininet> 
+mininet> 
+mininet> sh ovs-vsctl list-ports s1
+s1-eth1
+s1-eth2
+mininet> pingall
+*** Ping: testing ping reachability
+h1 -> X ^C
+Interrupt
+stopping h1 
+mininet> sh ovs-ofctl dump-flows s1
+mininet> sudo ovs-vsctl --if-exists del-br s1
+*** Unknown command: sudo ovs-vsctl --if-exists del-br s1
+mininet> sudo ovs-vsctl --if-exists del-br s2
+*** Unknown command: sudo ovs-vsctl --if-exists del-br s2
+mininet> sudo ovs-vsctl --if-exists del-br s3
+*** Unknown command: sudo ovs-vsctl --if-exists del-br s3
+mininet> 
+mininet> exit
+*** Stopping 1 controllers
+c0 
+*** Stopping 6 links
+......
+*** Stopping 3 switches
+s1 s2 s3 
+*** Stopping 4 hosts
+h1 h2 h3 h4 
+*** Done
+completed in 154.192 seconds
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ sudo ovs-vsctl --if-exists del-br s1
+sudo ovs-vsctl --if-exists del-br s2
+sudo ovs-vsctl --if-exists del-br s3
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ sudo mn --topo=tree,2,2 --controller=remote,ip=127.0.0.1,port=6653
+*** Creating network
+*** Adding controller
+*** Adding hosts:
+h1 h2 h3 h4 
+*** Adding switches:
+s1 s2 s3 
+*** Adding links:
+(s1, s2) (s1, s3) (s2, h1) (s2, h2) (s3, h3) (s3, h4) 
+*** Configuring hosts
+h1 h2 h3 h4 
+*** Starting controller
+c0 
+*** Starting 3 switches
+s1 s2 s3 ...
+*** Starting CLI:
+mininet> sh ovs-vsctl list-ports s1
+s1-eth1
+s1-eth2
+mininet> sh ovs-ofctl dump-flows s1
+mininet> sh ovs-vsctl show
+7bd9c72f-643e-43e2-a757-f36e3cd278d5
+    Bridge s3
+        Controller "tcp:127.0.0.1:6653"
+            is_connected: true
+        Controller "ptcp:6656"
+        fail_mode: secure
+        Port s3-eth3
+            Interface s3-eth3
+        Port s3-eth2
+            Interface s3-eth2
+        Port s3-eth1
+            Interface s3-eth1
+        Port s3
+            Interface s3
+                type: internal
+    Bridge s2
+        Controller "tcp:127.0.0.1:6653"
+            is_connected: true
+        Controller "ptcp:6655"
+        fail_mode: secure
+        Port s2-eth3
+            Interface s2-eth3
+        Port s2
+            Interface s2
+                type: internal
+        Port s2-eth1
+            Interface s2-eth1
+        Port s2-eth2
+            Interface s2-eth2
+    Bridge s1
+        Controller "tcp:127.0.0.1:6653"
+            is_connected: true
+        Controller "ptcp:6654"
+        fail_mode: secure
+        Port s1-eth2
+            Interface s1-eth2
+        Port s1-eth1
+            Interface s1-eth1
+        Port s1
+            Interface s1
+                type: internal
+    ovs_version: "3.3.0"
+mininet> exit
+*** Stopping 1 controllers
+c0 
+*** Stopping 6 links
+......
+*** Stopping 3 switches
+s1 s2 s3 
+*** Stopping 4 hosts
+h1 h2 h3 h4 
+*** Done
+completed in 170.166 seconds
+ubuntu@mininet-vm:~$ sudo mn --topo=tree,2,2 --controller=remote,ip=127.0.0.1,port=6653
+*** Creating network
+*** Adding controller
+*** Adding hosts:
+h1 h2 h3 h4 
+*** Adding switches:
+s1 s2 s3 
+*** Adding links:
+(s1, s2) (s1, s3) (s2, h1) (s2, h2) (s3, h3) (s3, h4) 
+*** Configuring hosts
+h1 h2 h3 h4 
+*** Starting controller
+c0 
+*** Starting 3 switches
+s1 s2 s3 ...
+*** Starting CLI:
+mininet> sh ovs-vsctl show
+7bd9c72f-643e-43e2-a757-f36e3cd278d5
+    Bridge s3
+        Controller "tcp:127.0.0.1:6653"
+            is_connected: true
+        Controller "ptcp:6656"
+        fail_mode: secure
+        Port s3
+            Interface s3
+                type: internal
+        Port s3-eth2
+            Interface s3-eth2
+        Port s3-eth3
+            Interface s3-eth3
+        Port s3-eth1
+            Interface s3-eth1
+    Bridge s1
+        Controller "ptcp:6654"
+        Controller "tcp:127.0.0.1:6653"
+            is_connected: true
+        fail_mode: secure
+        Port s1-eth2
+            Interface s1-eth2
+        Port s1
+            Interface s1
+                type: internal
+        Port s1-eth1
+            Interface s1-eth1
+    Bridge s2
+        Controller "ptcp:6655"
+        Controller "tcp:127.0.0.1:6653"
+            is_connected: true
+        fail_mode: secure
+        Port s2-eth2
+            Interface s2-eth2
+        Port s2
+            Interface s2
+                type: internal
+        Port s2-eth1
+            Interface s2-eth1
+        Port s2-eth3
+            Interface s2-eth3
+    ovs_version: "3.3.0"
+mininet> sh ovs-vsctl list controller
+_uuid               : 4e26f5bc-ebf5-47fe-8817-1e33c63337eb
+connection_mode     : []
+controller_burst_limit: []
+controller_queue_size: []
+controller_rate_limit: []
+enable_async_messages: []
+external_ids        : {}
+inactivity_probe    : []
+is_connected        : false
+local_gateway       : []
+local_ip            : []
+local_netmask       : []
+max_backoff         : 1000
+other_config        : {}
+role                : []
+status              : {}
+target              : "ptcp:6654"
+type                : []
+
+_uuid               : bcc2c390-ca54-4d8a-aaa9-fcf04f79e449
+connection_mode     : []
+controller_burst_limit: []
+controller_queue_size: []
+controller_rate_limit: []
+enable_async_messages: []
+external_ids        : {}
+inactivity_probe    : []
+is_connected        : false
+local_gateway       : []
+local_ip            : []
+local_netmask       : []
+max_backoff         : 1000
+other_config        : {}
+role                : []
+status              : {}
+target              : "ptcp:6656"
+type                : []
+
+_uuid               : 8bd791cd-d074-463b-991c-e8af57d4b033
+connection_mode     : []
+controller_burst_limit: []
+controller_queue_size: []
+controller_rate_limit: []
+enable_async_messages: []
+external_ids        : {}
+inactivity_probe    : []
+is_connected        : true
+local_gateway       : []
+local_ip            : []
+local_netmask       : []
+max_backoff         : 1000
+other_config        : {}
+role                : other
+status              : {sec_since_connect="60", state=IDLE}
+target              : "tcp:127.0.0.1:6653"
+type                : []
+
+_uuid               : 5908c33d-b7bc-495d-9f85-b4ed37147415
+connection_mode     : []
+controller_burst_limit: []
+controller_queue_size: []
+controller_rate_limit: []
+enable_async_messages: []
+external_ids        : {}
+inactivity_probe    : []
+is_connected        : false
+local_gateway       : []
+local_ip            : []
+local_netmask       : []
+max_backoff         : 1000
+other_config        : {}
+role                : []
+status              : {}
+target              : "ptcp:6655"
+type                : []
+
+_uuid               : bdb47689-909e-4054-bbfa-d94bc88ab68f
+connection_mode     : []
+controller_burst_limit: []
+controller_queue_size: []
+controller_rate_limit: []
+enable_async_messages: []
+external_ids        : {}
+inactivity_probe    : []
+is_connected        : true
+local_gateway       : []
+local_ip            : []
+local_netmask       : []
+max_backoff         : 1000
+other_config        : {}
+role                : other
+status              : {sec_since_connect="60", state=IDLE}
+target              : "tcp:127.0.0.1:6653"
+type                : []
+
+_uuid               : b90e79e3-3a5d-4147-a965-e0c7ad77218f
+connection_mode     : []
+controller_burst_limit: []
+controller_queue_size: []
+controller_rate_limit: []
+enable_async_messages: []
+external_ids        : {}
+inactivity_probe    : []
+is_connected        : true
+local_gateway       : []
+local_ip            : []
+local_netmask       : []
+max_backoff         : 1000
+other_config        : {}
+role                : other
+status              : {sec_since_connect="60", state=IDLE}
+target              : "tcp:127.0.0.1:6653"
+type                : []
+mininet> 
+mininet> 
+mininet> 
+mininet> sh ovs-ofctl show s1
+OFPT_FEATURES_REPLY (xid=0x2): dpid:0000000000000001
+n_tables:254, n_buffers:0
+capabilities: FLOW_STATS TABLE_STATS PORT_STATS QUEUE_STATS ARP_MATCH_IP
+actions: output enqueue set_vlan_vid set_vlan_pcp strip_vlan mod_dl_src mod_dl_dst mod_nw_src mod_nw_dst mod_nw_tos mod_tp_src mod_tp_dst
+ 1(s1-eth1): addr:42:9e:8d:37:d2:36
+     config:     0
+     state:      0
+     current:    10GB-FD COPPER
+     speed: 10000 Mbps now, 0 Mbps max
+ 2(s1-eth2): addr:c6:2c:5f:42:9f:21
+     config:     0
+     state:      0
+     current:    10GB-FD COPPER
+     speed: 10000 Mbps now, 0 Mbps max
+ LOCAL(s1): addr:1e:a3:59:1d:8c:4c
+     config:     PORT_DOWN
+     state:      LINK_DOWN
+     speed: 0 Mbps now, 0 Mbps max
+OFPT_GET_CONFIG_REPLY (xid=0x4): frags=normal miss_send_len=0
+mininet> sh ovs-ofctl dump-flows s1
+mininet> sudo ovs-ofctl add-flow s1 "in_port=1,dl_type=0x0800,nw_src=10.0.0.1,nw_dst=10.0.0.2,actions=output:2"
+*** Unknown command: sudo ovs-ofctl add-flow s1 "in_port=1,dl_type=0x0800,nw_src=10.0.0.1,nw_dst=10.0.0.2,actions=output:2"
+mininet> 
+mininet> 
+mininet> 
+mininet> exit
+*** Stopping 1 controllers
+c0 
+*** Stopping 6 links
+......
+*** Stopping 3 switches
+s1 s2 s3 
+*** Stopping 4 hosts
+h1 h2 h3 h4 
+*** Done
+completed in 408.360 seconds
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ sudo ovs-ofctl add-flow s1 "in_port=1,dl_type=0x0800,nw_src=10.0.0.1,nw_dst=10.0.0.2,actions=output:2"
+ovs-ofctl: s1 is not a bridge or a socket
+ubuntu@mininet-vm:~$ sudo ovs-vsctl list-br
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ sh ovs-vsctl show
+sh: 0: cannot open ovs-vsctl: No such file
+ubuntu@mininet-vm:~$ sudo mn -c
+*** Removing excess controllers/ofprotocols/ofdatapaths/pings/noxes
+killall controller ofprotocol ofdatapath ping nox_corelt-nox_core ovs-openflowd ovs-controllerovs-testcontroller udpbwtest mnexec ivs ryu-manager 2> /dev/null
+killall -9 controller ofprotocol ofdatapath ping nox_corelt-nox_core ovs-openflowd ovs-controllerovs-testcontroller udpbwtest mnexec ivs ryu-manager 2> /dev/null
+pkill -9 -f "sudo mnexec"
+*** Removing junk from /tmp
+rm -f /tmp/vconn* /tmp/vlogs* /tmp/*.out /tmp/*.log
+*** Removing old X11 tunnels
+*** Removing excess kernel datapaths
+ps ax | egrep -o 'dp[0-9]+' | sed 's/dp/nl:/'
+***  Removing OVS datapaths
+ovs-vsctl --timeout=1 list-br
+ovs-vsctl --timeout=1 list-br
+*** Removing all links of the pattern foo-ethX
+ip link show | egrep -o '([-_.[:alnum:]]+-eth[[:digit:]]+)'
+ip link show
+*** Killing stale mininet node processes
+pkill -9 -f mininet:
+*** Shutting down stale tunnels
+pkill -9 -f Tunnel=Ethernet
+pkill -9 -f .ssh/mn
+rm -f ~/.ssh/mn/*
+*** Cleanup complete.
+ubuntu@mininet-vm:~$ sudo ovs-vsctl list-br
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ sudo mn --topo=tree,2,2 --controller=remote,ip=127.0.0.1,port=6653
+*** Creating network
+*** Adding controller
+*** Adding hosts:
+h1 h2 h3 h4 
+*** Adding switches:
+s1 s2 s3 
+*** Adding links:
+(s1, s2) (s1, s3) (s2, h1) (s2, h2) (s3, h3) (s3, h4) 
+*** Configuring hosts
+h1 h2 h3 h4 
+*** Starting controller
+c0 
+*** Starting 3 switches
+s1 s2 s3 ...
+*** Starting CLI:
+mininet> sudo ovs-vsctl list-br
+*** Unknown command: sudo ovs-vsctl list-br
+mininet> 
+mininet> sudo ovs-vsctl show
+*** Unknown command: sudo ovs-vsctl show
+mininet> 
+mininet> sudo ovs-ofctl dump-flows s1
+*** Unknown command: sudo ovs-ofctl dump-flows s1
+mininet> 
+mininet> mininet> h1 ping h2
+*** Unknown command: mininet> h1 ping h2
+mininet> h1 ping h2
+PING 10.0.0.2 (10.0.0.2) 56(84) bytes of data.
+From 10.0.0.1 icmp_seq=1 Destination Host Unreachable
+From 10.0.0.1 icmp_seq=2 Destination Host Unreachable
+From 10.0.0.1 icmp_seq=3 Destination Host Unreachable
+^C
+--- 10.0.0.2 ping statistics ---
+6 packets transmitted, 0 received, +3 errors, 100% packet loss, time 5214ms
+pipe 4
+mininet> h1 ping h2
+PING 10.0.0.2 (10.0.0.2) 56(84) bytes of data.
+From 10.0.0.1 icmp_seq=1 Destination Host Unreachable
+From 10.0.0.1 icmp_seq=2 Destination Host Unreachable
+From 10.0.0.1 icmp_seq=3 Destination Host Unreachable
+From 10.0.0.1 icmp_seq=4 Destination Host Unreachable
+From 10.0.0.1 icmp_seq=5 Destination Host Unreachable
+From 10.0.0.1 icmp_seq=6 Destination Host Unreachable
+^C
+--- 10.0.0.2 ping statistics ---
+7 packets transmitted, 0 received, +6 errors, 100% packet loss, time 6315ms
+pipe 4
+mininet> ovs-ofctl dump-flows s1
+*** Unknown command: ovs-ofctl dump-flows s1
+mininet> sh ovs-vsctl list controller
+_uuid               : cda2fd30-07a7-4d4a-b3f6-693e5d0d51b5
+connection_mode     : []
+controller_burst_limit: []
+controller_queue_size: []
+controller_rate_limit: []
+enable_async_messages: []
+external_ids        : {}
+inactivity_probe    : []
+is_connected        : true
+local_gateway       : []
+local_ip            : []
+local_netmask       : []
+max_backoff         : 1000
+other_config        : {}
+role                : other
+status              : {sec_since_connect="246", state=IDLE}
+target              : "tcp:127.0.0.1:6653"
+type                : []
+
+_uuid               : fccd7efd-89df-4074-bf03-add2d5ddc1f2
+connection_mode     : []
+controller_burst_limit: []
+controller_queue_size: []
+controller_rate_limit: []
+enable_async_messages: []
+external_ids        : {}
+inactivity_probe    : []
+is_connected        : false
+local_gateway       : []
+local_ip            : []
+local_netmask       : []
+max_backoff         : 1000
+other_config        : {}
+role                : []
+status              : {}
+target              : "ptcp:6655"
+type                : []
+
+_uuid               : 7a97fba2-623b-4093-9304-0edd26dbfb05
+connection_mode     : []
+controller_burst_limit: []
+controller_queue_size: []
+controller_rate_limit: []
+enable_async_messages: []
+external_ids        : {}
+inactivity_probe    : []
+is_connected        : false
+local_gateway       : []
+local_ip            : []
+local_netmask       : []
+max_backoff         : 1000
+other_config        : {}
+role                : []
+status              : {}
+target              : "ptcp:6654"
+type                : []
+
+_uuid               : 1ac500da-7ae0-4f2c-88fa-b7fceded3ab2
+connection_mode     : []
+controller_burst_limit: []
+controller_queue_size: []
+controller_rate_limit: []
+enable_async_messages: []
+external_ids        : {}
+inactivity_probe    : []
+is_connected        : true
+local_gateway       : []
+local_ip            : []
+local_netmask       : []
+max_backoff         : 1000
+other_config        : {}
+role                : other
+status              : {sec_since_connect="246", state=IDLE}
+target              : "tcp:127.0.0.1:6653"
+type                : []
+
+_uuid               : f9e24b93-cdd3-4ee8-9c2e-e11a2f0d5620
+connection_mode     : []
+controller_burst_limit: []
+controller_queue_size: []
+controller_rate_limit: []
+enable_async_messages: []
+external_ids        : {}
+inactivity_probe    : []
+is_connected        : false
+local_gateway       : []
+local_ip            : []
+local_netmask       : []
+max_backoff         : 1000
+other_config        : {}
+role                : []
+status              : {}
+target              : "ptcp:6656"
+type                : []
+
+_uuid               : 2d864d37-cd5d-46ff-a65a-99469a602f4d
+connection_mode     : []
+controller_burst_limit: []
+controller_queue_size: []
+controller_rate_limit: []
+enable_async_messages: []
+external_ids        : {}
+inactivity_probe    : []
+is_connected        : true
+local_gateway       : []
+local_ip            : []
+local_netmask       : []
+max_backoff         : 1000
+other_config        : {}
+role                : other
+status              : {sec_since_connect="246", state=IDLE}
+target              : "tcp:127.0.0.1:6653"
+type                : []
+mininet> sh ovs-ofctl dump-flows s1
+ cookie=0x0, duration=234.731s, table=0, n_packets=0, n_bytes=0, ip,in_port="s1-eth1",nw_src=10.0.0.1,nw_dst=10.0.0.2 actions=output:"s1-eth2"
+mininet> 
+Interrupt
+mininet> exit
+*** Stopping 1 controllers
+c0 
+*** Stopping 6 links
+......
+*** Stopping 3 switches
+s1 s2 s3 
+*** Stopping 4 hosts
+h1 h2 h3 h4 
+*** Done
+completed in 396.872 seconds
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ sudo mn --topo=tree,2,2 --controller=remote,ip=127.0.0.1,port=6653
+*** Creating network
+*** Adding controller
+Unable to contact the remote controller at 127.0.0.1:6653
+*** Adding hosts:
+h1 h2 h3 h4 
+*** Adding switches:
+s1 s2 s3 
+*** Adding links:
+(s1, s2) (s1, s3) (s2, h1) (s2, h2) (s3, h3) (s3, h4) 
+*** Configuring hosts
+h1 h2 h3 h4 
+*** Starting controller
+c0 
+*** Starting 3 switches
+s1 s2 s3 ...
+*** Starting CLI:
+mininet> 
+Interrupt
+mininet> pingall
+*** Ping: testing ping reachability
+h1 -> ^C
+Interrupt
+stopping h1 
+mininet> exit
+*** Stopping 1 controllers
+c0 
+*** Stopping 6 links
+......
+*** Stopping 3 switches
+s1 s2 s3 
+*** Stopping 4 hosts
+h1 h2 h3 h4 
+*** Done
+completed in 10.672 seconds
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ sudo mn --topo=tree,2,2 --controller=remote,ip=127.0.0.1,port=6633
+*** Creating network
+*** Adding controller
+*** Adding hosts:
+h1 h2 h3 h4 
+*** Adding switches:
+s1 s2 s3 
+*** Adding links:
+(s1, s2) (s1, s3) (s2, h1) (s2, h2) (s3, h3) (s3, h4) 
+*** Configuring hosts
+h1 h2 h3 h4 
+*** Starting controller
+c0 
+*** Starting 3 switches
+s1 s2 s3 ...
+*** Starting CLI:
+mininet> pingall
+*** Ping: testing ping reachability
+h1 -> h2 h3 h4 
+h2 -> h1 h3 h4 
+h3 -> h1 h2 h4 
+h4 -> h1 h2 h3 
+*** Results: 0% dropped (12/12 received)
+mininet> h1 ifconfig
+h1-eth0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 10.0.0.1  netmask 255.0.0.0  broadcast 10.255.255.255
+        inet6 fe80::a0f7:1ff:febf:2186  prefixlen 64  scopeid 0x20<link>
+        ether a2:f7:01:bf:21:86  txqueuelen 1000  (Ethernet)
+        RX packets 76  bytes 5712 (5.7 KB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 23  bytes 1706 (1.7 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+        loop  txqueuelen 1000  (Local Loopback)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+mininet> h1 ifconfig h1-eth0 inet6 add 2001:db8:1::1/64
+mininet> h2 ifconfig h2-eth0 inet6 add 2001:db8:1::2/64
+mininet> h3 ifconfig h3-eth0 inet6 add 2001:db8:2::3/64
+mininet> h4 ifconfig h4-eth0 inet6 add 2001:db8:2::4/64
+mininet> 
+mininet> 
+mininet> 
+mininet> h1 ifconfig
+h1-eth0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 10.0.0.1  netmask 255.0.0.0  broadcast 10.255.255.255
+        inet6 fe80::a0f7:1ff:febf:2186  prefixlen 64  scopeid 0x20<link>
+        inet6 2001:db8:1::1  prefixlen 64  scopeid 0x0<global>
+        ether a2:f7:01:bf:21:86  txqueuelen 1000  (Ethernet)
+        RX packets 90  bytes 6980 (6.9 KB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 26  bytes 2012 (2.0 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+        loop  txqueuelen 1000  (Local Loopback)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+mininet> h1 ping -6 2001:db8:1::1
+PING 2001:db8:1::1 (2001:db8:1::1) 56 data bytes
+64 bytes from 2001:db8:1::1: icmp_seq=1 ttl=64 time=0.051 ms
+64 bytes from 2001:db8:1::1: icmp_seq=2 ttl=64 time=0.059 ms
+64 bytes from 2001:db8:1::1: icmp_seq=3 ttl=64 time=0.061 ms
+^C
+--- 2001:db8:1::1 ping statistics ---
+3 packets transmitted, 3 received, 0% packet loss, time 2155ms
+rtt min/avg/max/mdev = 0.051/0.057/0.061/0.004 ms
+mininet> h1 ping -6 2001:db8:1::2
+PING 2001:db8:1::2 (2001:db8:1::2) 56 data bytes
+64 bytes from 2001:db8:1::2: icmp_seq=1 ttl=64 time=8.13 ms
+64 bytes from 2001:db8:1::2: icmp_seq=2 ttl=64 time=0.896 ms
+64 bytes from 2001:db8:1::2: icmp_seq=3 ttl=64 time=0.066 ms
+^C
+--- 2001:db8:1::2 ping statistics ---
+3 packets transmitted, 3 received, 0% packet loss, time 2091ms
+rtt min/avg/max/mdev = 0.066/3.031/8.133/3.623 ms
+mininet> h1 ping -6 2001:db8:1::3
+PING 2001:db8:1::3 (2001:db8:1::3) 56 data bytes
+From 2001:db8:1::1 icmp_seq=1 Destination unreachable: Address unreachable
+From 2001:db8:1::1 icmp_seq=2 Destination unreachable: Address unreachable
+From 2001:db8:1::1 icmp_seq=3 Destination unreachable: Address unreachable
+From 2001:db8:1::1 icmp_seq=4 Destination unreachable: Address unreachable
+From 2001:db8:1::1 icmp_seq=5 Destination unreachable: Address unreachable
+From 2001:db8:1::1 icmp_seq=6 Destination unreachable: Address unreachable
+^C
+--- 2001:db8:1::3 ping statistics ---
+8 packets transmitted, 0 received, +6 errors, 100% packet loss, time 7456ms
+
+mininet> h1 ping -6 2001:db8:1::2
+PING 2001:db8:1::2 (2001:db8:1::2) 56 data bytes
+64 bytes from 2001:db8:1::2: icmp_seq=1 ttl=64 time=0.065 ms
+64 bytes from 2001:db8:1::2: icmp_seq=2 ttl=64 time=0.081 ms
+64 bytes from 2001:db8:1::2: icmp_seq=3 ttl=64 time=0.098 ms
+^C
+--- 2001:db8:1::2 ping statistics ---
+3 packets transmitted, 3 received, 0% packet loss, time 2178ms
+rtt min/avg/max/mdev = 0.065/0.081/0.098/0.013 ms
+mininet> h1 ping -6 2001:db8:1::4
+PING 2001:db8:1::4 (2001:db8:1::4) 56 data bytes
+From 2001:db8:1::1 icmp_seq=1 Destination unreachable: Address unreachable
+From 2001:db8:1::1 icmp_seq=2 Destination unreachable: Address unreachable
+From 2001:db8:1::1 icmp_seq=3 Destination unreachable: Address unreachable
+From 2001:db8:1::1 icmp_seq=4 Destination unreachable: Address unreachable
+From 2001:db8:1::1 icmp_seq=5 Destination unreachable: Address unreachable
+From 2001:db8:1::1 icmp_seq=6 Destination unreachable: Address unreachable
+From 2001:db8:1::1 icmp_seq=7 Destination unreachable: Address unreachable
+From 2001:db8:1::1 icmp_seq=8 Destination unreachable: Address unreachable
+From 2001:db8:1::1 icmp_seq=9 Destination unreachable: Address unreachable
+^C
+--- 2001:db8:1::4 ping statistics ---
+10 packets transmitted, 0 received, +9 errors, 100% packet loss, time 9652ms
+
+mininet> h1 route
+Kernel IP routing table
+Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
+10.0.0.0        0.0.0.0         255.0.0.0       U     0      0        0 h1-eth0
+mininet> h1 route -6
+Kernel IPv6 routing table
+Destination                    Next Hop                   Flag Met Ref  Use If
+2001:db8:1::/64                [::]                       U    256 2      0 h1-eth0
+fe80::/64                      [::]                       U    256 1      0 h1-eth0
+[::]/0                         [::]                       !n   -1  1      0 lo
+localhost/128                  [::]                       Un   0   3      0 lo
+2001:db8:1::1/128              [::]                       Un   0   3      0 h1-eth0
+fe80::a0f7:1ff:febf:2186/128   [::]                       Un   0   3      0 h1-eth0
+ff00::/8                       [::]                       U    256 3      0 h1-eth0
+[::]/0                         [::]                       !n   -1  1      0 lo
+mininet> 
+mininet> 
+mininet> 
+mininet> h1 ping -6 h2
+ping: 10.0.0.2: Address family for hostname not supported
+mininet> h1 ping -6 2001:db8:1::2
+PING 2001:db8:1::2 (2001:db8:1::2) 56 data bytes
+64 bytes from 2001:db8:1::2: icmp_seq=1 ttl=64 time=3.19 ms
+64 bytes from 2001:db8:1::2: icmp_seq=2 ttl=64 time=0.375 ms
+64 bytes from 2001:db8:1::2: icmp_seq=3 ttl=64 time=0.066 ms
+^C
+--- 2001:db8:1::2 ping statistics ---
+3 packets transmitted, 3 received, 0% packet loss, time 2126ms
+rtt min/avg/max/mdev = 0.066/1.211/3.194/1.407 ms
+mininet> h1 ping -6 2001:db8:1::4
+PING 2001:db8:1::4 (2001:db8:1::4) 56 data bytes
+From 2001:db8:1::1 icmp_seq=1 Destination unreachable: Address unreachable
+From 2001:db8:1::1 icmp_seq=2 Destination unreachable: Address unreachable
+From 2001:db8:1::1 icmp_seq=3 Destination unreachable: Address unreachable
+^C
+--- 2001:db8:1::4 ping statistics ---
+5 packets transmitted, 0 received, +3 errors, 100% packet loss, time 4257ms
+
+mininet> 
+mininet> 
+mininet> sudo ovs-ofctl dump-flows s1
+*** Unknown command: sudo ovs-ofctl dump-flows s1
+mininet> 
+mininet> 
+mininet> 
+mininet> net
+h1 h1-eth0:s2-eth1
+h2 h2-eth0:s2-eth2
+h3 h3-eth0:s3-eth1
+h4 h4-eth0:s3-eth2
+s1 lo:  s1-eth1:s2-eth3 s1-eth2:s3-eth3
+s2 lo:  s2-eth1:h1-eth0 s2-eth2:h2-eth0 s2-eth3:s1-eth1
+s3 lo:  s3-eth1:h3-eth0 s3-eth2:h4-eth0 s3-eth3:s1-eth2
+c0
+mininet> h1 ping -6 2001:db8:1::2
+PING 2001:db8:1::2 (2001:db8:1::2) 56 data bytes
+64 bytes from 2001:db8:1::2: icmp_seq=1 ttl=64 time=7.78 ms
+
+64 bytes from 2001:db8:1::2: icmp_seq=2 ttl=64 time=0.378 ms
+64 bytes from 2001:db8:1::2: icmp_seq=3 ttl=64 time=0.084 ms
+64 bytes from 2001:db8:1::2: icmp_seq=4 ttl=64 time=0.084 ms
+^C
+--- 2001:db8:1::2 ping statistics ---
+4 packets transmitted, 4 received, 0% packet loss, time 3203ms
+rtt min/avg/max/mdev = 0.084/2.081/7.779/3.291 ms
+mininet> h1 ping -6 2001:db8:1::3
+PING 2001:db8:1::3 (2001:db8:1::3) 56 data bytes
+From 2001:db8:1::1 icmp_seq=1 Destination unreachable: Address unreachable
+From 2001:db8:1::1 icmp_seq=2 Destination unreachable: Address unreachable
+From 2001:db8:1::1 icmp_seq=3 Destination unreachable: Address unreachable
+^C
+--- 2001:db8:1::3 ping statistics ---
+6 packets transmitted, 0 received, +3 errors, 100% packet loss, time 5468ms
+
+mininet> h1 ping -6 2001:db8:1::2
+PING 2001:db8:1::2 (2001:db8:1::2) 56 data bytes
+64 bytes from 2001:db8:1::2: icmp_seq=1 ttl=64 time=4.02 ms
+
+
+64 bytes from 2001:db8:1::2: icmp_seq=2 ttl=64 time=0.428 ms
+64 bytes from 2001:db8:1::2: icmp_seq=3 ttl=64 time=0.066 ms
+64 bytes from 2001:db8:1::2: icmp_seq=4 ttl=64 time=0.077 ms
+64 bytes from 2001:db8:1::2: icmp_seq=5 ttl=64 time=0.063 ms
+64 bytes from 2001:db8:1::2: icmp_seq=6 ttl=64 time=0.053 ms
+h2 ping -6 2001:db8:1::164 bytes from 2001:db8:1::2: icmp_seq=7 ttl=64 time=0.079 ms
+^C
+--- 2001:db8:1::2 ping statistics ---
+7 packets transmitted, 7 received, 0% packet loss, time 6384ms
+rtt min/avg/max/mdev = 0.053/0.683/4.017/1.366 ms
+mininet> 
+mininet> 
+mininet> 
+mininet> h2 ping -6 2001:db8:1::1
+PING 2001:db8:1::1 (2001:db8:1::1) 56 data bytes
+64 bytes from 2001:db8:1::1: icmp_seq=1 ttl=64 time=0.060 ms
+64 bytes from 2001:db8:1::1: icmp_seq=2 ttl=64 time=0.086 ms
+64 bytes from 2001:db8:1::1: icmp_seq=3 ttl=64 time=0.082 ms
+^C
+--- 2001:db8:1::1 ping statistics ---
+3 packets transmitted, 3 received, 0% packet loss, time 2068ms
+rtt min/avg/max/mdev = 0.060/0.076/0.086/0.011 ms
+mininet> 
+mininet> 
+mininet> 
+mininet> 
+mininet> 
+mininet> mininet> h4 iperf -s -V
+*** Unknown command: mininet> h4 iperf -s -V
+mininet> h1 iperf -s -V &
+mininet> h2 iperf -c 2001:db8:1::1 -V -b 10M
+------------------------------------------------------------
+Client connecting to 2001:db8:1::1, TCP port 5001
+TCP window size: 85.3 KByte (default)
+------------------------------------------------------------
+[  1] local 2001:db8:1::2 port 33500 connected with 2001:db8:1::1 port 5001 (icwnd/mss/irtt=13/1428/5251)
+[ ID] Interval       Transfer     Bandwidth
+[  1] 0.0000-10.0948 sec  12.7 MBytes  10.6 Mbits/sec
+mininet> 
+mininet> 
+mininet> 
+mininet> h1 iperf -s -V &
+------------------------------------------------------------
+Server listening on TCP port 5001
+TCP window size: 85.3 KByte (default)
+------------------------------------------------------------
+[  1] local 2001:db8:1::1 port 5001 connected with 2001:db8:1::2 port 33500 (icwnd/mss/irtt=13/1428/2356)
+[ ID] Interval       Transfer     Bandwidth
+[  1] 0.0000-10.0986 sec  12.7 MBytes  10.6 Mbits/sec
+mininet> h2 iperf -c 2001:db8:1::1 -V -b 10M
+------------------------------------------------------------
+Client connecting to 2001:db8:1::1, TCP port 5001
+TCP window size: 85.3 KByte (default)
+------------------------------------------------------------
+[  1] local 2001:db8:1::2 port 57952 connected with 2001:db8:1::1 port 5001 (icwnd/mss/irtt=13/1428/8754)
+[ ID] Interval       Transfer     Bandwidth
+[  1] 0.0000-10.0940 sec  12.7 MBytes  10.6 Mbits/sec
+mininet> h2 iperf -c 2001:db8:1::1 -V -b 5M
+------------------------------------------------------------
+Client connecting to 2001:db8:1::1, TCP port 5001
+TCP window size: 85.3 KByte (default)
+------------------------------------------------------------
+[  1] local 2001:db8:1::2 port 33926 connected with 2001:db8:1::1 port 5001 (icwnd/mss/irtt=13/1428/4142)
+[ ID] Interval       Transfer     Bandwidth
+[  1] 0.0000-10.2100 sec  6.50 MBytes  5.34 Mbits/sec
+mininet> h1 iperf -s -V &
+listener bind failed: Address already in use
+[  2] local 2001:db8:1::1 port 5001 connected with 2001:db8:1::2 port 57952 (icwnd/mss/irtt=13/1428/2299)
+[ ID] Interval       Transfer     Bandwidth
+[  2] 0.0000-10.0963 sec  12.7 MBytes  10.6 Mbits/sec
+[  3] local 2001:db8:1::1 port 5001 connected with 2001:db8:1::2 port 33926 (icwnd/mss/irtt=13/1428/1705)
+[ ID] Interval       Transfer     Bandwidth
+[  3] 0.0000-10.1956 sec  6.50 MBytes  5.34 Mbits/sec
+mininet> h2 iperf -c 2001:db8:1::1 -V -b 5M
+------------------------------------------------------------
+Client connecting to 2001:db8:1::1, TCP port 5001
+TCP window size: 85.3 KByte (default)
+------------------------------------------------------------
+[  1] local 2001:db8:1::2 port 43130 connected with 2001:db8:1::1 port 5001 (icwnd/mss/irtt=13/1428/3685)
+[ ID] Interval       Transfer     Bandwidth
+[  1] 0.0000-10.2120 sec  6.50 MBytes  5.34 Mbits/sec
+mininet> net
+h1 h1-eth0:s2-eth1
+h2 h2-eth0:s2-eth2
+h3 h3-eth0:s3-eth1
+h4 h4-eth0:s3-eth2
+s1 lo:  s1-eth1:s2-eth3 s1-eth2:s3-eth3
+s2 lo:  s2-eth1:h1-eth0 s2-eth2:h2-eth0 s2-eth3:s1-eth1
+s3 lo:  s3-eth1:h3-eth0 s3-eth2:h4-eth0 s3-eth3:s1-eth2
+c0
+mininet> 

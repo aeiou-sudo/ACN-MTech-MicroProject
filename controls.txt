@@ -1,0 +1,831 @@
+Last login: Mon Dec  2 17:23:55 on ttys001
+pauljose@Pauls-MacBook-Air ~ % brew uninstall multipass
+
+==> Uninstalling Cask multipass
+==> Removing launchctl service com.canonical.multipassd
+Password:
+==> Uninstalling packages with sudo; the password may be necessary:
+com.canonical.multipass.multipassd
+com.canonical.multipass.multipass
+com.canonical.multipass.multipass_gui
+==> Removing files:
+/opt/homebrew/etc/bash_completion.d/multipass
+/Applications/Multipass.app
+/Library/Application Support/com.canonical.multipass
+/Library/Logs/Multipass
+/usr/local/bin/multipass
+/usr/local/etc/bash_completion.d/multipass
+==> Purging files for version 1.14.1 of Cask multipass
+pauljose@Pauls-MacBook-Air ~ % brew install multipass
+
+==> Downloading https://formulae.brew.sh/api/formula.jws.json
+##O=-#      #                                                                                                                                                                                             
+==> Downloading https://formulae.brew.sh/api/cask.jws.json
+
+==> Downloading https://raw.githubusercontent.com/Homebrew/homebrew-cask/383ec5ebf44e82fdfb95601d8d495e7ed60d077d/Casks/m/multipass.rb
+Already downloaded: /Users/pauljose/Library/Caches/Homebrew/downloads/817c47b88b38f61df7e13ce2a66b12460b93663991e97fa8c104261dd38529f4--multipass.rb
+==> Downloading https://github.com/canonical/multipass/releases/download/v1.14.1/multipass-1.14.1+mac-Darwin.pkg
+Already downloaded: /Users/pauljose/Library/Caches/Homebrew/downloads/86c4d174b60426252f4d4e935030f008377b46d709a89d0395cc0a15620fb2be--multipass-1.14.1+mac-Darwin.pkg
+==> Installing Cask multipass
+==> Running installer for multipass with sudo; the password may be necessary.
+Password:
+installer: Package name is multipass
+installer: Installing at base path /
+installer: The install was successful.
+🍺  multipass was successfully installed!
+pauljose@Pauls-MacBook-Air ~ % multipass list
+
+
+Name                    State             IPv4             Image
+mininet-vm              Stopped           --               Ubuntu 24.04 LTS
+pauljose@Pauls-MacBook-Air ~ % 
+pauljose@Pauls-MacBook-Air ~ % 
+pauljose@Pauls-MacBook-Air ~ % 
+pauljose@Pauls-MacBook-Air ~ % 
+pauljose@Pauls-MacBook-Air ~ % 
+pauljose@Pauls-MacBook-Air ~ % multipass delete mininet-vm
+multipass purge
+
+pauljose@Pauls-MacBook-Air ~ % 
+pauljose@Pauls-MacBook-Air ~ % 
+pauljose@Pauls-MacBook-Air ~ % 
+pauljose@Pauls-MacBook-Air ~ % 
+pauljose@Pauls-MacBook-Air ~ % multipass list             
+
+No instances found.
+pauljose@Pauls-MacBook-Air ~ % 
+pauljose@Pauls-MacBook-Air ~ % 
+pauljose@Pauls-MacBook-Air ~ % 
+pauljose@Pauls-MacBook-Air ~ % multipass launch --name mininet-vm
+
+Launched: mininet-vm
+pauljose@Pauls-MacBook-Air ~ % multipass shell mininet-vm
+sudo apt update
+sudo apt install mininet -y
+Welcome to Ubuntu 24.04.1 LTS (GNU/Linux 6.8.0-49-generic aarch64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/pro
+
+ System information as of Mon Dec  2 17:28:06 IST 2024
+
+  System load:             0.46
+  Usage of /:              48.6% of 3.80GB
+  Memory usage:            19%
+  Swap usage:              0%
+  Processes:               97
+  Users logged in:         0
+  IPv4 address for enp0s1: 192.168.64.5
+  IPv6 address for enp0s1: fd1c:7755:a134:49f:5054:ff:fe14:e377
+
+
+Expanded Security Maintenance for Applications is not enabled.
+
+16 updates can be applied immediately.
+12 of these updates are standard security updates.
+To see these additional updates run: apt list --upgradable
+
+Enable ESM Apps to receive additional future security updates.
+See https://ubuntu.com/esm or run: sudo pro status
+
+
+To run a command as administrator (user "root"), use "sudo <command>".
+See "man sudo_root" for details.
+
+ubuntu@mininet-vm:~$ curl -s https://packagecloud.io/install/repositories/fdio/release/script.deb.sh | sudo bash
+sudo apt install vpp vpp-plugin-core vpp-plugin-dpdk -y
+Detected operating system as Ubuntu/noble.
+Checking for curl...
+Detected curl...
+Checking for gpg...
+Detected gpg...
+Detected apt version as 2.7.14
+Running apt-get update... done.
+Installing apt-transport-https... done.
+Installing /etc/apt/sources.list.d/fdio_release.list...done.
+Importing packagecloud gpg key... Packagecloud gpg key imported to /etc/apt/keyrings/fdio_release-archive-keyring.gpg
+done.
+Running apt-get update... done.
+
+The repository is setup! You can now install packages.
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+The following additional packages will be installed:
+  libvppinfra
+The following NEW packages will be installed:
+  libvppinfra vpp vpp-plugin-core vpp-plugin-dpdk
+0 upgraded, 4 newly installed, 0 to remove and 16 not upgraded.
+Need to get 13.6 MB of archives.
+After this operation, 83.1 MB of additional disk space will be used.
+Get:1 https://packagecloud.io/fdio/release/ubuntu noble/main arm64 libvppinfra arm64 24.10-release [170 kB]
+Get:2 https://packagecloud.io/fdio/release/ubuntu noble/main arm64 vpp arm64 24.10-release [4598 kB]
+Get:3 https://packagecloud.io/fdio/release/ubuntu noble/main arm64 vpp-plugin-core arm64 24.10-release [4280 kB]
+Get:4 https://packagecloud.io/fdio/release/ubuntu noble/main arm64 vpp-plugin-dpdk arm64 24.10-release [4558 kB]
+Fetched 13.6 MB in 5s (2654 kB/s)          
+Selecting previously unselected package libvppinfra.
+(Reading database ... 77395 files and directories currently installed.)
+Preparing to unpack .../libvppinfra_24.10-release_arm64.deb ...
+Unpacking libvppinfra (24.10-release) ...
+Selecting previously unselected package vpp.
+Preparing to unpack .../vpp_24.10-release_arm64.deb ...
+start-stop-daemon: unable to stat /usr/bin/vpp (No such file or directory)
+Unpacking vpp (24.10-release) ...
+Selecting previously unselected package vpp-plugin-core.
+Preparing to unpack .../vpp-plugin-core_24.10-release_arm64.deb ...
+Unpacking vpp-plugin-core (24.10-release) ...
+Selecting previously unselected package vpp-plugin-dpdk.
+Preparing to unpack .../vpp-plugin-dpdk_24.10-release_arm64.deb ...
+Unpacking vpp-plugin-dpdk (24.10-release) ...
+Setting up libvppinfra (24.10-release) ...
+Setting up vpp (24.10-release) ...
+* Applying /usr/lib/sysctl.d/10-apparmor.conf ...
+* Applying /etc/sysctl.d/10-bufferbloat.conf ...
+* Applying /etc/sysctl.d/10-console-messages.conf ...
+* Applying /etc/sysctl.d/10-ipv6-privacy.conf ...
+* Applying /etc/sysctl.d/10-kernel-hardening.conf ...
+* Applying /etc/sysctl.d/10-magic-sysrq.conf ...
+* Applying /etc/sysctl.d/10-map-count.conf ...
+* Applying /etc/sysctl.d/10-network-security.conf ...
+* Applying /etc/sysctl.d/10-ptrace.conf ...
+* Applying /etc/sysctl.d/10-zeropage.conf ...
+* Applying /usr/lib/sysctl.d/50-pid-max.conf ...
+* Applying /etc/sysctl.d/80-vpp.conf ...
+* Applying /etc/sysctl.d/99-cloudimg-ipv6.conf ...
+* Applying /usr/lib/sysctl.d/99-protect-links.conf ...
+* Applying /etc/sysctl.d/99-sysctl.conf ...
+* Applying /etc/sysctl.conf ...
+kernel.apparmor_restrict_unprivileged_userns = 1
+net.core.default_qdisc = fq_codel
+kernel.printk = 4 4 1 7
+net.ipv6.conf.all.use_tempaddr = 2
+net.ipv6.conf.default.use_tempaddr = 2
+kernel.kptr_restrict = 1
+kernel.sysrq = 176
+vm.max_map_count = 1048576
+net.ipv4.conf.default.rp_filter = 2
+net.ipv4.conf.all.rp_filter = 2
+kernel.yama.ptrace_scope = 1
+vm.mmap_min_addr = 32768
+kernel.pid_max = 4194304
+vm.nr_hugepages = 1024
+vm.max_map_count = 3096
+vm.hugetlb_shm_group = 0
+kernel.shmmax = 2147483648
+net.ipv6.conf.all.use_tempaddr = 0
+net.ipv6.conf.default.use_tempaddr = 0
+fs.protected_fifos = 1
+fs.protected_hardlinks = 1
+fs.protected_regular = 2
+fs.protected_symlinks = 1
+Created symlink /etc/systemd/system/multi-user.target.wants/vpp.service → /usr/lib/systemd/system/vpp.service.
+Setting up vpp-plugin-dpdk (24.10-release) ...
+Setting up vpp-plugin-core (24.10-release) ...
+Processing triggers for libc-bin (2.39-0ubuntu8.3) ...
+Scanning processes...                                                                                                                                                                                     
+Scanning linux images...                                                                                                                                                                                  
+
+Running kernel seems to be up-to-date.
+
+No services need to be restarted.
+
+No containers need to be restarted.
+
+No user sessions are running outdated binaries.
+
+No VM guests are running outdated hypervisor (qemu) binaries on this host.
+ubuntu@mininet-vm:~$ cd /etc/vpp/
+ubuntu@mininet-vm:/etc/vpp$ 
+ubuntu@mininet-vm:/etc/vpp$ 
+ubuntu@mininet-vm:/etc/vpp$ 
+ubuntu@mininet-vm:/etc/vpp$ sudo nano startup.conf 
+ubuntu@mininet-vm:/etc/vpp$ 
+ubuntu@mininet-vm:/etc/vpp$ 
+ubuntu@mininet-vm:/etc/vpp$ 
+ubuntu@mininet-vm:/etc/vpp$ sudo nano startup.conf 
+ubuntu@mininet-vm:/etc/vpp$ sudo systemctl restart vpp
+ubuntu@mininet-vm:/etc/vpp$ 
+ubuntu@mininet-vm:/etc/vpp$ 
+ubuntu@mininet-vm:/etc/vpp$ 
+ubuntu@mininet-vm:/etc/vpp$ 
+ubuntu@mininet-vm:/etc/vpp$ 
+ubuntu@mininet-vm:/etc/vpp$ 
+ubuntu@mininet-vm:/etc/vpp$ cd //
+ubuntu@mininet-vm://$ 
+ubuntu@mininet-vm://$ 
+ubuntu@mininet-vm://$ ls
+bin                dev   lib                media  proc  sbin                srv  usr
+bin.usr-is-merged  etc   lib.usr-is-merged  mnt    root  sbin.usr-is-merged  sys  var
+boot               home  lost+found         opt    run   snap                tmp
+ubuntu@mininet-vm://$ 
+ubuntu@mininet-vm://$ 
+ubuntu@mininet-vm://$ cd /etc/vpp
+ubuntu@mininet-vm:/etc/vpp$ 
+ubuntu@mininet-vm:/etc/vpp$ 
+ubuntu@mininet-vm:/etc/vpp$ 
+ubuntu@mininet-vm:/etc/vpp$ ls
+startup.conf
+ubuntu@mininet-vm:/etc/vpp$ 
+ubuntu@mininet-vm:/etc/vpp$ 
+ubuntu@mininet-vm:/etc/vpp$ ./pox.py forwarding.l2_learning
+-bash: ./pox.py: No such file or directory
+ubuntu@mininet-vm:/etc/vpp$ 
+ubuntu@mininet-vm:/etc/vpp$ 
+ubuntu@mininet-vm:/etc/vpp$ 
+ubuntu@mininet-vm:/etc/vpp$ cd //
+ubuntu@mininet-vm://$ 
+ubuntu@mininet-vm://$ 
+ubuntu@mininet-vm://$ cd ~
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ ls
+custom_topology.py  pox
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ cd pox
+ubuntu@mininet-vm:~/pox$ 
+ubuntu@mininet-vm:~/pox$ 
+ubuntu@mininet-vm:~/pox$ ./pox.py forwarding.l2_learning
+POX 0.7.0 (gar) / Copyright 2011-2020 James McCauley, et al.
+WARNING:version:POX requires one of the following versions of Python: 3.6 3.7 3.8 3.9
+WARNING:version:You're running Python 3.12.
+WARNING:version:If you run into problems, try using a supported version.
+INFO:core:POX 0.7.0 (gar) is up.
+ERROR:openflow.of_01:Error 98 while binding 0.0.0.0:6633: Address already in use
+ERROR:openflow.of_01: You may have another controller running.
+ERROR:openflow.of_01: Use openflow.of_01 --port=<port> to run POX on another port.
+^CINFO:core:Going down...
+INFO:core:Down.
+ubuntu@mininet-vm:~/pox$ 
+ubuntu@mininet-vm:~/pox$ 
+ubuntu@mininet-vm:~/pox$ 
+ubuntu@mininet-vm:~/pox$ 
+ubuntu@mininet-vm:~/pox$ ./pox.py forwarding.l2_learning
+POX 0.7.0 (gar) / Copyright 2011-2020 James McCauley, et al.
+WARNING:version:POX requires one of the following versions of Python: 3.6 3.7 3.8 3.9
+WARNING:version:You're running Python 3.12.
+WARNING:version:If you run into problems, try using a supported version.
+INFO:core:POX 0.7.0 (gar) is up.
+ERROR:openflow.of_01:Error 98 while binding 0.0.0.0:6633: Address already in use
+ERROR:openflow.of_01: You may have another controller running.
+ERROR:openflow.of_01: Use openflow.of_01 --port=<port> to run POX on another port.
+^CINFO:core:Going down...
+INFO:core:Down.
+ubuntu@mininet-vm:~/pox$ 
+ubuntu@mininet-vm:~/pox$ 
+ubuntu@mininet-vm:~/pox$ 
+ubuntu@mininet-vm:~/pox$ 
+ubuntu@mininet-vm:~/pox$ sudo kill 6633
+kill: (6633): No such process
+ubuntu@mininet-vm:~/pox$ 
+ubuntu@mininet-vm:~/pox$ 
+ubuntu@mininet-vm:~/pox$ 
+ubuntu@mininet-vm:~/pox$ 
+ubuntu@mininet-vm:~/pox$ ./pox.py forwarding.l2_learning
+POX 0.7.0 (gar) / Copyright 2011-2020 James McCauley, et al.
+WARNING:version:POX requires one of the following versions of Python: 3.6 3.7 3.8 3.9
+WARNING:version:You're running Python 3.12.
+WARNING:version:If you run into problems, try using a supported version.
+INFO:core:POX 0.7.0 (gar) is up.
+ERROR:openflow.of_01:Error 98 while binding 0.0.0.0:6633: Address already in use
+ERROR:openflow.of_01: You may have another controller running.
+ERROR:openflow.of_01: Use openflow.of_01 --port=<port> to run POX on another port.
+^CINFO:core:Going down...
+INFO:core:Down.
+ubuntu@mininet-vm:~/pox$ 
+ubuntu@mininet-vm:~/pox$ 
+ubuntu@mininet-vm:~/pox$ 
+ubuntu@mininet-vm:~/pox$ ./pox.py forwarding.l2_learning
+POX 0.7.0 (gar) / Copyright 2011-2020 James McCauley, et al.
+WARNING:version:POX requires one of the following versions of Python: 3.6 3.7 3.8 3.9
+WARNING:version:You're running Python 3.12.
+WARNING:version:If you run into problems, try using a supported version.
+INFO:core:POX 0.7.0 (gar) is up.
+ERROR:openflow.of_01:Error 98 while binding 0.0.0.0:6633: Address already in use
+ERROR:openflow.of_01: You may have another controller running.
+ERROR:openflow.of_01: Use openflow.of_01 --port=<port> to run POX on another port.
+
+^CINFO:core:Going down...
+INFO:core:Down.
+
+ubuntu@mininet-vm:~/pox$ 
+ubuntu@mininet-vm:~/pox$ 
+ubuntu@mininet-vm:~/pox$ 
+ubuntu@mininet-vm:~/pox$ 
+ubuntu@mininet-vm:~/pox$ sudo lsof -i :6633
+COMMAND  PID   USER   FD   TYPE DEVICE SIZE/OFF NODE NAME
+python3 2665 ubuntu    7u  IPv4  19293      0t0  TCP *:6633 (LISTEN)
+ubuntu@mininet-vm:~/pox$ 
+ubuntu@mininet-vm:~/pox$ 
+ubuntu@mininet-vm:~/pox$ 
+ubuntu@mininet-vm:~/pox$ sudo kill 2665
+ubuntu@mininet-vm:~/pox$ 
+ubuntu@mininet-vm:~/pox$ 
+ubuntu@mininet-vm:~/pox$ 
+ubuntu@mininet-vm:~/pox$ 
+ubuntu@mininet-vm:~/pox$ ./pox.py forwarding.l2_learning
+POX 0.7.0 (gar) / Copyright 2011-2020 James McCauley, et al.
+WARNING:version:POX requires one of the following versions of Python: 3.6 3.7 3.8 3.9
+WARNING:version:You're running Python 3.12.
+WARNING:version:If you run into problems, try using a supported version.
+INFO:core:POX 0.7.0 (gar) is up.
+INFO:openflow.of_01:[00-00-00-00-00-01 2] connected
+INFO:openflow.of_01:[00-00-00-00-00-01 2] closed
+^CINFO:core:Going down...
+INFO:core:Down.
+ubuntu@mininet-vm:~/pox$ 
+ubuntu@mininet-vm:~/pox$ 
+ubuntu@mininet-vm:~/pox$ 
+ubuntu@mininet-vm:~/pox$ ./pox.py log.level --DEBUG openflow.of_01 --port=6633
+POX 0.7.0 (gar) / Copyright 2011-2020 James McCauley, et al.
+DEBUG:boot:Not launching of_01
+DEBUG:core:POX 0.7.0 (gar) going up...
+DEBUG:core:Running on CPython (3.12.3/Sep 11 2024 14:17:37)
+DEBUG:core:Platform is Linux-6.8.0-49-generic-aarch64-with-glibc2.39
+WARNING:version:POX requires one of the following versions of Python: 3.6 3.7 3.8 3.9
+WARNING:version:You're running Python 3.12.
+WARNING:version:If you run into problems, try using a supported version.
+INFO:core:POX 0.7.0 (gar) is up.
+DEBUG:openflow.of_01:Listening on 0.0.0.0:6633
+^[[A
+
+
+
+^CINFO:core:Going down...
+INFO:core:Down.
+ubuntu@mininet-vm:~/pox$ 
+ubuntu@mininet-vm:~/pox$ 
+ubuntu@mininet-vm:~/pox$ 
+ubuntu@mininet-vm:~/pox$ ./pox.py log.level --DEBUG openflow.of_01 --port=6633
+POX 0.7.0 (gar) / Copyright 2011-2020 James McCauley, et al.
+DEBUG:boot:Not launching of_01
+DEBUG:core:POX 0.7.0 (gar) going up...
+DEBUG:core:Running on CPython (3.12.3/Sep 11 2024 14:17:37)
+DEBUG:core:Platform is Linux-6.8.0-49-generic-aarch64-with-glibc2.39
+WARNING:version:POX requires one of the following versions of Python: 3.6 3.7 3.8 3.9
+WARNING:version:You're running Python 3.12.
+WARNING:version:If you run into problems, try using a supported version.
+INFO:core:POX 0.7.0 (gar) is up.
+DEBUG:openflow.of_01:Listening on 0.0.0.0:6633
+DEBUG:openflow.of_01:1 connection aborted
+DEBUG:openflow.of_01:1 connection aborted
+INFO:openflow.of_01:[00-00-00-00-00-01 4] connected
+DEBUG:openflow.of_01:1 connection aborted
+INFO:openflow.of_01:[00-00-00-00-00-01 4] closed
+
+
+
+^CINFO:core:Going down...
+INFO:core:Down.
+ubuntu@mininet-vm:~/pox$ 
+ubuntu@mininet-vm:~/pox$ 
+ubuntu@mininet-vm:~/pox$ 
+ubuntu@mininet-vm:~/pox$ 
+ubuntu@mininet-vm:~/pox$ ./pox.py log.level --DEBUG openflow.of_01 --port=6633
+POX 0.7.0 (gar) / Copyright 2011-2020 James McCauley, et al.
+DEBUG:boot:Not launching of_01
+DEBUG:core:POX 0.7.0 (gar) going up...
+DEBUG:core:Running on CPython (3.12.3/Sep 11 2024 14:17:37)
+DEBUG:core:Platform is Linux-6.8.0-49-generic-aarch64-with-glibc2.39
+WARNING:version:POX requires one of the following versions of Python: 3.6 3.7 3.8 3.9
+WARNING:version:You're running Python 3.12.
+WARNING:version:If you run into problems, try using a supported version.
+INFO:core:POX 0.7.0 (gar) is up.
+DEBUG:openflow.of_01:Listening on 0.0.0.0:6633
+INFO:openflow.of_01:[00-00-00-00-00-01 2] connected
+DEBUG:openflow.of_01:1 connection aborted
+INFO:openflow.of_01:[00-00-00-00-00-01 2] closed
+INFO:openflow.of_01:[00-00-00-00-00-01 4] connected
+INFO:openflow.of_01:[00-00-00-00-00-03 5] connected
+INFO:openflow.of_01:[00-00-00-00-00-02 6] connected
+DEBUG:openflow.of_01:1 connection aborted
+INFO:openflow.of_01:[00-00-00-00-00-01 4] closed
+INFO:openflow.of_01:[00-00-00-00-00-03 5] closed
+INFO:openflow.of_01:[00-00-00-00-00-02 6] closed
+INFO:openflow.of_01:[00-00-00-00-00-01 8] connected
+INFO:openflow.of_01:[00-00-00-00-00-03 9] connected
+INFO:openflow.of_01:[00-00-00-00-00-02 10] connected
+DEBUG:openflow.of_01:1 connection aborted
+INFO:openflow.of_01:[00-00-00-00-00-01 8] closed
+INFO:openflow.of_01:[00-00-00-00-00-03 9] closed
+INFO:openflow.of_01:[00-00-00-00-00-02 10] closed
+INFO:openflow.of_01:[00-00-00-00-00-01 12] connected
+INFO:openflow.of_01:[00-00-00-00-00-03 13] connected
+INFO:openflow.of_01:[00-00-00-00-00-02 14] connected
+DEBUG:openflow.of_01:1 connection aborted
+INFO:openflow.of_01:[00-00-00-00-00-01 12] closed
+INFO:openflow.of_01:[00-00-00-00-00-03 13] closed
+INFO:openflow.of_01:[00-00-00-00-00-02 14] closed
+^CINFO:core:Going down...
+INFO:core:Down.
+
+ubuntu@mininet-vm:~/pox$ 
+ubuntu@mininet-vm:~/pox$ 
+ubuntu@mininet-vm:~/pox$ 
+ubuntu@mininet-vm:~/pox$ 
+ubuntu@mininet-vm:~/pox$ ryu-manager ryu.app.simple_switch_13
+ryu-manager: command not found
+ubuntu@mininet-vm:~/pox$ 
+ubuntu@mininet-vm:~/pox$ 
+ubuntu@mininet-vm:~/pox$ 
+ubuntu@mininet-vm:~/pox$ 
+ubuntu@mininet-vm:~/pox$ 
+ubuntu@mininet-vm:~/pox$ ./pox.py forwarding.l2_learning
+POX 0.7.0 (gar) / Copyright 2011-2020 James McCauley, et al.
+WARNING:version:POX requires one of the following versions of Python: 3.6 3.7 3.8 3.9
+WARNING:version:You're running Python 3.12.
+WARNING:version:If you run into problems, try using a supported version.
+INFO:core:POX 0.7.0 (gar) is up.
+INFO:openflow.of_01:[00-00-00-00-00-03 3] connected
+INFO:openflow.of_01:[00-00-00-00-00-01 2] connected
+INFO:openflow.of_01:[00-00-00-00-00-02 4] connected
+INFO:openflow.of_01:[00-00-00-00-00-01 2] closed
+INFO:openflow.of_01:[00-00-00-00-00-03 3] closed
+INFO:openflow.of_01:[00-00-00-00-00-02 4] closed
+INFO:openflow.of_01:[00-00-00-00-00-01 6] connected
+INFO:openflow.of_01:[00-00-00-00-00-02 8] connected
+INFO:openflow.of_01:[00-00-00-00-00-03 7] connected
+INFO:openflow.of_01:[00-00-00-00-00-01 6] closed
+INFO:openflow.of_01:[00-00-00-00-00-03 7] closed
+INFO:openflow.of_01:[00-00-00-00-00-02 8] closed
+INFO:openflow.of_01:[00-00-00-00-00-02 12] connected
+INFO:openflow.of_01:[00-00-00-00-00-01 10] connected
+INFO:openflow.of_01:[00-00-00-00-00-03 11] connected
+^CINFO:core:Going down...
+INFO:openflow.of_01:[00-00-00-00-00-02 12] disconnected
+INFO:openflow.of_01:[00-00-00-00-00-01 10] disconnected
+INFO:openflow.of_01:[00-00-00-00-00-03 11] disconnected
+INFO:core:Down.
+ubuntu@mininet-vm:~/pox$ cd ..
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ 
+ubuntu@mininet-vm:~$ cd /etc/
+ubuntu@mininet-vm:/etc$ 
+ubuntu@mininet-vm:/etc$ 
+ubuntu@mininet-vm:/etc$ ls
+ModemManager            groff            modules                 selinux
+PackageKit              group            modules-load.d          sensors.d
+X11                     group-           mtab                    sensors3.conf
+adduser.conf            grub.d           multipath               services
+alternatives            gshadow          multipath.conf          sgml
+apparmor                gshadow-         nanorc                  shadow
+apparmor.d              gss              needrestart             shadow-
+apport                  hdparm.conf      netconfig               shells
+apt                     host.conf        netplan                 skel
+bash.bashrc             hostname         network                 sos
+bash_completion         hosts            networkd-dispatcher     ssh
+bash_completion.d       hosts.allow      networks                ssl
+bindresvport.blacklist  hosts.deny       newt                    subgid
+binfmt.d                init.d           nftables.conf           subgid-
+byobu                   initramfs        nsswitch.conf           subuid
+ca-certificates         initramfs-tools  openvswitch             subuid-
+ca-certificates.conf    inputrc          opt                     sudo.conf
+cloud                   iproute2         os-release              sudo_logsrvd.conf
+console-setup           iscsi            overlayroot.conf        sudoers
+credstore               issue            overlayroot.local.conf  sudoers.d
+credstore.encrypted     issue.net        pam.conf                supercat
+cron.d                  kernel           pam.d                   sysctl.conf
+cron.daily              landscape        passwd                  sysctl.d
+cron.hourly             ld.so.cache      passwd-                 sysstat
+cron.monthly            ld.so.conf       perl                    systemd
+cron.weekly             ld.so.conf.d     pki                     terminfo
+cron.yearly             ldap             plymouth                timezone
+crontab                 legal            pm                      tmpfiles.d
+cryptsetup-initramfs    libaudit.conf    polkit-1                ubuntu-advantage
+crypttab                libblockdev      pollinate               ucf.conf
+dbus-1                  libibverbs.d     profile                 udev
+debconf.conf            libnl-3          profile.d               udisks2
+debian_version          locale.alias     protocols               ufw
+default                 locale.conf      python3                 update-manager
+deluser.conf            locale.gen       python3.12              update-motd.d
+depmod.d                localtime        rc0.d                   update-notifier
+dhcp                    logcheck         rc1.d                   usb_modeswitch.conf
+dhcpcd.conf             login.defs       rc2.d                   usb_modeswitch.d
+dpkg                    logrotate.conf   rc3.d                   vconsole.conf
+e2scrub.conf            logrotate.d      rc4.d                   vim
+ec2_version             lsb-release      rc5.d                   vmware-tools
+environment             lvm              rc6.d                   vpp
+ethertypes              machine-id       rcS.d                   vtrgb
+flash-kernel            magic            resolv.conf             wgetrc
+fonts                   magic.mime       rmt                     xattr.conf
+fstab                   manpath.config   rpc                     xdg
+fuse.conf               mdadm            rsyslog.conf            xml
+fwupd                   mime.types       rsyslog.d               zsh_command_not_found
+gai.conf                mke2fs.conf      screenrc
+gnutls                  modprobe.d       security
+ubuntu@mininet-vm:/etc$ nano sysctl.conf 
+ubuntu@mininet-vm:/etc$ sudo nano sysctl.conf 
+ubuntu@mininet-vm:/etc$ 
+ubuntu@mininet-vm:/etc$ 
+ubuntu@mininet-vm:/etc$ 
+ubuntu@mininet-vm:/etc$ cd ..
+ubuntu@mininet-vm:/$ 
+ubuntu@mininet-vm:/$ 
+ubuntu@mininet-vm:/$ 
+ubuntu@mininet-vm:/$ sudo sysctl -w net.ipv6.conf.all.disable_ipv6=0
+sudo sysctl -w net.ipv6.conf.default.disable_ipv6=0
+net.ipv6.conf.all.disable_ipv6 = 0
+net.ipv6.conf.default.disable_ipv6 = 0
+ubuntu@mininet-vm:/$ 
+ubuntu@mininet-vm:/$ 
+ubuntu@mininet-vm:/$ 
+ubuntu@mininet-vm:/$ sudo sysctl -w net.ipv6.conf.all.seg6_enabled=1
+sudo sysctl -w net.ipv6.conf.default.seg6_enabled=1
+net.ipv6.conf.all.seg6_enabled = 1
+net.ipv6.conf.default.seg6_enabled = 1
+ubuntu@mininet-vm:/$ 
+ubuntu@mininet-vm:/$ 
+ubuntu@mininet-vm:/$ 
+ubuntu@mininet-vm:/$ cd /etc/
+ubuntu@mininet-vm:/etc$ sudo nano sysctl.conf 
+ubuntu@mininet-vm:/etc$ 
+ubuntu@mininet-vm:/etc$ 
+ubuntu@mininet-vm:/etc$ cd ..
+ubuntu@mininet-vm:/$ 
+ubuntu@mininet-vm:/$ 
+ubuntu@mininet-vm:/$ 
+ubuntu@mininet-vm:/$ sudo sysctl -p
+net.ipv6.conf.all.disable_ipv6 = 0
+net.ipv6.conf.default.disable_ipv6 = 0
+net.ipv6.conf.all.seg6_enabled = 1
+net.ipv6.conf.default.seg6_enabled = 1
+ubuntu@mininet-vm:/$ 
+ubuntu@mininet-vm:/$ 
+ubuntu@mininet-vm:/$ 
+ubuntu@mininet-vm:/$ 
+ubuntu@mininet-vm:/$ 
+ubuntu@mininet-vm:/$ 
+ubuntu@mininet-vm:/$ 
+ubuntu@mininet-vm:/$ cd etc/
+ubuntu@mininet-vm:/etc$ 
+ubuntu@mininet-vm:/etc$ 
+ubuntu@mininet-vm:/etc$ ls
+ModemManager            groff            modules                 selinux
+PackageKit              group            modules-load.d          sensors.d
+X11                     group-           mtab                    sensors3.conf
+adduser.conf            grub.d           multipath               services
+alternatives            gshadow          multipath.conf          sgml
+apparmor                gshadow-         nanorc                  shadow
+apparmor.d              gss              needrestart             shadow-
+apport                  hdparm.conf      netconfig               shells
+apt                     host.conf        netplan                 skel
+bash.bashrc             hostname         network                 sos
+bash_completion         hosts            networkd-dispatcher     ssh
+bash_completion.d       hosts.allow      networks                ssl
+bindresvport.blacklist  hosts.deny       newt                    subgid
+binfmt.d                init.d           nftables.conf           subgid-
+byobu                   initramfs        nsswitch.conf           subuid
+ca-certificates         initramfs-tools  openvswitch             subuid-
+ca-certificates.conf    inputrc          opt                     sudo.conf
+cloud                   iproute2         os-release              sudo_logsrvd.conf
+console-setup           iscsi            overlayroot.conf        sudoers
+credstore               issue            overlayroot.local.conf  sudoers.d
+credstore.encrypted     issue.net        pam.conf                supercat
+cron.d                  kernel           pam.d                   sysctl.conf
+cron.daily              landscape        passwd                  sysctl.d
+cron.hourly             ld.so.cache      passwd-                 sysstat
+cron.monthly            ld.so.conf       perl                    systemd
+cron.weekly             ld.so.conf.d     pki                     terminfo
+cron.yearly             ldap             plymouth                timezone
+crontab                 legal            pm                      tmpfiles.d
+cryptsetup-initramfs    libaudit.conf    polkit-1                ubuntu-advantage
+crypttab                libblockdev      pollinate               ucf.conf
+dbus-1                  libibverbs.d     profile                 udev
+debconf.conf            libnl-3          profile.d               udisks2
+debian_version          locale.alias     protocols               ufw
+default                 locale.conf      python3                 update-manager
+deluser.conf            locale.gen       python3.12              update-motd.d
+depmod.d                localtime        rc0.d                   update-notifier
+dhcp                    logcheck         rc1.d                   usb_modeswitch.conf
+dhcpcd.conf             login.defs       rc2.d                   usb_modeswitch.d
+dpkg                    logrotate.conf   rc3.d                   vconsole.conf
+e2scrub.conf            logrotate.d      rc4.d                   vim
+ec2_version             lsb-release      rc5.d                   vmware-tools
+environment             lvm              rc6.d                   vpp
+ethertypes              machine-id       rcS.d                   vtrgb
+flash-kernel            magic            resolv.conf             wgetrc
+fonts                   magic.mime       rmt                     xattr.conf
+fstab                   manpath.config   rpc                     xdg
+fuse.conf               mdadm            rsyslog.conf            xml
+fwupd                   mime.types       rsyslog.d               zsh_command_not_found
+gai.conf                mke2fs.conf      screenrc
+gnutls                  modprobe.d       security
+ubuntu@mininet-vm:/etc$ cd ..
+ubuntu@mininet-vm:/$ 
+ubuntu@mininet-vm:/$ 
+ubuntu@mininet-vm:/$ 
+ubuntu@mininet-vm:/$ ls
+bin                dev   lib                media  proc  sbin                srv  usr
+bin.usr-is-merged  etc   lib.usr-is-merged  mnt    root  sbin.usr-is-merged  sys  var
+boot               home  lost+found         opt    run   snap                tmp
+ubuntu@mininet-vm:/$ 
+ubuntu@mininet-vm:/$ 
+ubuntu@mininet-vm:/$ sudo ovs-vsctl list-br
+s1
+s2
+s3
+ubuntu@mininet-vm:/$ sudo ovs-vsctl show
+7bd9c72f-643e-43e2-a757-f36e3cd278d5
+    Bridge s1
+        Controller "tcp:127.0.0.1:6653"
+            is_connected: true
+        Controller "ptcp:6654"
+        fail_mode: secure
+        Port s1-eth1
+            Interface s1-eth1
+        Port s1-eth2
+            Interface s1-eth2
+        Port s1
+            Interface s1
+                type: internal
+    Bridge s2
+        Controller "tcp:127.0.0.1:6653"
+            is_connected: true
+        Controller "ptcp:6655"
+        fail_mode: secure
+        Port s2-eth2
+            Interface s2-eth2
+        Port s2-eth3
+            Interface s2-eth3
+        Port s2-eth1
+            Interface s2-eth1
+        Port s2
+            Interface s2
+                type: internal
+    Bridge s3
+        Controller "tcp:127.0.0.1:6653"
+            is_connected: true
+        Controller "ptcp:6656"
+        fail_mode: secure
+        Port s3
+            Interface s3
+                type: internal
+        Port s3-eth2
+            Interface s3-eth2
+        Port s3-eth3
+            Interface s3-eth3
+        Port s3-eth1
+            Interface s3-eth1
+    ovs_version: "3.3.0"
+ubuntu@mininet-vm:/$ sudo ovs-ofctl add-flow s1 "in_port=1,dl_type=0x0800,nw_src=10.0.0.1,nw_dst=10.0.0.2,actions=output:2"
+ubuntu@mininet-vm:/$ 
+ubuntu@mininet-vm:/$ 
+ubuntu@mininet-vm:/$ 
+ubuntu@mininet-vm:/$ sudo ovs-ofctl dump-flows s1
+ cookie=0x0, duration=9.166s, table=0, n_packets=0, n_bytes=0, ip,in_port="s1-eth1",nw_src=10.0.0.1,nw_dst=10.0.0.2 actions=output:"s1-eth2"
+ubuntu@mininet-vm:/$ sudo ovs-ofctl add-flow s2 "in_port=1,dl_type=0x0800,nw_src=10.0.0.1,nw_dst=10.0.0.2,actions=output:2"
+ubuntu@mininet-vm:/$ 
+ubuntu@mininet-vm:/$ 
+ubuntu@mininet-vm:/$ sudo ovs-ofctl dump-flows s2
+ cookie=0x0, duration=19.196s, table=0, n_packets=0, n_bytes=0, ip,in_port="s2-eth1",nw_src=10.0.0.1,nw_dst=10.0.0.2 actions=output:"s2-eth2"
+ubuntu@mininet-vm:/$ sudo ovs-ofctl dump-flows s1
+sudo ovs-ofctl dump-flows s2
+sudo ovs-ofctl dump-flows s3
+ubuntu@mininet-vm:/$ 
+ubuntu@mininet-vm:/$ 
+ubuntu@mininet-vm:/$ 
+ubuntu@mininet-vm:/$ 
+ubuntu@mininet-vm:/$ sudo ovs-ofctl dump-flows s1
+sudo ovs-ofctl dump-flows s2
+sudo ovs-ofctl dump-flows s3
+ubuntu@mininet-vm:/$ 
+ubuntu@mininet-vm:/$ 
+ubuntu@mininet-vm:/$ 
+ubuntu@mininet-vm:/$ sudo ovs-ofctl dump-flows s1
+ubuntu@mininet-vm:/$ 
+ubuntu@mininet-vm:/$ 
+ubuntu@mininet-vm:/$ 
+ubuntu@mininet-vm:/$ 
+ubuntu@mininet-vm:/$ sudo ovs-ofctl dump-flows s1
+ubuntu@mininet-vm:/$ 
+ubuntu@mininet-vm:/$ 
+ubuntu@mininet-vm:/$ 
+ubuntu@mininet-vm:/$ 
+ubuntu@mininet-vm:/$ sudo ovs-ofctl dump-flows s1
+ubuntu@mininet-vm:/$ sudo ovs-ofctl dump-flows s1
+ubuntu@mininet-vm:/$ sudo ovs-vsctl show
+7bd9c72f-643e-43e2-a757-f36e3cd278d5
+    Bridge s1
+        Controller "ptcp:6654"
+        Controller "tcp:127.0.0.1:6633"
+            is_connected: true
+        fail_mode: secure
+        Port s1-eth1
+            Interface s1-eth1
+        Port s1-eth2
+            Interface s1-eth2
+        Port s1
+            Interface s1
+                type: internal
+    Bridge s2
+        Controller "tcp:127.0.0.1:6633"
+            is_connected: true
+        Controller "ptcp:6655"
+        fail_mode: secure
+        Port s2-eth1
+            Interface s2-eth1
+        Port s2-eth2
+            Interface s2-eth2
+        Port s2
+            Interface s2
+                type: internal
+        Port s2-eth3
+            Interface s2-eth3
+    Bridge s3
+        Controller "ptcp:6656"
+        Controller "tcp:127.0.0.1:6633"
+            is_connected: true
+        fail_mode: secure
+        Port s3-eth1
+            Interface s3-eth1
+        Port s3
+            Interface s3
+                type: internal
+        Port s3-eth3
+            Interface s3-eth3
+        Port s3-eth2
+            Interface s3-eth2
+    ovs_version: "3.3.0"
+ubuntu@mininet-vm:/$ 
+ubuntu@mininet-vm:/$ 
+ubuntu@mininet-vm:/$ 
+ubuntu@mininet-vm:/$ 
+ubuntu@mininet-vm:/$ 
+ubuntu@mininet-vm:/$ sudo ovs-ofctl add-flow s1 "dl_type=0x86DD,ipv6_src=2001:db8:1::1,ipv6_dst=2001:db8:1::3,actions=output:2"
+sudo ovs-ofctl add-flow s1 "dl_type=0x86DD,ipv6_src=2001:db8:1::1,ipv6_dst=2001:db8:1::4,actions=output:2"
+sudo ovs-ofctl add-flow s1 "dl_type=0x86DD,ipv6_src=2001:db8:1::2,ipv6_dst=2001:db8:1::3,actions=output:2"
+sudo ovs-ofctl add-flow s1 "dl_type=0x86DD,ipv6_src=2001:db8:1::2,ipv6_dst=2001:db8:1::4,actions=output:2"
+ubuntu@mininet-vm:/$ 
+ubuntu@mininet-vm:/$ 
+ubuntu@mininet-vm:/$ sudo ovs-ofctl add-flow s1 "dl_type=0x86DD,ipv6_src=2001:db8:1::3,ipv6_dst=2001:db8:1::1,actions=output:1"
+sudo ovs-ofctl add-flow s1 "dl_type=0x86DD,ipv6_src=2001:db8:1::3,ipv6_dst=2001:db8:1::2,actions=output:1"
+sudo ovs-ofctl add-flow s1 "dl_type=0x86DD,ipv6_src=2001:db8:1::4,ipv6_dst=2001:db8:1::1,actions=output:1"
+sudo ovs-ofctl add-flow s1 "dl_type=0x86DD,ipv6_src=2001:db8:1::4,ipv6_dst=2001:db8:1::2,actions=output:1"
+ubuntu@mininet-vm:/$ 
+ubuntu@mininet-vm:/$ 
+ubuntu@mininet-vm:/$ 
+ubuntu@mininet-vm:/$ 
+ubuntu@mininet-vm:/$ sudo ovs-ofctl add-flow s2 "dl_type=0x86DD,ipv6_src=2001:db8:1::1,ipv6_dst=2001:db8:1::3,actions=output:3"
+sudo ovs-ofctl add-flow s2 "dl_type=0x86DD,ipv6_src=2001:db8:1::1,ipv6_dst=2001:db8:1::4,actions=output:3"
+sudo ovs-ofctl add-flow s2 "dl_type=0x86DD,ipv6_src=2001:db8:1::2,ipv6_dst=2001:db8:1::3,actions=output:3"
+sudo ovs-ofctl add-flow s2 "dl_type=0x86DD,ipv6_src=2001:db8:1::2,ipv6_dst=2001:db8:1::4,actions=output:3"
+ubuntu@mininet-vm:/$ 
+ubuntu@mininet-vm:/$ 
+ubuntu@mininet-vm:/$ 
+ubuntu@mininet-vm:/$ sudo ovs-ofctl add-flow s2 "dl_type=0x86DD,ipv6_src=2001:db8:1::3,ipv6_dst=2001:db8:1::1,actions=output:1"
+sudo ovs-ofctl add-flow s2 "dl_type=0x86DD,ipv6_src=2001:db8:1::3,ipv6_dst=2001:db8:1::2,actions=output:2"
+sudo ovs-ofctl add-flow s2 "dl_type=0x86DD,ipv6_src=2001:db8:1::4,ipv6_dst=2001:db8:1::1,actions=output:1"
+sudo ovs-ofctl add-flow s2 "dl_type=0x86DD,ipv6_src=2001:db8:1::4,ipv6_dst=2001:db8:1::2,actions=output:2"
+ubuntu@mininet-vm:/$ 
+ubuntu@mininet-vm:/$ 
+ubuntu@mininet-vm:/$ 
+ubuntu@mininet-vm:/$ sudo ovs-ofctl add-flow s3 "dl_type=0x86DD,ipv6_src=2001:db8:1::3,ipv6_dst=2001:db8:1::1,actions=output:3"
+sudo ovs-ofctl add-flow s3 "dl_type=0x86DD,ipv6_src=2001:db8:1::3,ipv6_dst=2001:db8:1::2,actions=output:3"
+sudo ovs-ofctl add-flow s3 "dl_type=0x86DD,ipv6_src=2001:db8:1::4,ipv6_dst=2001:db8:1::1,actions=output:3"
+sudo ovs-ofctl add-flow s3 "dl_type=0x86DD,ipv6_src=2001:db8:1::4,ipv6_dst=2001:db8:1::2,actions=output:3"
+ubuntu@mininet-vm:/$ 
+ubuntu@mininet-vm:/$ 
+ubuntu@mininet-vm:/$ 
+ubuntu@mininet-vm:/$ sudo ovs-ofctl add-flow s3 "dl_type=0x86DD,ipv6_src=2001:db8:1::1,ipv6_dst=2001:db8:1::3,actions=output:1"
+sudo ovs-ofctl add-flow s3 "dl_type=0x86DD,ipv6_src=2001:db8:1::1,ipv6_dst=2001:db8:1::4,actions=output:2"
+sudo ovs-ofctl add-flow s3 "dl_type=0x86DD,ipv6_src=2001:db8:1::2,ipv6_dst=2001:db8:1::3,actions=output:1"
+sudo ovs-ofctl add-flow s3 "dl_type=0x86DD,ipv6_src=2001:db8:1::2,ipv6_dst=2001:db8:1::4,actions=output:2"
+ubuntu@mininet-vm:/$ 
+ubuntu@mininet-vm:/$ 
+ubuntu@mininet-vm:/$ 
+ubuntu@mininet-vm:/$ 
+ubuntu@mininet-vm:/$ sudo ovs-ofctl dump-flows s1
+sudo ovs-ofctl dump-flows s2
+sudo ovs-ofctl dump-flows s3
+ cookie=0x0, duration=40.086s, table=0, n_packets=0, n_bytes=0, ipv6,ipv6_src=2001:db8:1::1,ipv6_dst=2001:db8:1::3 actions=output:"s1-eth2"
+ cookie=0x0, duration=40.075s, table=0, n_packets=0, n_bytes=0, ipv6,ipv6_src=2001:db8:1::1,ipv6_dst=2001:db8:1::4 actions=output:"s1-eth2"
+ cookie=0x0, duration=40.066s, table=0, n_packets=0, n_bytes=0, ipv6,ipv6_src=2001:db8:1::2,ipv6_dst=2001:db8:1::3 actions=output:"s1-eth2"
+ cookie=0x0, duration=40.057s, table=0, n_packets=0, n_bytes=0, ipv6,ipv6_src=2001:db8:1::2,ipv6_dst=2001:db8:1::4 actions=output:"s1-eth2"
+ cookie=0x0, duration=33.440s, table=0, n_packets=0, n_bytes=0, ipv6,ipv6_src=2001:db8:1::3,ipv6_dst=2001:db8:1::1 actions=output:"s1-eth1"
+ cookie=0x0, duration=33.412s, table=0, n_packets=0, n_bytes=0, ipv6,ipv6_src=2001:db8:1::3,ipv6_dst=2001:db8:1::2 actions=output:"s1-eth1"
+ cookie=0x0, duration=33.395s, table=0, n_packets=0, n_bytes=0, ipv6,ipv6_src=2001:db8:1::4,ipv6_dst=2001:db8:1::1 actions=output:"s1-eth1"
+ cookie=0x0, duration=33.375s, table=0, n_packets=0, n_bytes=0, ipv6,ipv6_src=2001:db8:1::4,ipv6_dst=2001:db8:1::2 actions=output:"s1-eth1"
+ cookie=0x0, duration=23.106s, table=0, n_packets=0, n_bytes=0, ipv6,ipv6_src=2001:db8:1::1,ipv6_dst=2001:db8:1::3 actions=output:"s2-eth3"
+ cookie=0x0, duration=23.091s, table=0, n_packets=0, n_bytes=0, ipv6,ipv6_src=2001:db8:1::1,ipv6_dst=2001:db8:1::4 actions=output:"s2-eth3"
+ cookie=0x0, duration=23.078s, table=0, n_packets=0, n_bytes=0, ipv6,ipv6_src=2001:db8:1::2,ipv6_dst=2001:db8:1::3 actions=output:"s2-eth3"
+ cookie=0x0, duration=23.065s, table=0, n_packets=0, n_bytes=0, ipv6,ipv6_src=2001:db8:1::2,ipv6_dst=2001:db8:1::4 actions=output:"s2-eth3"
+ cookie=0x0, duration=17.454s, table=0, n_packets=0, n_bytes=0, ipv6,ipv6_src=2001:db8:1::3,ipv6_dst=2001:db8:1::1 actions=output:"s2-eth1"
+ cookie=0x0, duration=17.438s, table=0, n_packets=0, n_bytes=0, ipv6,ipv6_src=2001:db8:1::3,ipv6_dst=2001:db8:1::2 actions=output:"s2-eth2"
+ cookie=0x0, duration=17.425s, table=0, n_packets=0, n_bytes=0, ipv6,ipv6_src=2001:db8:1::4,ipv6_dst=2001:db8:1::1 actions=output:"s2-eth1"
+ cookie=0x0, duration=17.412s, table=0, n_packets=0, n_bytes=0, ipv6,ipv6_src=2001:db8:1::4,ipv6_dst=2001:db8:1::2 actions=output:"s2-eth2"
+ cookie=0x0, duration=10.378s, table=0, n_packets=0, n_bytes=0, ipv6,ipv6_src=2001:db8:1::3,ipv6_dst=2001:db8:1::1 actions=output:"s3-eth3"
+ cookie=0x0, duration=10.364s, table=0, n_packets=0, n_bytes=0, ipv6,ipv6_src=2001:db8:1::3,ipv6_dst=2001:db8:1::2 actions=output:"s3-eth3"
+ cookie=0x0, duration=10.354s, table=0, n_packets=0, n_bytes=0, ipv6,ipv6_src=2001:db8:1::4,ipv6_dst=2001:db8:1::1 actions=output:"s3-eth3"
+ cookie=0x0, duration=10.345s, table=0, n_packets=0, n_bytes=0, ipv6,ipv6_src=2001:db8:1::4,ipv6_dst=2001:db8:1::2 actions=output:"s3-eth3"
+ cookie=0x0, duration=6.232s, table=0, n_packets=0, n_bytes=0, ipv6,ipv6_src=2001:db8:1::1,ipv6_dst=2001:db8:1::3 actions=output:"s3-eth1"
+ cookie=0x0, duration=6.217s, table=0, n_packets=0, n_bytes=0, ipv6,ipv6_src=2001:db8:1::1,ipv6_dst=2001:db8:1::4 actions=output:"s3-eth2"
+ cookie=0x0, duration=6.207s, table=0, n_packets=0, n_bytes=0, ipv6,ipv6_src=2001:db8:1::2,ipv6_dst=2001:db8:1::3 actions=output:"s3-eth1"
+ cookie=0x0, duration=6.198s, table=0, n_packets=0, n_bytes=0, ipv6,ipv6_src=2001:db8:1::2,ipv6_dst=2001:db8:1::4 actions=output:"s3-eth2"
+ubuntu@mininet-vm:/$ sudo tc qdisc add dev s1-eth1 root handle 1: htb default 11
+sudo tc class add dev s1-eth1 parent 1: classid 1:1 htb rate 5mbit ceil 5mbit
+sudo tc class add dev s1-eth1 parent 1:1 classid 1:11 htb rate 5mbit ceil 5mbit
+ubuntu@mininet-vm:/$ 
+ubuntu@mininet-vm:/$ 
+ubuntu@mininet-vm:/$ 
+ubuntu@mininet-vm:/$ 
